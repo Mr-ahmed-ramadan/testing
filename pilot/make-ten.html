@@ -1,0 +1,472 @@
+<title>Make Ten Pilot</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: one landscape stage (two ten-frames + cherry) with a prompt line and a control tray under it; stacks on phones. */
+:root{
+  --bg:#f3f6fb; --panel:#ffffff; --ink:#1d2a44; --soft:#5b6886; --line:#c9d2e3;
+  --red:#d63c3c; --yellow:#f2b705; --blue:#2856c7; --blue-soft:#e3eafc; --green:#1f8a5b; --green-soft:#dff3e8;
+  --cell:#fbfcfe; --glow:#ffe58a;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111827; --panel:#1a2236; --ink:#eef1f8; --soft:#a6b0c8; --line:#34405c;
+  --red:#f06a6a; --yellow:#f6c945; --blue:#8aa9ff; --blue-soft:#24325a; --green:#5fd39e; --green-soft:#183b2c;
+  --cell:#202a42; --glow:#6b5a14; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111827; --panel:#1a2236; --ink:#eef1f8; --soft:#a6b0c8; --line:#34405c;
+  --red:#f06a6a; --yellow:#f6c945; --blue:#8aa9ff; --blue-soft:#24325a; --green:#5fd39e; --green-soft:#183b2c;
+  --cell:#202a42; --glow:#6b5a14; color-scheme:dark}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;margin:0}
+.app{max-width:1100px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;gap:12px;
+  padding-block:12px 20px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));box-sizing:border-box}
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+header h1{font-family:var(--display);font-size:1.4rem;margin:0;font-weight:800}
+.phases{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.phases span{font-size:.8rem;padding:4px 10px;border-radius:999px;border:1.5px solid var(--line);color:var(--soft)}
+.phases span.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.phases span.done{border-color:var(--green);color:var(--green)}
+.iconbtn{font:inherit;font-size:.85rem;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer}
+.stagewrap{background:var(--panel);border:2px solid var(--line);border-radius:18px;position:relative;overflow:hidden}
+svg#stage{display:block;width:100%;height:auto;touch-action:none;user-select:none;-webkit-user-select:none}
+.prompt{display:flex;align-items:center;gap:12px;min-height:56px}
+.prompt .say{font-family:var(--display);font-size:1.35rem;font-weight:600;line-height:1.3;text-wrap:balance}
+.tray{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;min-height:76px}
+.btn{font-family:var(--display);font-weight:700;font-size:1.2rem;border:0;border-radius:16px;padding:14px 26px;cursor:pointer;background:var(--blue);color:#fff;min-height:56px}
+.btn.ghost{background:var(--panel);color:var(--ink);border:2px solid var(--line)}
+.btn.go{background:var(--green)}
+.tile{font-family:var(--display);font-weight:800;font-size:2rem;min-width:84px;min-height:72px;border-radius:16px;border:2.5px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.tile.right{background:var(--green-soft);border-color:var(--green)}
+.tile.wrong{opacity:.35}
+.keypad{display:grid;grid-template-columns:repeat(5,64px);gap:8px}
+.keypad button{font-family:var(--display);font-weight:800;font-size:1.6rem;height:60px;border-radius:12px;border:2px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.answerbox{font-family:var(--display);font-weight:800;font-size:2.4rem;min-width:110px;text-align:center;border-bottom:4px solid var(--ink);padding:0 8px}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+/* svg */
+.frame{fill:var(--cell);stroke:var(--ink);stroke-width:3}
+.cellline{stroke:var(--ink);stroke-width:1.5}
+.counter{transition:transform .65s cubic-bezier(.3,.8,.3,1),opacity .4s}
+.counter.drag{transition:none}
+.c-red{fill:var(--red)} .c-yel{fill:var(--yellow)}
+.dotmode .c-red,.dotmode .c-yel{fill:none;stroke-width:4}
+.dotmode .c-red{stroke:var(--red)} .dotmode .c-yel{stroke:var(--yellow)}
+.tag{font-family:var(--display);font-weight:800;font-size:56px;fill:var(--ink);text-anchor:middle}
+.small{font-family:var(--display);font-weight:600;font-size:24px;fill:var(--soft);text-anchor:middle}
+.eq{font-family:var(--display);font-weight:800;font-size:46px;fill:var(--ink);text-anchor:middle}
+.glowcell{fill:var(--glow);opacity:.9}
+@media (prefers-reduced-motion:no-preference){.glowcell{animation:pulse 1s ease-in-out infinite alternate}}
+@keyframes pulse{from{opacity:.35}to{opacity:1}}
+.cherry circle{fill:var(--panel);stroke:var(--ink);stroke-width:3}
+.cherry line{stroke:var(--ink);stroke-width:3}
+.cherry text{font-family:var(--display);font-weight:800;font-size:38px;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.cherry .hl{fill:var(--glow)}
+.lasso{fill:none;stroke:var(--green);stroke-width:5;stroke-dasharray:14 8}
+.fade{transition:opacity .5s}
+.hidden{opacity:0;pointer-events:none}
+.ghost{opacity:.45}
+/* home */
+.home{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px}
+.card{background:var(--panel);border:2px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.card h2{font-family:var(--display);margin:0;font-size:1.5rem}
+.days{display:flex;gap:10px}
+.day{flex:1;border:2px dashed var(--line);border-radius:14px;padding:10px;text-align:center;font-size:.9rem;color:var(--soft)}
+.day.ok{border-style:solid;border-color:var(--green);background:var(--green-soft);color:var(--ink)}
+.day b{display:block;font-family:var(--display);font-size:1.4rem;color:var(--ink)}
+.parent{font-size:.88rem;color:var(--soft);display:flex;flex-direction:column;gap:6px}
+.parent table{border-collapse:collapse;width:100%}
+.parent td{padding:3px 6px;border-bottom:1px solid var(--line)}
+@media (max-width:720px){.home{grid-template-columns:1fr}.prompt .say{font-size:1.1rem}.keypad{grid-template-columns:repeat(5,52px)}.tile{min-width:64px;font-size:1.6rem}}
+</style>
+
+<div class="app">
+  <header>
+    <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="21" fill="var(--yellow)" stroke="var(--ink)" stroke-width="2.5"/><circle cx="16" cy="19" r="3.2" fill="var(--ink)"/><circle cx="30" cy="19" r="3.2" fill="var(--ink)"/><path d="M14 28 Q23 36 32 28" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <h1>Make Ten</h1>
+    <div class="phases" id="phases"><span>Watch</span><span>Try</span><span>Practise</span><span>Check</span><span>Teach Dot</span></div>
+    <button class="iconbtn" id="sound" aria-pressed="true">Voice on</button>
+  </header>
+
+  <div id="homeView" class="home">
+    <div class="card">
+      <div style="font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Objective AS1.5 · Year 1 · from Japan</div>
+      <h2>Add across ten by making ten first</h2>
+      <p style="margin:0">8 + 5 → give 2 of the 5 to the 8 to make 10, then 10 + 3 = 13. Dot the counter will show him, then he does it himself with his fingers.</p>
+      <div class="days" id="days"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn go" id="startBtn">Start today's session</button>
+        <button class="btn ghost" id="challengeBtn" hidden>Excellence challenges</button>
+      </div>
+    </div>
+    <div class="card parent">
+      <h2 style="font-size:1.1rem">For parents</h2>
+      <span>Mastered = passing the check (9 of 10) on 3 different days, the last one without pressing "Show me".</span>
+      <div id="log"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="iconbtn" id="nextDay">Pilot: pretend it's the next day</button>
+        <button class="iconbtn" id="reset">Reset progress</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="lessonView" hidden style="display:flex;flex-direction:column;gap:12px">
+    <div class="stagewrap">
+      <svg id="stage" viewBox="0 0 1000 515" role="img" aria-label="Two ten-frames with counters"></svg>
+    </div>
+    <div class="prompt"><button class="iconbtn" id="repeatSay" aria-label="Say it again">🔊</button><div class="say" id="say"></div></div>
+    <div class="tray" id="tray"></div>
+  </div>
+</div>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s);
+const NS="http://www.w3.org/2000/svg";
+const svg=$("#stage");
+const sleep=ms=>new Promise(r=>setTimeout(r,reduced()?Math.min(ms,150):ms));
+const reduced=()=>matchMedia("(prefers-reduced-motion: reduce)").matches;
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+const shuffle=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+
+/* ---------------- voice ---------------- */
+let voiceOn=true,lastSay="";
+function say(text,speakIt=true){
+  lastSay=text;$("#say").textContent=text;
+  if(!voiceOn||!speakIt) return;
+  try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="en-GB";u.rate=.9;
+    const v=speechSynthesis.getVoices().find(v=>v.lang==="en-GB");if(v)u.voice=v;speechSynthesis.speak(u);}catch(e){}
+}
+$("#repeatSay").onclick=()=>say(lastSay);
+$("#sound").onclick=e=>{voiceOn=!voiceOn;e.target.textContent=voiceOn?"Voice on":"Voice off";e.target.setAttribute("aria-pressed",voiceOn);if(!voiceOn)try{speechSynthesis.cancel()}catch(_){}};
+
+/* ---------------- store ---------------- */
+const KEY="maketen-pilot";
+let store={sessions:[],dayOffset:0,events:[]};
+try{const s=JSON.parse(localStorage.getItem(KEY));if(s)store=s;}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}};
+const today=()=>{const d=new Date();d.setDate(d.getDate()+store.dayOffset);return d.toISOString().slice(0,10)};
+function mastery(){
+  const passed=store.sessions.filter(s=>s.score>=9);
+  const days=[...new Set(passed.map(s=>s.date))];
+  const last=passed[passed.length-1];
+  return {days,mastered:days.length>=3&&last&&!last.usedModel};
+}
+
+/* ---------------- scene ---------------- */
+const CELL=68,FY=90,AX=70,BX=560;
+let counters=[],layer={},mode="counters",dragEnabled=false,onFull=null;
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);(parent||svg).appendChild(e);return e;}
+function cellXY(frame,i){const fx=frame==="A"?AX:BX;return [fx+CELL*(i%5)+CELL/2,FY+CELL*Math.floor(i/5)+CELL/2];}
+function buildScene(){
+  svg.innerHTML="";
+  layer.frames=el("g",{class:"fade"});
+  for(const fx of [AX,BX]){
+    el("rect",{x:fx,y:FY,width:CELL*5,height:CELL*2,rx:6,class:"frame"},layer.frames);
+    for(let c=1;c<5;c++) el("line",{x1:fx+CELL*c,y1:FY,x2:fx+CELL*c,y2:FY+CELL*2,class:"cellline"},layer.frames);
+    el("line",{x1:fx,y1:FY+CELL,x2:fx+CELL*5,y2:FY+CELL,class:"cellline"},layer.frames);
+  }
+  layer.glow=el("g",{});
+  layer.lasso=el("g",{});
+  layer.counters=el("g",{});
+  layer.tags=el("g",{});
+  layer.tagA=el("text",{x:AX+170,y:62,class:"tag"},layer.tags);
+  layer.plus=el("text",{x:500,y:62,class:"tag"},layer.tags);layer.plus.textContent="+";
+  layer.tagB=el("text",{x:BX+170,y:62,class:"tag"},layer.tags);
+  layer.cherry=el("g",{class:"cherry fade hidden"});
+  layer.eq=el("text",{x:500,y:495,class:"eq fade"});
+  layer.ghost=el("g",{});
+}
+function setTags(a,b){layer.tagA.textContent=a;layer.tagB.textContent=b;}
+function setMode(m){
+  mode=m;svg.classList.toggle("dotmode",m==="dots");
+  layer.frames.classList.toggle("hidden",m==="symbols");
+  layer.counters.style.opacity=m==="symbols"?0:1;
+}
+function makeCounters(a,b){
+  layer.counters.innerHTML="";counters=[];
+  const add=(frame,cell,color)=>{
+    const g=el("g",{class:"counter"},layer.counters);
+    el("circle",{r:26,cx:0,cy:0,class:color},g);
+    const [x,y]=cellXY(frame,cell);g.style.transform=`translate(${x}px,${y-400}px)`;g.style.opacity=0;
+    const c={g,frame,cell,color};counters.push(c);
+    g.addEventListener("pointerdown",ev=>startDrag(ev,c));
+    return c;
+  };
+  for(let i=0;i<a;i++) add("A",i,"c-red");
+  for(let i=0;i<b;i++) add("B",i,"c-yel");
+}
+function place(c,instant){if(instant)c.g.classList.add("drag");const [x,y]=cellXY(c.frame,c.cell);c.g.style.transform=`translate(${x}px,${y}px)`;c.g.style.opacity=1;if(instant){c.g.getBoundingClientRect();c.g.classList.remove("drag");}}
+async function dropIn(frame,delay=110){for(const c of counters.filter(c=>c.frame===frame)){place(c);await sleep(delay);}}
+const countIn=f=>counters.filter(c=>c.frame===f).length;
+function glowEmpty(on){
+  layer.glow.innerHTML="";if(!on)return;
+  const n=countIn("A");for(let i=n;i<10;i++){const [x,y]=cellXY("A",i);el("rect",{x:x-CELL/2+4,y:y-CELL/2+4,width:CELL-8,height:CELL-8,rx:6,class:"glowcell"},layer.glow);}
+}
+function cherry(top,left,right,hl){
+  const g=layer.cherry;g.innerHTML="";const cx=BX+170;
+  el("line",{x1:cx,y1:285,x2:cx-80,y2:390},g);el("line",{x1:cx,y1:285,x2:cx+80,y2:390},g);
+  const bub=(x,y,t,h)=>{el("circle",{cx:x,cy:y,r:36,class:h?"hl":""},g);const tx=el("text",{x,y},g);tx.textContent=t;};
+  bub(cx,280,top);bub(cx-80,400,left,hl==="L");bub(cx+80,400,right,hl==="R");
+  g.classList.remove("hidden");
+}
+function hideCherry(){layer.cherry.classList.add("hidden");}
+function lasso(frame,on){layer.lasso.innerHTML="";if(!on)return;const fx=frame==="A"?AX:BX;el("rect",{x:fx-12,y:FY-12,width:CELL*5+24,height:CELL*2+24,rx:20,class:"lasso"},layer.lasso);}
+function eq(t){layer.eq.textContent=t;}
+
+/* moving counters B -> A */
+async function moveOne(){
+  const c=counters.filter(c=>c.frame==="B").pop();if(!c)return;
+  c.frame="A";c.cell=countIn("A")-1;place(c);
+}
+function refreshTags(){if(mode!=="symbols")setTags(countIn("A"),countIn("B"));}
+
+/* ---------------- drag ---------------- */
+let drag=null;
+function svgPoint(ev){const p=svg.createSVGPoint();p.x=ev.clientX;p.y=ev.clientY;return p.matrixTransform(svg.getScreenCTM().inverse());}
+function startDrag(ev,c){
+  if(!dragEnabled||c.frame!=="B")return;
+  ev.preventDefault();idleReset();
+  drag={c};c.g.classList.add("drag");svg.setPointerCapture(ev.pointerId);moveDrag(ev);
+}
+function moveDrag(ev){if(!drag)return;const p=svgPoint(ev);drag.c.g.style.transform=`translate(${p.x}px,${p.y}px)`;}
+function endDrag(ev){
+  if(!drag)return;const c=drag.c;drag=null;c.g.classList.remove("drag");
+  const p=svgPoint(ev);const overA=p.x>AX-30&&p.x<AX+CELL*5+30&&p.y>FY-40&&p.y<FY+CELL*2+40;
+  log("drag",{toA:overA});
+  if(overA&&countIn("A")<10){
+    c.frame="A";c.cell=countIn("A")-1;
+    // keep B compact
+    counters.filter(x=>x.frame==="B").forEach((x,i)=>{x.cell=i;place(x);});
+    place(c);refreshTags();glowEmpty(true);
+    if(countIn("A")===10&&onFull){const f=onFull;onFull=null;f();}
+  }else{place(c);if(countIn("A")===10){say("The ten is already full. That one stays.",true);}}
+}
+svg.addEventListener("pointermove",moveDrag);
+svg.addEventListener("pointerup",endDrag);
+svg.addEventListener("pointercancel",endDrag);
+
+/* idle hint: ghost counter slides from B to the next empty A cell */
+let idleT=null,hintOn=false;
+function idleReset(){clearTimeout(idleT);layer.ghost&&(layer.ghost.innerHTML="");if(hintOn)idleT=setTimeout(showHint,7000);}
+async function showHint(){
+  if(!hintOn)return;const src=counters.filter(c=>c.frame==="B").pop();if(!src||countIn("A")>=10)return;
+  log("hint",{});
+  const [sx,sy]=cellXY("B",src.cell),[tx,ty]=cellXY("A",countIn("A"));
+  const g=el("g",{class:"counter ghost"},layer.ghost);el("circle",{r:26,class:"c-yel"},g);
+  g.style.transform=`translate(${sx}px,${sy}px)`;await sleep(60);g.getBoundingClientRect();
+  g.style.transform=`translate(${tx}px,${ty}px)`;await sleep(900);g.remove();idleReset();
+}
+
+/* ---------------- UI helpers ---------------- */
+const tray=$("#tray");
+function setPhase(i){[...$("#phases").children].forEach((s,j)=>{s.className=j<i?"done":j===i?"on":"";});}
+function buttons(list){tray.innerHTML="";return new Promise(res=>{list.forEach(([label,val,cls])=>{const b=document.createElement("button");b.className="btn "+(cls||"");b.textContent=label;b.onclick=()=>res(val);tray.appendChild(b);});});}
+function tiles(options,correct,onWrong){
+  tray.innerHTML="";return new Promise(res=>{let tries=0;const t0=performance.now();
+    options.forEach(v=>{const b=document.createElement("button");b.className="tile";b.textContent=v;
+      b.onclick=async()=>{tries++;if(v===correct){b.classList.add("right");res({ok:tries===1,ms:performance.now()-t0});}
+        else{b.classList.add("wrong");b.disabled=true;onWrong&&await onWrong(v);}};tray.appendChild(b);});});
+}
+function keypad(extra){
+  tray.innerHTML="";return new Promise(res=>{let val="";const t0=performance.now();
+    const box=document.createElement("div");box.className="answerbox";box.textContent="?";tray.appendChild(box);
+    const kp=document.createElement("div");kp.className="keypad";
+    [1,2,3,4,5,6,7,8,9,0].forEach(n=>{const b=document.createElement("button");b.textContent=n;b.onclick=()=>{if(val.length<2){val+=n;box.textContent=val;}};kp.appendChild(b);});
+    tray.appendChild(kp);
+    const row=document.createElement("div");row.style.cssText="display:flex;gap:8px;flex-wrap:wrap;justify-content:center";
+    const clr=document.createElement("button");clr.className="btn ghost";clr.textContent="Clear";clr.onclick=()=>{val="";box.textContent="?";};
+    const ok=document.createElement("button");ok.className="btn go";ok.textContent="Done";ok.onclick=()=>{if(val)res({val:+val,ms:performance.now()-t0});};
+    row.append(clr,ok);if(extra)row.prepend(extra);tray.appendChild(row);
+  });
+}
+function log(type,data){store.events.push({t:Date.now(),type,...data});if(store.events.length>500)store.events.shift();save();}
+
+/* ---------------- problems ---------------- */
+const POOL=[];for(let a=6;a<=9;a++)for(let b=11-a;b<=9;b++)POOL.push([a,b]);
+
+/* full animated demonstration of a + b (also used as "show me" and wrong-answer feedback) */
+async function demo(a,b,talk=true,fast=false){
+  const T=fast?.5:1;
+  buildScene();setMode("counters");makeCounters(a,b);eq("");
+  setTags("","");
+  talk&&say(`${a} add ${b}.`);
+  await dropIn("A",90*T);setTags(a,"");await sleep(400*T);
+  await dropIn("B",90*T);setTags(a,b);await sleep(900*T);
+  const need=10-a;
+  glowEmpty(true);talk&&say(`${a} needs ${need} more to make ten.`);await sleep(2200*T);
+  cherry(b,need,b-need,"L");talk&&say(`So split the ${b} into ${need} and ${b-need}.`);await sleep(2400*T);
+  talk&&say(`Move ${need} across.`);
+  for(let i=0;i<need;i++){await moveOne();refreshTags();await sleep(450*T);}
+  glowEmpty(false);await sleep(500*T);
+  lasso("A",true);setTags(10,b-need);talk&&say(`That makes ten, and ${b-need} left over.`);await sleep(2000*T);
+  eq(`${a} + ${b} = 10 + ${b-need} = ${10+b-need}`);talk&&say(`Ten and ${b-need} is ${10+b-need}.`);await sleep(1800*T);
+}
+
+/* ---------------- phases ---------------- */
+async function phaseWatch(){
+  setPhase(0);
+  for(;;){
+    await demo(8,5);
+    const r=await buttons([["Watch again","again","ghost"],["Watch with 9 + 4","other","ghost"],["My turn","go","go"]]);
+    if(r==="go")break;
+    if(r==="other"){await demo(9,4);const r2=await buttons([["Watch again","again","ghost"],["My turn","go","go"]]);if(r2==="go")break;}
+  }
+}
+async function guidedItem(a,b,opts={}){
+  buildScene();setMode(opts.dots?"dots":"counters");makeCounters(a,b);eq("");
+  await dropIn("A",60);await dropIn("B",60);setTags(a,b);
+  const need=10-a;
+  if(!opts.dots){
+    glowEmpty(true);say(opts.lead||`${a} add ${b}. Drag the yellow counters to fill the ten.`);
+    dragEnabled=true;hintOn=true;idleReset();
+    await new Promise(r=>onFull=r);
+    dragEnabled=false;hintOn=false;clearTimeout(idleT);glowEmpty(false);
+    lasso("A",true);cherry(b,need,b-need,"L");setTags(10,b-need);
+    say(`You moved ${need}. Ten and ${b-need}. How many altogether?`);
+  }else{
+    glowEmpty(true);say(`${a} add ${b}. How many does ${a} need to make ten?`);
+    const r1=await tilesWith([need,need+1,Math.max(1,need-1)],need,null,async()=>{say(`Count the glowing spaces.`);});
+    cherry(b,need,"?","L");say(`So split the ${b}: ${need} and how many?`);
+    const r2=await tilesWith([b-need,b-need+1,b-need===1?2:b-need-1],b-need,null,async()=>{say(`${need} and what makes ${b}?`);});
+    cherry(b,need,b-need,"L");for(let i=0;i<need;i++){await moveOne();refreshTags();await sleep(300);}
+    glowEmpty(false);lasso("A",true);setTags(10,b-need);say(`Ten and ${b-need}. How many altogether?`);
+    log("cherry",{a,b,ok:r1.ok&&r2.ok});
+  }
+  const ans=10+b-need;
+  const res=await tiles(shuffle([ans,ans+1,ans-1]),ans,async(v)=>{say(v===ans-1?`Look, there are ${b-need} outside the ten, not ${b-need-1}.`:`Count the ones outside the ten: ${b-need}.`);});
+  eq(`${a} + ${b} = 10 + ${b-need} = ${ans}`);say(res.ok?rnd(["Yes!","Brilliant!","You made ten!"]):`That's it: ${ans}.`);
+  log("item",{phase:opts.phase||"try",a,b,ok:res.ok,ms:Math.round(res.ms)});
+  await sleep(1600);return res.ok;
+}
+async function symbolItem(a,b,phase){
+  buildScene();setMode("symbols");makeCounters(a,b);counters.forEach(c=>place(c,true));setTags(a,b);eq("");
+  const need=10-a;let used=false;
+  const show=document.createElement("button");show.className="btn ghost";show.textContent="Show me";
+  say(`${a} add ${b}. Split the ${b} to make ten. ${a} needs how many?`);
+  cherry(b,"?","?");
+  const showMe=async()=>{used=true;log("showme",{a,b});setMode("counters");glowEmpty(true);await sleep(1800);glowEmpty(false);setMode("symbols");};
+  show.onclick=showMe;
+  const r1=await tilesWith([need,need+1,Math.max(1,need-1)],need,show,async()=>say(`How many more does ${a} need to make 10?`));
+  cherry(b,need,"?","L");say(`${need} and how many make ${b}?`);
+  const r2=await tilesWith([b-need,b-need+1,b-need===1?2:b-need-1],b-need,null,async()=>say(`${need} and what makes ${b}?`));
+  cherry(b,need,b-need,"L");setTags(10,b-need);layer.plus.textContent="+";say(`10 add ${b-need} makes?`);
+  const ans=10+b-need;
+  const r3=await tilesWith([ans,ans+1,ans-1],ans,null,async()=>say(`Ten and ${b-need}.`));
+  eq(`${a} + ${b} = 10 + ${b-need} = ${ans}`);say(r1.ok&&r2.ok&&r3.ok?"Spot on!":"Good thinking.");
+  log("item",{phase,a,b,ok:r1.ok&&r2.ok&&r3.ok,used});await sleep(1500);
+  return {ok:r1.ok&&r2.ok&&r3.ok,used};
+}
+function tilesWith(opts,correct,extraBtn,onWrong){
+  const uniq=shuffle(opts.filter((v,i,s)=>s.indexOf(v)===i&&v>=0));const p=tiles(uniq,correct,onWrong);if(extraBtn)tray.prepend(extraBtn);return p;
+}
+async function phaseTry(){
+  setPhase(1);
+  await guidedItem(9,4,{lead:"Your turn! 9 add 4. Drag yellow counters into the red ten until it's full."});
+  await guidedItem(8,6);
+}
+async function phasePractise(){
+  setPhase(2);
+  await guidedItem(7,5,{phase:"practise"});
+  await guidedItem(8,7,{dots:true,phase:"practise"});
+  await guidedItem(9,6,{dots:true,phase:"practise"});
+  await symbolItem(7,6,"practise");
+}
+async function phaseCheck(){
+  setPhase(3);
+  say("Now the check. Ten questions. Use 'Show me' if you need to see it.");await sleep(2600);
+  const items=shuffle(POOL).slice(0,10);let score=0,usedModel=false;const times=[];
+  for(let i=0;i<items.length;i++){
+    const [a,b]=items[i];buildScene();setMode("symbols");makeCounters(a,b);counters.forEach(c=>place(c,true));setTags(a,b);
+    eq(`Question ${i+1} of 10`);say(`${a} add ${b}`);
+    const show=document.createElement("button");show.className="btn ghost";show.textContent="Show me";
+    show.onclick=async()=>{usedModel=true;log("showme",{a,b,phase:"check"});setMode("counters");glowEmpty(true);cherry(b,10-a,b-(10-a),"L");await sleep(2500);glowEmpty(false);hideCherry();setMode("symbols");};
+    const r=await keypad(show);times.push(r.ms);
+    const ok=r.val===a+b;if(ok)score++;
+    log("item",{phase:"check",a,b,ok,val:r.val,ms:Math.round(r.ms)});
+    if(ok){eq(`${a} + ${b} = ${a+b}`);say(rnd(["Correct!","Yes!","Great!"]));await sleep(1000);}
+    else{say(`Let's see it.`);await demo(a,b,false,true);say(`${a} add ${b} is ${a+b}.`);await sleep(1500);}
+  }
+  const med=times.sort((x,y)=>x-y)[5]||0;
+  return {score,usedModel,medianMs:Math.round(med)};
+}
+async function phaseTeach(){
+  setPhase(4);
+  // Dot makes a mistake; the child spots which part is wrong and fixes it
+  const cases=[[8,5,3,2],[9,6,2,4]];
+  for(const [a,b,wrongL,wrongR] of cases){
+    buildScene();setMode("counters");makeCounters(a,b);counters.forEach(c=>place(c,true));setTags(a,b);
+    cherry(b,wrongL,wrongR);eq("");
+    say(`Dot tried ${a} add ${b}. Dot split ${b} into ${wrongL} and ${wrongR}. Watch what happens.`);await sleep(3200);
+    for(let i=0;i<Math.min(wrongL,10-a);i++){await moveOne();refreshTags();await sleep(400);}
+    if(wrongL>10-a){say(`Oh no! The ten is full and Dot still has ${wrongL-(10-a)} to move.`);}else{glowEmpty(true);say(`Oh no! The ten is not full yet.`);}
+    await sleep(2600);
+    say(`What should ${a} get to make ten?`);
+    await tilesWith([10-a,wrongL,10-a+1],10-a,null,async()=>say(`Count the empty spaces in the red ten.`));
+    await demo(a,b,false,true);say("You fixed it. Thanks for teaching Dot!");await sleep(1800);
+  }
+}
+
+/* ---------------- session flow ---------------- */
+async function runSession(){
+  $("#homeView").hidden=true;$("#lessonView").hidden=false;buildScene();
+  const firstTime=store.sessions.length===0;
+  if(firstTime){await phaseWatch();await phaseTry();await phasePractise();}
+  else{
+    setPhase(0);say("Welcome back! Quick warm-up.");await sleep(1500);
+    await guidedItem(...rnd(POOL),{dots:true,phase:"warmup"});
+    setPhase(2);await symbolItem(...rnd(POOL),"practise");
+  }
+  const r=await phaseCheck();
+  store.sessions.push({date:today(),...r});save();
+  if(r.score>=9) await phaseTeach();
+  setPhase(5);buildScene();setMode("symbols");setTags("","");layer.plus.textContent="";
+  eq(`${r.score} out of 10`);
+  const m=mastery();
+  say(m.mastered?"You've mastered make ten! Amazing.":r.score>=9?"Brilliant session! Come back tomorrow.":"Good work. We'll practise more tomorrow.");
+  await buttons([["Finish","done","go"]]);
+  showHome();
+}
+
+/* ---------------- excellence challenges ---------------- */
+async function runChallenges(){
+  $("#homeView").hidden=true;$("#lessonView").hidden=false;setPhase(-1);
+  // 1. Missing number: 8 + ? = 13
+  buildScene();setMode("counters");makeCounters(8,0);counters.forEach(c=>place(c,true));setTags(8,"?");eq("8 + ? = 13");
+  glowEmpty(true);say("Challenge one. 8 add what makes 13? Think: how many to make ten, then how many more?");
+  await tiles(shuffle([5,4,6]),5,async()=>say("8 needs 2 to make ten, then 3 more to make 13."));
+  eq("8 + 5 = 13");say("Yes! 2 and 3 make 5.");await sleep(1800);
+  // 2. Two ways: 7 + 8
+  await demo(7,8,false,true);say("Here 8 gave 3 to the 7. Could the 7 give to the 8 instead?");
+  await tiles(["Yes","No"],"Yes",async()=>say("Watch: 8 needs 2, so the 7 splits into 2 and 5."));
+  buildScene();setMode("symbols");setTags(8,7);cherry(7,2,5,"L");eq("8 + 7 = 10 + 5 = 15");say("Both ways make 15. Pick the way that makes ten fastest!");await sleep(2600);
+  // 3. Bigger numbers: 28 + 5
+  buildScene();setMode("symbols");setTags(28,5);cherry(5,"?","?");eq("");say("Challenge three. 28 add 5. How many does 28 need to make 30?");
+  await tiles(shuffle([2,3,1]),2,async()=>say("28, 29, 30. That's 2."));
+  cherry(5,2,"?","L");say("Split the 5: 2 and how many?");await tiles(shuffle([3,2,4]),3,null);
+  cherry(5,2,3,"L");setTags(30,3);say("30 add 3 makes?");await tiles(shuffle([33,32,34]),33,async()=>say("Thirty and three."));
+  eq("28 + 5 = 30 + 3 = 33");say("Make ten works with big numbers too!");log("challenges",{done:true});
+  await buttons([["Finish","done","go"]]);showHome();
+}
+
+/* ---------------- home ---------------- */
+function showHome(){
+  try{speechSynthesis.cancel()}catch(e){}
+  $("#lessonView").hidden=true;$("#homeView").hidden=false;
+  const m=mastery();
+  $("#days").innerHTML=[0,1,2].map(i=>{const d=m.days[i];return `<div class="day ${d?"ok":""}"><b>${d?"✓":i+1}</b>${d?d:"Day "+(i+1)+" check"}</div>`;}).join("");
+  $("#startBtn").textContent=m.mastered?"Practise again":store.sessions.length?"Start today's session":"Start first lesson";
+  $("#challengeBtn").hidden=!m.mastered;
+  const rows=store.sessions.slice(-6).map(s=>`<tr><td>${s.date}</td><td>${s.score}/10</td><td>${s.usedModel?"used Show me":"no help"}</td><td>${(s.medianMs/1000).toFixed(1)} s</td></tr>`).join("");
+  const hints=store.events.filter(e=>e.type==="hint").length;
+  $("#log").innerHTML=(rows?`<table><tr><td><b>Date</b></td><td><b>Check</b></td><td><b>Help</b></td><td><b>Typical time</b></td></tr>${rows}</table>`:"No sessions yet.")+
+    `<span>Status: <b>${m.mastered?"Mastered — review in 7, 21 and 60 days":m.days.length?`${m.days.length} of 3 passing days`:"Learning"}</b>${hints?` · hints shown: ${hints}`:""}</span>`;
+}
+$("#startBtn").onclick=()=>{say("",false);runSession();};
+$("#challengeBtn").onclick=()=>runChallenges();
+$("#nextDay").onclick=()=>{store.dayOffset++;save();showHome();};
+$("#reset").onclick=e=>{if(e.target.dataset.sure){store={sessions:[],dayOffset:0,events:[]};save();e.target.textContent="Reset progress";delete e.target.dataset.sure;showHome();}else{e.target.dataset.sure=1;e.target.textContent="Tap again to reset";}};
+buildScene();showHome();
+})();
+</script>
