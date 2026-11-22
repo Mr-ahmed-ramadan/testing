@@ -1,0 +1,457 @@
+<title>Ladybird Garden</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap">
+<style>
+/* Layout: one full-screen illustrated garden (SVG) that the whole episode plays inside; tiny parent controls in the corner.
+   Single bright daytime look on purpose, so colours are set explicitly rather than themed. */
+:root{color-scheme:light;
+  --sky1:#7fcbff; --sky2:#d9f3ff; --hill1:#9ad86b; --hill2:#62bb45; --leaf:#43a047; --leaf-dark:#2e7d32;
+  --dot:#ffd23f; --dot-edge:#c98f00; --red:#e53935; --red-edge:#8e1b1b; --gold:#ffc61a; --ink:#2b2118; --white:#ffffff;
+  --round:"Baloo 2","Trebuchet MS","Segoe UI",system-ui,sans-serif}
+html,body{height:100%;margin:0}
+body{background:linear-gradient(#6cc2fb 0 50%,#76c454 50% 100%);overflow:hidden;font-family:var(--round);-webkit-tap-highlight-color:transparent}
+#hand,#fx,#badge,#garden{pointer-events:none}
+#game{position:fixed;inset:0;display:block;width:100%;height:100%;touch-action:none;user-select:none;-webkit-user-select:none}
+.rotate{display:none}
+@media (orientation:portrait) and (max-width:700px){.rotate{display:flex;position:fixed;inset:0;z-index:9;align-items:center;justify-content:center;text-align:center;padding:24px;background:#ff7a1a;color:#fff;font-size:30px;font-weight:800}}
+.parent{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:calc(env(safe-area-inset-right,0px) + 12px);display:flex;gap:8px;z-index:5}
+.parent button{font-family:var(--round);font-weight:600;font-size:14px;border:0;border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.75);color:#24506b;cursor:pointer}
+.parent button:focus-visible{outline:3px solid #1d6fa5}
+/* animation classes */
+.mover{transition:transform 1.4s cubic-bezier(.45,.05,.3,1)}
+.mover.fast{transition-duration:.6s}
+.mover.slow{transition-duration:2.2s}
+.inner{transform-box:fill-box;transform-origin:50% 80%}
+.hop{animation:hop .55s cubic-bezier(.3,.7,.4,1)}
+@keyframes hop{0%{transform:translateY(0) scale(1)}35%{transform:translateY(-38px) scale(1.08,.95)}70%{transform:translateY(0) scale(1.05,.9)}100%{transform:translateY(0) scale(1)}}
+.wiggle{animation:wiggle .6s ease-in-out}
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+.giggle{animation:giggle .9s ease-in-out}
+@keyframes giggle{0%{transform:rotate(0) scale(1)}20%{transform:rotate(-14deg) scale(1.08)}40%{transform:rotate(14deg) scale(1.1)}60%{transform:rotate(-10deg) scale(1.06)}80%{transform:rotate(6deg) scale(1.03)}100%{transform:rotate(0) scale(1)}}
+.loop{animation:loop 1.2s ease-in-out}
+@keyframes loop{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(0,-120px) rotate(180deg)}100%{transform:translate(0,0) rotate(360deg)}}
+.pop-in{animation:popin .5s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes popin{from{transform:scale(0)}to{transform:scale(1)}}
+.breathe{animation:breathe 3s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.03,.97)}}
+.pulse{animation:pulse 1.1s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.wings ellipse{fill:rgba(230,245,255,.75);stroke:rgba(120,160,190,.8);stroke-width:2}
+.flying .wings{opacity:1}
+.wings{opacity:0;transition:opacity .3s}
+.flying .wings ellipse{animation:flutter .09s linear infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes flutter{from{transform:scaleY(1)}to{transform:scaleY(.55)}}
+.blink{animation:blink 4.5s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.08)}}
+.sway{animation:sway 3.5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes sway{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+.spin{animation:spin 40s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+.drift{animation:drift 60s linear infinite}
+@keyframes drift{from{transform:translateX(-300px)}to{transform:translateX(1400px)}}
+.ripple{animation:ripple .7s ease-out forwards;transform-box:fill-box;transform-origin:center}
+@keyframes ripple{from{transform:scale(.3);opacity:.9}to{transform:scale(1.8);opacity:0}}
+.sparkle{animation:sparkle .9s ease-out forwards;transform-box:fill-box;transform-origin:center}
+@keyframes sparkle{0%{transform:scale(0) rotate(0);opacity:1}60%{opacity:1}100%{transform:scale(1.4) rotate(90deg);opacity:0}}
+.bloom{animation:bloom 1.2s cubic-bezier(.3,1.5,.5,1) both;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes bloom{from{transform:scale(0)}to{transform:scale(1)}}
+.fade{transition:opacity .5s}
+.gone{opacity:0;pointer-events:none}
+.numtext{font-family:var(--round);font-weight:800;fill:#ff7a1a;text-anchor:middle;dominant-baseline:central;paint-order:stroke;stroke:#fff;stroke-width:6}
+@media (prefers-reduced-motion:reduce){.mover{transition-duration:.25s!important}.hop,.wiggle,.giggle,.loop,.breathe,.pulse,.sway,.spin,.drift,.blink{animation:none!important}}
+</style>
+
+<div class="rotate">Turn your phone sideways to play</div>
+<div class="parent">
+  <button id="musicBtn" aria-pressed="true">Music on</button>
+  <button id="restartBtn">Restart</button>
+</div>
+
+<svg id="game" viewBox="0 0 1200 750" preserveAspectRatio="xMidYMid meet" aria-label="Ladybird Garden">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6cc2fb"/><stop offset="1" stop-color="#dff5ff"/></linearGradient>
+    <radialGradient id="dotBody" cx=".38" cy=".32" r=".75"><stop offset="0" stop-color="#fff2a8"/><stop offset=".45" stop-color="#ffd23f"/><stop offset="1" stop-color="#f2a900"/></radialGradient>
+    <radialGradient id="shell" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff7b6b"/><stop offset=".5" stop-color="#e53935"/><stop offset="1" stop-color="#b71c1c"/></radialGradient>
+    <radialGradient id="shellGold" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff4b0"/><stop offset=".5" stop-color="#ffc61a"/><stop offset="1" stop-color="#e09a00"/></radialGradient>
+    <linearGradient id="leafG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6cc24a"/><stop offset="1" stop-color="#3b9a3a"/></linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9774a"/><stop offset="1" stop-color="#8a5432"/></linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#1b3a1b" flood-opacity=".22"/></filter>
+  </defs>
+
+  <!-- scenery -->
+  <rect width="1200" height="750" fill="url(#sky)"/>
+  <g transform="translate(1065 105)"><g class="spin">
+    <g fill="#ffe27a" opacity=".7"><path d="M0-105 12-70h-24z"/><path d="M0 105 12 70h-24z"/><path d="M-105 0 -70 12v-24z"/><path d="M105 0 70 12v-24z"/>
+      <path d="M-74-74-44-56-56-44z"/><path d="M74 74 44 56 56 44z"/><path d="M74-74 56-44 44-56z"/><path d="M-74 74-56 44-44 56z"/></g></g>
+    <circle r="58" fill="#ffd93b"/><circle r="58" fill="none" stroke="#ffb703" stroke-width="5"/></g>
+  <g class="drift" opacity=".95"><g transform="translate(0 90)" fill="#fff"><circle cx="0" cy="20" r="28"/><circle cx="34" cy="8" r="36"/><circle cx="72" cy="22" r="26"/><rect x="0" y="22" width="76" height="26" rx="13"/></g></g>
+  <g class="drift" style="animation-duration:85s;animation-delay:-40s" opacity=".85"><g transform="translate(0 170) scale(.7)" fill="#fff"><circle cx="0" cy="20" r="28"/><circle cx="34" cy="8" r="36"/><circle cx="72" cy="22" r="26"/><rect x="0" y="22" width="76" height="26" rx="13"/></g></g>
+  <path d="M-20 430 C 200 330 420 380 620 420 S 1000 330 1220 400 V750 H-20Z" fill="#a7dd77"/>
+  <path d="M-20 500 C 240 430 520 470 760 500 S 1100 440 1220 470 V750 H-20Z" fill="#76c454"/>
+  <g id="bgFlowers"></g>
+  <!-- the big leaf where ladybirds land -->
+  <g filter="url(#soft)"><path d="M380 470 C 470 360 780 350 920 440 C 800 560 520 580 380 470Z" fill="url(#leafG)"/>
+    <path d="M395 468 C 560 450 760 440 905 442" stroke="#2e7d32" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M520 458 l40 -45 M640 450 l45 -50 M760 446 l40 -42 M560 462 l40 45 M680 456 l40 48" stroke="#2e7d32" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+    <path d="M380 470 l-40 22" stroke="#2e7d32" stroke-width="7" stroke-linecap="round"/></g>
+  <g id="grass"></g>
+
+  <!-- garden box (shown at the end) -->
+  <g id="garden" class="fade gone">
+    <rect x="300" y="620" width="840" height="120" rx="18" fill="url(#box)" filter="url(#soft)"/>
+    <rect x="315" y="610" width="810" height="30" rx="12" fill="#6b3f22"/>
+    <text x="720" y="700" class="numtext" style="font-size:40px;fill:#fff3d6;stroke:#6b3f22">Your garden</text>
+    <g id="gardenFlowers"></g>
+  </g>
+
+  <g id="badge" class="fade gone" transform="translate(640 230)">
+    <g filter="url(#soft)" fill="#fff"><circle cx="-60" cy="10" r="48"/><circle cx="0" cy="-12" r="66"/><circle cx="62" cy="10" r="48"/><rect x="-100" y="0" width="200" height="58" rx="29"/></g>
+    <g id="badgeNum"><text class="numtext" y="12" style="font-size:120px">1</text></g>
+  </g>
+
+  <g id="actors"></g>
+  <g id="tray"></g>
+  <g id="fx"></g>
+  <g id="hand" class="mover fast gone fade" style="transform:translate(600px,900px)">
+    <g id="handInner" class="inner" style="transform-origin:0 0">
+      <g transform="rotate(-18)">
+        <path d="M-9 2 Q-9 -8 1 -8 Q11 -8 11 2 V44 H-9Z" fill="#ffd9b8" stroke="#8a5a3c" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M-14 40 Q-14 30 0 30 H34 Q50 30 50 46 V78 Q50 102 26 102 H6 Q-14 102 -14 82Z" fill="#ffd9b8" stroke="#8a5a3c" stroke-width="4"/>
+        <path d="M11 40 Q11 30 20 30 Q29 30 29 40 M29 42 Q29 32 38 32 Q48 32 48 44" fill="none" stroke="#8a5a3c" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M-14 60 Q-34 56 -34 70 Q-32 82 -12 82" fill="#ffd9b8" stroke="#8a5a3c" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M-2 18 h8" stroke="#c9906a" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- start screen -->
+  <g id="start">
+    <rect width="1200" height="750" fill="#0b3d5c" opacity=".35"/>
+    <g id="playBtn" style="cursor:pointer" transform="translate(600 375)">
+      <g class="pulse" style="transform-box:fill-box;transform-origin:center">
+        <circle r="110" fill="#ff7a1a" stroke="#fff" stroke-width="10" filter="url(#soft)"/>
+        <path d="M-32 -50 L58 0 L-32 50Z" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <text x="600" y="560" class="numtext" style="font-size:54px;fill:#fff;stroke:#ff7a1a;stroke-width:8">Ladybird Garden</text>
+  </g>
+</svg>
+
+<script>
+(()=>{
+const NS="http://www.w3.org/2000/svg";
+const $=id=>document.getElementById(id);
+const svg=$("game");
+const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const sleep=ms=>new Promise(r=>setTimeout(r,reduced?Math.min(ms,250):ms));
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function setPos(g,x,y,s=1,r=0){g._x=x;g._y=y;g._s=s;g.style.transform=`translate(${x}px,${y}px) scale(${s}) rotate(${r}deg)`;}
+function anim(node,cls,ms){node.classList.remove(cls);void node.getBoundingClientRect();node.classList.add(cls);setTimeout(()=>node.classList.remove(cls),ms||1000);}
+
+/* ---------- scenery details ---------- */
+(function grass(){
+  const g=$("grass");
+  for(let x=-10;x<1220;x+=22){const h=30+Math.random()*34;const b=el("path",{d:`M${x} 760 Q${x+6} ${760-h/2} ${x+3+Math.random()*8} ${760-h} Q${x+12} ${760-h/2} ${x+14} 760Z`,fill:Math.random()<.5?"#4caf50":"#5cbf4a",class:"sway"},g);b.style.animationDelay=(-Math.random()*3)+"s";b.style.animationDuration=(3+Math.random()*2)+"s";}
+  const f=$("bgFlowers");
+  [[90,520,"#ff8fb1"],[260,470,"#fff"],[1000,500,"#b388ff"],[1130,540,"#ff8fb1"],[930,560,"#fff176"]].forEach(([x,y,c])=>flower(f,x,y,c,.8));
+})();
+function flower(parent,x,y,color,s=1,cls){
+  const g=el("g",{transform:`translate(${x} ${y}) scale(${s})`},parent);
+  const inner=el("g",{class:cls||"sway"},g);inner.style.animationDelay=(-Math.random()*3)+"s";
+  el("path",{d:"M0 0 Q-4 -40 0 -80",stroke:"#2e7d32","stroke-width":6,fill:"none"},inner);
+  el("path",{d:"M0 -30 Q-26 -44 -30 -24 Q-14 -18 0 -30Z",fill:"#43a047"},inner);
+  for(let i=0;i<6;i++){const a=i*60*Math.PI/180;el("circle",{cx:Math.cos(a)*18,cy:-80+Math.sin(a)*18,r:14,fill:color,stroke:"rgba(0,0,0,.12)","stroke-width":2},inner);}
+  el("circle",{cx:0,cy:-80,r:11,fill:"#ffb300"},inner);
+  return inner;
+}
+
+/* ---------- Dot ---------- */
+const actors=$("actors");
+const dot=el("g",{class:"mover"},actors);setPos(dot,170,900);
+const dotInner=el("g",{class:"inner"},dot);
+const dotBody=el("g",{class:"breathe",style:"transform-box:fill-box;transform-origin:50% 100%"},dotInner);
+el("ellipse",{cx:0,cy:86,rx:72,ry:12,fill:"rgba(0,0,0,.15)"},dotBody);
+el("ellipse",{cx:-32,cy:78,rx:24,ry:13,fill:"#ff9800",stroke:"#b45f00","stroke-width":3},dotBody);
+el("ellipse",{cx:32,cy:78,rx:24,ry:13,fill:"#ff9800",stroke:"#b45f00","stroke-width":3},dotBody);
+el("circle",{r:80,fill:"url(#dotBody)",stroke:"#c98f00","stroke-width":5},dotBody);
+const dotArm=el("g",{style:"transform-box:view-box;transform-origin:70px 10px"},dotBody);
+el("path",{d:"M70 10 Q100 -10 108 -40",stroke:"#c98f00","stroke-width":9,fill:"none","stroke-linecap":"round"},dotArm);
+el("circle",{cx:108,cy:-44,r:14,fill:"#ffd23f",stroke:"#c98f00","stroke-width":4},dotArm);
+el("circle",{cx:-46,cy:18,r:13,fill:"#ff8a80",opacity:.55},dotBody);el("circle",{cx:46,cy:18,r:13,fill:"#ff8a80",opacity:.55},dotBody);
+const eyes=el("g",{class:"blink"},dotBody);
+for(const ex of [-27,27]){el("ellipse",{cx:ex,cy:-16,rx:17,ry:21,fill:"#fff",stroke:"#3b2a10","stroke-width":3},eyes);el("circle",{cx:ex+3,cy:-12,r:9,fill:"#2b2118"},eyes);el("circle",{cx:ex+6,cy:-16,r:3.2,fill:"#fff"},eyes);}
+const dotMouthClosed=el("path",{d:"M-22 24 Q0 44 22 24",stroke:"#5a2d0c","stroke-width":5,fill:"none","stroke-linecap":"round"},dotBody);
+const dotMouthOpen=el("path",{d:"M-18 24 Q0 56 18 24 Z",fill:"#7a2b14",stroke:"#5a2d0c","stroke-width":4,"stroke-linejoin":"round",opacity:0},dotBody);
+const dotHit=el("circle",{r:110,fill:"transparent",style:"cursor:pointer"},dot);
+
+/* ---------- ladybirds ---------- */
+const SPOTS=[[-14,-2,7],[14,-2,7],[-12,18,6],[12,18,6]];
+function makeLadybird({spots=true,big=false}={}){
+  const g=el("g",{class:"mover slow"},actors);
+  const inner=el("g",{class:"inner"},g);
+  const body=el("g",{},inner);
+  el("ellipse",{cx:0,cy:40,rx:32,ry:7,fill:"rgba(0,0,0,.16)"},body);
+  const wings=el("g",{class:"wings"},body);
+  el("ellipse",{cx:-26,cy:-18,rx:16,ry:34,transform:"rotate(-35 -26 -18)"},wings);el("ellipse",{cx:26,cy:-18,rx:16,ry:34,transform:"rotate(35 26 -18)"},wings);
+  for(const s of [-1,1])for(const y of [-6,8,22]) el("path",{d:`M${s*28} ${y} l${s*14} ${4}`,stroke:"#222","stroke-width":4,"stroke-linecap":"round"},body);
+  el("path",{d:"M-6 -46 Q-10 -62 -20 -66 M6 -46 Q10 -62 20 -66",stroke:"#222","stroke-width":3,fill:"none","stroke-linecap":"round"},body);
+  el("circle",{cx:-20,cy:-66,r:4,fill:"#222"},body);el("circle",{cx:20,cy:-66,r:4,fill:"#222"},body);
+  el("circle",{cx:0,cy:-32,r:19,fill:"#222"},body);
+  const shell=el("circle",{cx:0,cy:6,r:35,fill:"url(#shell)",stroke:"#8e1b1b","stroke-width":3},body);
+  el("path",{d:"M0 -28 V40",stroke:"#5c1010","stroke-width":3},body);
+  const spotG=el("g",{},body);
+  if(spots) SPOTS.forEach(([x,y,r])=>el("circle",{cx:x,cy:y,r,fill:"#1e1e1e"},spotG));
+  const face=el("g",{class:"blink"},body);
+  el("circle",{cx:-8,cy:-38,r:6,fill:"#fff"},face);el("circle",{cx:8,cy:-38,r:6,fill:"#fff"},face);
+  el("circle",{cx:-7,cy:-37,r:3,fill:"#111"},face);el("circle",{cx:9,cy:-37,r:3,fill:"#111"},face);
+  const mouth=el("path",{d:"M-6 -26 Q0 -21 6 -26",stroke:"#fff","stroke-width":2.5,fill:"none","stroke-linecap":"round"},body);
+  el("circle",{cx:-12,cy:-6,r:7,fill:"#fff",opacity:.35},body);
+  const hit=el("circle",{r:62,fill:"transparent",style:"cursor:pointer"},g);
+  const lb={g,inner,shell,spotG,mouth,counted:false,big,placed:0};
+  lb.happy=on=>mouth.setAttribute("d",on?"M-7 -27 Q0 -19 7 -27":"M-6 -23 Q0 -28 6 -23");
+  lb.gold=on=>{lb.counted=on;shell.setAttribute("fill",on?"url(#shellGold)":"url(#shell)");};
+  lb.fly=on=>g.classList.toggle("flying",on);
+  hit.addEventListener("pointerdown",e=>{e.preventDefault();onTap(lb);});
+  return lb;
+}
+async function flyTo(lb,x,y,s=1,ms=2200){
+  lb.g.classList.remove("fast","slow");lb.g.classList.add(ms<1000?"fast":ms>1800?"slow":"x");
+  lb.fly(true);sfx.buzz();setPos(lb.g,x,y,s,0);await sleep(ms);lb.fly(false);
+}
+
+/* ---------- number badge ---------- */
+const badge=$("badge"),badgeNum=$("badgeNum");
+function showNumber(n){badge.classList.remove("gone");badgeNum.innerHTML="";const t=el("text",{class:"numtext pop-in",y:12,style:"font-size:120px;transform-box:fill-box;transform-origin:center"},badgeNum);t.textContent=n;}
+function hideNumber(){badge.classList.add("gone");}
+
+/* ---------- hand ---------- */
+const hand=$("hand"),handInner=$("handInner");
+async function handTo(x,y){hand.classList.remove("gone");setPos(hand,x,y);await sleep(650);}
+async function handTap(x,y){await handTo(x,y);handInner.animate([{transform:"scale(1)"},{transform:"scale(.82)"},{transform:"scale(1)"}],{duration:420});ripple(x,y);await sleep(450);}
+function handHide(){hand.classList.add("gone");setPos(hand,hand._x||600,(hand._y||700)+120);}
+function ripple(x,y){const r=el("circle",{cx:x,cy:y,r:40,fill:"none",stroke:"#fff","stroke-width":8,class:"ripple"},$("fx"));setTimeout(()=>r.remove(),800);}
+function sparkle(x,y){const g=el("g",{class:"sparkle"},$("fx"));for(let i=0;i<8;i++){const a=i*Math.PI/4;el("path",{d:"M0 -9 L3 -3 L9 0 L3 3 L0 9 L-3 3 L-9 0 L-3 -3Z",fill:i%2?"#fff59d":"#ffffff",transform:`translate(${x+Math.cos(a)*60} ${y+Math.sin(a)*60})`},g);}setTimeout(()=>g.remove(),1000);}
+
+/* ---------- audio: voice lines ---------- */
+const LINES=["hello1","hello2","hello_hint","tickle","v1","v2","v3","count_intro","now_you","n1","n2","n3","n4","n5","already","tap_hint","total3","round2","total4","sad1","drag_demo","drag_hint","thanks2","sad2","thanks3","bye1","bye2","play_again"];
+const buffers={};let current=null;
+async function loadVoices(){
+  await Promise.all(LINES.map(async k=>{try{const r=await fetch("audio/"+k+".mp3");buffers[k]=await ac.decodeAudioData(await r.arrayBuffer());}catch(e){}}));
+}
+let mouthTimer=null;
+function talk(who,on){
+  clearInterval(mouthTimer);
+  const set=open=>{if(who==="dot"){dotMouthOpen.setAttribute("opacity",open?1:0);dotMouthClosed.setAttribute("opacity",open?0:1);}else if(who&&who.mouth){who.mouth.setAttribute("d",open?"M-6 -27 Q0 -16 6 -27Z":"M-7 -27 Q0 -19 7 -27");}};
+  if(on) mouthTimer=setInterval(()=>set(Math.random()<.6),130); else set(false);
+}
+function say(key,who="dot"){
+  return new Promise(res=>{
+    if(current){try{current.onended=null;current.stop()}catch(e){}current=null;}
+    const buf=buffers[key];
+    let done=false;const fin=()=>{if(done)return;done=true;talk(who,false);duck(false);res();};
+    if(!ac||!buf){setTimeout(fin,1200);return;}
+    const src=ac.createBufferSource();src.buffer=buf;src.connect(ac.destination);
+    src.onended=fin;current=src;talk(who,true);duck(true);src.start();
+    setTimeout(fin,buf.duration*1000+600);
+  });
+}
+
+/* ---------- audio: music + sound effects (generated) ---------- */
+let ac=null,musicGain=null,musicOn=true,musicTimer=null;
+function initAudio(){
+  try{ac=new (window.AudioContext||window.webkitAudioContext)();musicGain=ac.createGain();musicGain.gain.value=.05;
+    const delay=ac.createDelay();delay.delayTime.value=.35;const fb=ac.createGain();fb.gain.value=.35;
+    musicGain.connect(ac.destination);musicGain.connect(delay);delay.connect(fb);fb.connect(delay);delay.connect(ac.destination);}catch(e){}
+}
+function tone(freq,start,dur,type="sine",vol=.2,dest){
+  if(!ac)return;const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.setValueAtTime(freq,start);
+  g.gain.setValueAtTime(0,start);g.gain.linearRampToValueAtTime(vol,start+.015);g.gain.exponentialRampToValueAtTime(.0001,start+dur);
+  o.connect(g);g.connect(dest||ac.destination);o.start(start);o.stop(start+dur+.05);return o;
+}
+const SCALE=[523.25,587.33,659.25,783.99,880,1046.5];
+function startMusic(){
+  if(!ac||musicTimer)return;let step=0;
+  const chords=[[0,2,4],[1,3,5],[0,2,4],[2,4,5]];
+  musicTimer=setInterval(()=>{if(!musicOn)return;const t=ac.currentTime;const ch=chords[Math.floor(step/8)%4];
+    const n=SCALE[ch[step%3]]/2;tone(n,t,1.2,"triangle",.5,musicGain);if(step%4===0)tone(n/2,t,2,"sine",.6,musicGain);step++;},520);
+}
+function duck(on){if(musicGain&&ac)musicGain.gain.setTargetAtTime(musicOn?(on?.02:.05):0,ac.currentTime,.2);}
+const sfx={
+  pop(){if(!ac)return;const t=ac.currentTime;const o=tone(700,t,.18,"sine",.35);o&&o.frequency.exponentialRampToValueAtTime(1400,t+.08);},
+  chime(n=0){if(!ac)return;const t=ac.currentTime;tone(SCALE[n%6]*1,t,.5,"triangle",.25);tone(SCALE[n%6]*2,t+.05,.4,"sine",.12);},
+  giggle(){if(!ac)return;const t=ac.currentTime;[0,1,2,3,4].forEach(i=>tone(900+i*120+(i%2)*200,t+i*.07,.09,"square",.05));},
+  buzz(){if(!ac)return;const t=ac.currentTime;const o=ac.createOscillator(),g=ac.createGain(),l=ac.createOscillator(),lg=ac.createGain();
+    o.type="sawtooth";o.frequency.value=180;l.frequency.value=40;lg.gain.value=30;l.connect(lg);lg.connect(o.frequency);
+    const f=ac.createBiquadFilter();f.type="lowpass";f.frequency.value=900;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.04,t+.2);g.gain.linearRampToValueAtTime(0,t+1.4);
+    o.connect(f);f.connect(g);g.connect(ac.destination);o.start(t);l.start(t);o.stop(t+1.5);l.stop(t+1.5);},
+  jingle(){if(!ac)return;const t=ac.currentTime;[0,2,4,5].forEach((n,i)=>tone(SCALE[n],t+i*.13,.4,"triangle",.25));tone(SCALE[5]*1.5,t+.55,.7,"sine",.15);}
+};
+
+/* ---------- interaction plumbing ---------- */
+let mode="none",tapHandler=null;
+function onTap(target){if(tapHandler)tapHandler(target);}
+dotHit.addEventListener("pointerdown",e=>{e.preventDefault();onTap("dot");});
+function waitTaps(handler,{hint,every=7000}={}){
+  return new Promise(res=>{
+    let t=null;const arm=()=>{clearTimeout(t);if(hint)t=setTimeout(async()=>{await hint();arm();},every);};
+    tapHandler=async target=>{arm();const r=await handler(target);if(r){clearTimeout(t);tapHandler=null;res(r);}};
+    arm();
+  });
+}
+
+/* ---------- landing spots ---------- */
+const LAND=[[520,440],[640,412],[760,436],[580,500],[700,494]];
+
+/* ---------- the episode ---------- */
+let ladies=[];
+async function episode(){
+  // 1. Hello
+  setPos(dot,170,560);await sleep(900);
+  dot.querySelector(".inner").classList.add("wiggle");
+  await say("hello1");await say("hello2");
+  await handTap(215,590);await sleep(300);
+  await waitTaps(async t=>{
+    if(t!=="dot")return false;
+    handHide();sfx.giggle();anim(dotInner,"giggle",900);sparkle(170,540);await say("tickle");return true;
+  },{hint:async()=>{await say("hello_hint");await handTap(215,590);}});
+  handHide();await sleep(400);
+
+  // 2. Visitors arrive: one, two, three
+  const lines=["v1","v2","v3"];
+  for(let i=0;i<3;i++){
+    const lb=makeLadybird();setPos(lb.g,1300,-80-i*40,1,0);ladies.push(lb);await sleep(50);
+    await flyTo(lb,LAND[i][0],LAND[i][1]);sfx.pop();
+    ladies.forEach(l=>anim(l.inner,"wiggle",600));showNumber(i+1);sfx.chime(i);
+    await say(lines[i]);await sleep(300);
+  }
+  await sleep(500);hideNumber();
+
+  // 3. Count together
+  await countRound(3,true,"total3");
+
+  // 4. Another one arrives; count all again
+  const lb4=makeLadybird();setPos(lb4.g,-120,120,1);ladies.push(lb4);await sleep(50);
+  await flyTo(lb4,LAND[3][0],LAND[3][1]);sfx.pop();ladies.forEach(l=>{l.gold(false);anim(l.inner,"wiggle",600);});
+  await say("round2");
+  await countRound(4,false,"total4");sfx.jingle();await sleep(600);
+
+  // ladybirds fly up to rest on the sun-side flowers (out of the way)
+  hideNumber();
+  for(const [i,l] of ladies.entries()){flyTo(l,960+i*55,260+(i%2)*40,.6,1400);await sleep(150);}
+  await sleep(1500);
+
+  // 5. Help the spotless ladybirds
+  await spotsRound(2,"sad1","thanks2",true);
+  await spotsRound(3,"sad2","thanks3",false);
+
+  // 6. Goodbye: ladybirds go to your garden, a flower blooms
+  await say("bye1");
+  const garden=$("garden");garden.classList.remove("gone");
+  const prog=loadProgress();prog.flowers=(prog.flowers||0)+1;saveProgress(prog);
+  drawGarden(prog.flowers,true);
+  const all=ladies.concat(helpers);ladies.forEach(l=>l.gold(false));
+  all.forEach((l,i)=>flyTo(l,400+i*115,598-(i%2)*14,.45,2000));
+  await sleep(2300);sfx.jingle();sparkle(gardenSpot(prog.flowers-1),560);
+  anim(dotInner,"hop",600);await say("bye2");await sleep(500);
+  await say("play_again");
+  showReplay();
+}
+
+async function countRound(n,demo,totalLine){
+  ladies.forEach(l=>l.gold(false));
+  let count=0;
+  const markNext=async lb=>{count++;lb.gold(true);anim(lb.inner,"hop",600);sparkle(lb.g._x,lb.g._y-10);sfx.chime(count);await say("n"+count);};
+  if(demo){
+    await say("count_intro");
+    const first=ladies[0];await handTap(first.g._x+22,first.g._y+28);await markNext(first);handHide();
+    await say("now_you");
+  }
+  await waitTaps(async t=>{
+    if(!t||t==="dot"||!ladies.includes(t))return false;
+    if(t.counted){sfx.giggle();anim(t.inner,"giggle",900);await say("already",t);return false;}
+    await markNext(t);return count>=n;
+  },{hint:async()=>{const next=ladies.find(l=>!l.counted);if(!next)return;await say("tap_hint");await handTap(next.g._x+22,next.g._y+28);handHide();}});
+  handHide();await sleep(300);
+  ladies.forEach(l=>anim(l.inner,"hop",600));showNumber(n);sfx.jingle();
+  await say(totalLine);await sleep(600);hideNumber();
+}
+
+/* ---------- spots ---------- */
+const helpers=[];
+const HX=640,HY=430,HS=2.6;
+const SHELL_SPOTS=[[-14,-2],[14,-2],[-12,18],[12,18],[0,30]];
+async function spotsRound(n,askLine,thanksLine,demo){
+  const lb=makeLadybird({spots:false,big:true});helpers.push(lb);setPos(lb.g,1350,200,HS);lb.happy(false);await sleep(50);
+  await flyTo(lb,HX,HY,HS,2000);sfx.pop();
+  const tray=$("tray");tray.innerHTML="";
+  // a leaf holding loose spots
+  const tl=el("g",{class:"pop-in",style:"transform-box:fill-box;transform-origin:center"},tray);
+  el("path",{d:"M930 640 C 980 570 1130 570 1170 630 C 1110 700 980 705 930 640Z",fill:"url(#leafG)",filter:"url(#soft)"},tl);
+  const home=[[985,628],[1035,612],[1085,618],[1010,662],[1065,664],[1120,640]];
+  const spots=home.map(([x,y])=>{const s=el("g",{class:"mover fast",style:"cursor:grab"},tray);el("circle",{r:40,fill:"transparent"},s);el("circle",{r:17,fill:"#1e1e1e"},s);el("circle",{cx:-5,cy:-5,r:5,fill:"#555"},s);setPos(s,x,y);s._home=[x,y];return s;});
+  await say(askLine,lb);
+  if(demo){
+    const s=spots[0];await handTo(s._x,s._y);
+    const ghost=el("g",{class:"mover",style:"opacity:.55"},$("fx"));el("circle",{r:17,fill:"#1e1e1e"},ghost);setPos(ghost,s._x,s._y);
+    const sp=say("drag_demo",lb);await sleep(200);
+    setPos(hand,HX,HY);setPos(ghost,HX,HY);await sleep(1500);
+    ghost.style.opacity=0;await sp;ghost.remove();handHide();
+  }
+  let placed=0;
+  await new Promise(res=>{
+    let drag=null,t=null;
+    const arm=()=>{clearTimeout(t);t=setTimeout(async()=>{await say("drag_hint",lb);const s=spots.find(s=>!s._used);if(s){await handTo(s._x,s._y);setPos(hand,HX,HY);await sleep(900);handHide();}arm();},8000);};
+    arm();
+    const pt=e=>{const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(svg.getScreenCTM().inverse());};
+    spots.forEach(s=>{
+      s.addEventListener("pointerdown",e=>{if(s._used||placed>=n)return;e.preventDefault();drag=s;s.classList.remove("fast");s.style.transition="none";svg.setPointerCapture(e.pointerId);sfx.pop();arm();});
+    });
+    const move=e=>{if(!drag)return;const p=pt(e);setPos(drag,p.x,p.y,1.15);};
+    const up=async e=>{
+      if(!drag)return;const s=drag;drag=null;s.style.transition="";s.classList.add("fast");
+      const p=pt(e);const d=Math.hypot(p.x-HX,p.y-(HY+6*HS));
+      if(d<40*HS&&placed<n){
+        s._used=true;s.style.display="none";
+        const [sx,sy]=SHELL_SPOTS[placed];placed++;
+        const spot=el("circle",{cx:sx,cy:sy,r:7,fill:"#1e1e1e",class:"pop-in",style:"transform-box:fill-box;transform-origin:center"},lb.spotG);
+        anim(lb.inner,"wiggle",600);sfx.chime(placed);sparkle(HX+sx*HS,HY+sy*HS);
+        await say("n"+placed);
+        if(placed>=n){clearTimeout(t);svg.removeEventListener("pointermove",move);svg.removeEventListener("pointerup",up);res();}
+      }else{setPos(s,...s._home);}
+    };
+    svg.addEventListener("pointermove",move);svg.addEventListener("pointerup",up);svg.addEventListener("pointercancel",up);
+  });
+  lb.happy(true);sfx.jingle();anim(lb.inner,"loop",1200);await sleep(400);
+  await say(thanksLine,lb);
+  tray.innerHTML="";
+  await flyTo(lb,960+helpers.length*70,200,.6,1400);
+}
+
+/* ---------- garden + progress ---------- */
+const KEY="ladybird-garden";
+function loadProgress(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function saveProgress(p){try{localStorage.setItem(KEY,JSON.stringify(p))}catch(e){}}
+const FCOL=["#ff8fb1","#b388ff","#fff176","#80d8ff","#ffab91","#ffffff"];
+function gardenSpot(i){return 360+((i*97)%730);}
+function drawGarden(n,bloomLast){const g=$("gardenFlowers");g.innerHTML="";for(let i=0;i<Math.min(n,20);i++){flower(g,gardenSpot(i),628,FCOL[i%FCOL.length],.85,bloomLast&&i===n-1?"bloom":"sway");}}
+
+function showReplay(){
+  const outer=el("g",{transform:"translate(600 300)"},svg);
+  const g=el("g",{style:"cursor:pointer;transform-box:fill-box;transform-origin:center",class:"pop-in"},outer);
+  const b=el("g",{class:"pulse",style:"transform-box:fill-box;transform-origin:center"},g);
+  el("circle",{r:80,fill:"#ff7a1a",stroke:"#fff","stroke-width":8,filter:"url(#soft)"},b);
+  el("path",{d:"M-25 -38 L42 0 L-25 38Z",fill:"#fff",stroke:"#fff","stroke-width":8,"stroke-linejoin":"round"},b);
+  g.addEventListener("pointerdown",()=>location.reload());
+}
+
+/* ---------- start ---------- */
+$("playBtn").addEventListener("pointerdown",async e=>{
+  e.preventDefault();initAudio();try{await ac.resume()}catch(_){}
+  $("playBtn").style.opacity=.5;await loadVoices();
+  $("start").remove();startMusic();await sleep(300);episode();
+});
+$("musicBtn").addEventListener("click",e=>{musicOn=!musicOn;e.target.textContent=musicOn?"Music on":"Music off";e.target.setAttribute("aria-pressed",musicOn);duck(false);});
+$("restartBtn").addEventListener("click",()=>location.reload());
+drawGarden(loadProgress().flowers||0,false);
+})();
+</script>

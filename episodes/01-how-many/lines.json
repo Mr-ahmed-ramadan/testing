@@ -1,0 +1,59 @@
+{
+  "voice": "bm_fable",
+  "speed": 0.95,
+  "lines": {
+    "hello1": "Hi! I'm Dot. This is my garden.",
+    "hello2": "Can you tap me, to say hello?",
+    "hello_hint": "Tap me! Just here.",
+    "tickle": "Hee hee! That tickles! Hello, friend!",
+    "v1": "Ooh, look! A visitor. One ladybird.",
+    "v2": "Another one! Now there are two ladybirds.",
+    "v3": "And another! Three ladybirds.",
+    "count_intro": "Let's count them together. Watch me first.",
+    "now_you": "Now you! Tap the next ladybird.",
+    "n1": "One!",
+    "n2": "Two!",
+    "n3": "Three!",
+    "n4": "Four!",
+    "n5": "Five!",
+    "already": {
+      "text": "Hee hee, you already counted me!",
+      "voice": "bf_lily"
+    },
+    "tap_hint": "Tap a ladybird that isn't shiny yet.",
+    "total3": "Three! There are three ladybirds.",
+    "round2": "Oh! Another ladybird has come to play. Can you count them all, from the start?",
+    "total4": "Four! There are four ladybirds. Well done!",
+    "sad1": {
+      "text": "Oh, hello. I've lost all my spots. Can you give me two spots, please?",
+      "voice": "bf_lily"
+    },
+    "drag_demo": {
+      "text": "Pick up a spot, and put it on my back. Like this.",
+      "voice": "bf_lily"
+    },
+    "drag_hint": {
+      "text": "Drag a spot onto my back.",
+      "voice": "bf_lily"
+    },
+    "thanks2": {
+      "text": "Two spots! Thank you!",
+      "voice": "bf_lily"
+    },
+    "sad2": {
+      "text": "Can you help me too? I need three spots, please.",
+      "voice": "bf_lily"
+    },
+    "thanks3": {
+      "text": "Three spots! I love them! Thank you!",
+      "voice": "bf_lily"
+    },
+    "bye1": "Look! The ladybirds are flying to your garden.",
+    "bye2": "You helped me so much today. See you tomorrow!",
+    "play_again": "Do you want to play again?"
+  },
+  "characters": {
+    "dot": "bm_fable",
+    "ladybird": "bf_lily"
+  }
+}
