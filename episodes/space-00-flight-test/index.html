@@ -1,0 +1,235 @@
+<meta charset="utf-8">
+<title>Flight Test</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Orbitron:wght@700;900&display=swap">
+<style>
+/* Layout: altitude ladder (left), question panel (centre), keypad (right), Bolt bottom-left.
+   The sky darkens into space as he climbs. Single intentional look, so colours are explicit. */
+:root{color-scheme:dark;--round:"Baloo 2","Trebuchet MS",system-ui,sans-serif;--title:"Orbitron","Baloo 2",system-ui,sans-serif}
+html,body{height:100%;margin:0}
+body{background:#0b1236;overflow:hidden;-webkit-tap-highlight-color:transparent;font-family:var(--round)}
+#game{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;user-select:none;-webkit-user-select:none}
+.ui{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:calc(env(safe-area-inset-right,0px) + 12px);display:flex;gap:8px;z-index:5}
+.ui button{font-family:var(--round);font-weight:600;font-size:14px;border:1px solid rgba(56,225,255,.4);border-radius:999px;padding:6px 12px;background:rgba(7,11,31,.7);color:#bfefff;cursor:pointer}
+.rotate{display:none}
+@media (orientation:portrait) and (max-width:700px){.rotate{display:flex;position:fixed;inset:0;z-index:9;align-items:center;justify-content:center;text-align:center;padding:24px;background:#070b1f;color:#38e1ff;font:800 30px var(--round)}}
+#fx{pointer-events:none}
+.t-title{font-family:var(--title);font-weight:900;fill:#e8f1ff;letter-spacing:2px}
+.t-label{font-family:var(--title);font-weight:700;fill:#7fdcff;letter-spacing:2px}
+.t-num{font-family:var(--round);font-weight:800;text-anchor:middle;dominant-baseline:central}
+.mv{transition:transform .9s cubic-bezier(.3,.8,.3,1)}
+.twinkle{animation:tw 3s ease-in-out infinite alternate}@keyframes tw{from{opacity:.2}to{opacity:1}}
+.bob{animation:bob 2.6s ease-in-out infinite alternate}@keyframes bob{from{transform:translateY(-5px)}to{transform:translateY(5px)}}
+.blink{animation:blink 4s infinite;transform-box:fill-box;transform-origin:center}@keyframes blink{0%,45%,49%,100%{transform:scaleY(1)}47%{transform:scaleY(.1)}}
+.pop{animation:pop .4s cubic-bezier(.3,1.6,.5,1) both;transform-box:fill-box;transform-origin:center}@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.flame{animation:flame .12s linear infinite alternate;transform-box:fill-box;transform-origin:50% 0}@keyframes flame{from{transform:scaleY(.8)}to{transform:scaleY(1.2)}}
+.key{cursor:pointer}.key rect{transition:fill .12s}.key:active rect{fill:#2a4fa0}
+.off{opacity:.35;pointer-events:none}
+#sky,#clouds,#stars{transition:opacity 1.2s, fill 1.2s}
+@media (prefers-reduced-motion:reduce){.twinkle,.bob,.blink,.flame{animation:none!important}.mv{transition-duration:.15s!important}}
+</style>
+<div class="rotate">Turn your device sideways to fly</div>
+<div class="ui"><button id="musicBtn">Music on</button><button id="restartBtn">Restart</button></div>
+
+<svg id="game" viewBox="0 0 1200 750" preserveAspectRatio="xMidYMid meet" aria-label="Flight test">
+<defs>
+  <linearGradient id="cell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9ffcf"/><stop offset=".45" stop-color="#4dff86"/><stop offset="1" stop-color="#11b35a"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f0f7"/><stop offset="1" stop-color="#9aaabd"/></linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e2b58" stop-opacity=".92"/><stop offset="1" stop-color="#121a3a" stop-opacity=".92"/></linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".4"/></filter>
+  <g id="cellShape"><rect x="-26" y="-26" width="52" height="52" rx="11" fill="url(#cell)" stroke="#0b7a3c" stroke-width="3"/><path d="M3 -17 L-9 3 H1 L-3 17 L10 -5 H1Z" fill="#0b6b34" opacity=".75"/></g>
+  <g id="mini"><rect x="-9" y="-9" width="18" height="18" rx="4" fill="url(#cell)" stroke="#0b7a3c" stroke-width="2"/></g>
+</defs>
+<rect id="sky" width="1200" height="750" fill="#4aa8ee"/>
+<g id="stars" opacity="0"></g>
+<g id="clouds" opacity="1">
+  <g fill="#fff" opacity=".85"><circle cx="420" cy="660" r="40"/><circle cx="470" cy="645" r="52"/><circle cx="530" cy="665" r="38"/><circle cx="980" cy="690" r="44"/><circle cx="1030" cy="672" r="56"/><circle cx="1090" cy="690" r="40"/></g>
+</g>
+<text x="40" y="52" class="t-title" style="font-size:26px">FLIGHT TEST</text>
+
+<!-- altitude ladder -->
+<g id="ladder"></g>
+<g id="ship" class="mv" style="transform:translate(150px,690px)">
+  <g transform="scale(.55)"><path class="flame" d="M-14 42 Q0 100 14 42Z" fill="#ffb21f"/><path d="M0 -60 C 26 -30 26 10 22 44 H-22 C -26 10 -26 -30 0 -60Z" fill="#fff" stroke="#7c8aa3" stroke-width="3"/><path d="M0 -60 C 12 -48 18 -38 20 -26 H-20 C -18 -38 -12 -48 0 -60Z" fill="#e2553c"/><circle cx="0" cy="-2" r="10" fill="#163a7a"/><path d="M-22 20 L-38 48 L-22 44Z M22 20 L38 48 L22 44Z" fill="#e2553c"/></g>
+</g>
+
+<!-- question panel -->
+<rect x="300" y="88" width="570" height="474" rx="26" fill="url(#panel)" stroke="#38e1ff" stroke-width="2.5" filter="url(#shadow)"/>
+<text id="lvlLabel" x="330" y="124" class="t-label" style="font-size:14px"></text>
+<g id="replay" style="cursor:pointer" transform="translate(830 118)"><circle r="22" fill="#14244f" stroke="#38e1ff" stroke-width="2"/><path d="M-9 -6 H-3 L5 -13 V13 L-3 6 H-9Z" fill="#7fdcff"/><path d="M9 -7 Q15 0 9 7" stroke="#7fdcff" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+<g id="pic"></g>
+<text id="expr" x="585" y="200" class="t-num" style="font-size:80px;fill:#fff"></text>
+
+<!-- keypad -->
+<rect x="895" y="88" width="280" height="110" rx="22" fill="#0a1230" stroke="#38e1ff" stroke-width="2.5"/>
+<text id="ans" x="1035" y="146" class="t-num" style="font-size:72px;fill:#fff">?</text>
+<g id="keys"></g>
+
+<!-- Bolt -->
+<g transform="translate(470 668) scale(.5)"><g class="bob">
+  <line x1="0" y1="-118" x2="0" y2="-88" stroke="#9aaabd" stroke-width="6"/><circle cx="0" cy="-124" r="10" fill="#ff4b4b" filter="url(#glow)"/>
+  <rect x="-80" y="-90" width="160" height="128" rx="30" fill="url(#metal)" stroke="#6d7d94" stroke-width="4"/>
+  <rect x="-62" y="-72" width="124" height="88" rx="18" fill="#0b1236"/>
+  <g class="blink"><rect x="-42" y="-56" width="24" height="34" rx="10" fill="#38e1ff" filter="url(#glow)"/><rect x="18" y="-56" width="24" height="34" rx="10" fill="#38e1ff" filter="url(#glow)"/></g>
+  <g id="mouth"></g>
+  <rect x="-56" y="44" width="112" height="86" rx="20" fill="url(#metal)" stroke="#6d7d94" stroke-width="4"/>
+  <circle cx="0" cy="86" r="16" fill="#ff8a1f" filter="url(#glow)"/>
+</g></g>
+<g id="fx"></g>
+<g id="screens"></g>
+</svg>
+
+<script>
+(()=>{
+const BANK={"tiers": [{"tier": 1, "name": "Pairs to 10", "objective": "AS1.1", "ukYear": "Year 1", "items": [{"id": "t1a", "kind": "bond", "data": {"n": 7}, "answer": 3}, {"id": "t1b", "kind": "bond", "data": {"n": 4}, "answer": 6}, {"id": "t1c", "kind": "bond", "data": {"n": 8}, "answer": 2}]}, {"tier": 2, "name": "Teen numbers", "objective": "NS1.4", "ukYear": "Year 1", "items": [{"id": "t2a", "kind": "teen", "data": {"n": 13}, "answer": 13}, {"id": "t2b", "kind": "teen", "data": {"n": 16}, "answer": 16}, {"id": "t2c", "kind": "teen", "data": {"n": 18}, "answer": 18}]}, {"tier": 3, "name": "Adding past 10", "objective": "AS1.5", "ukYear": "Year 1", "items": [{"id": "t3a", "kind": "calc", "data": {"e": "8 + 5"}, "answer": 13}, {"id": "t3b", "kind": "calc", "data": {"e": "9 + 7"}, "answer": 16}, {"id": "t3c", "kind": "calc", "data": {"e": "6 + 8"}, "answer": 14}]}, {"tier": 4, "name": "Taking away within 20", "objective": "AS1.6", "ukYear": "Year 1", "items": [{"id": "t4a", "kind": "calc", "data": {"e": "14 − 6"}, "answer": 8}, {"id": "t4b", "kind": "calc", "data": {"e": "12 − 5"}, "answer": 7}, {"id": "t4c", "kind": "calc", "data": {"e": "16 − 9"}, "answer": 7}]}, {"tier": 5, "name": "Equal groups", "objective": "MD1.1", "ukYear": "Year 1-2", "items": [{"id": "t5a", "kind": "pods", "data": {"k": 3, "m": 5}, "answer": 15}, {"id": "t5b", "kind": "pods", "data": {"k": 4, "m": 2}, "answer": 8}, {"id": "t5c", "kind": "pods", "data": {"k": 6, "m": 10}, "answer": 60}]}, {"tier": 6, "name": "Tens and ones", "objective": "NS2.2", "ukYear": "Year 2", "items": [{"id": "t6a", "kind": "rods", "data": {"t": 4, "o": 7}, "answer": 47}, {"id": "t6b", "kind": "rods", "data": {"t": 6, "o": 3}, "answer": 63}, {"id": "t6c", "kind": "rods", "data": {"t": 3, "o": 8}, "answer": 38}]}, {"tier": 7, "name": "Missing numbers", "objective": "AS1.7", "ukYear": "Year 1-2", "items": [{"id": "t7a", "kind": "calc", "data": {"e": "? + 6 = 15"}, "answer": 9}, {"id": "t7b", "kind": "calc", "data": {"e": "20 − ? = 13"}, "answer": 7}, {"id": "t7c", "kind": "calc", "data": {"e": "8 + ? = 17"}, "answer": 9}]}, {"tier": 8, "name": "Adding tens", "objective": "AS2.1", "ukYear": "Year 2", "items": [{"id": "t8a", "kind": "calc", "data": {"e": "34 + 20"}, "answer": 54}, {"id": "t8b", "kind": "calc", "data": {"e": "25 + 40"}, "answer": 65}, {"id": "t8c", "kind": "calc", "data": {"e": "56 + 30"}, "answer": 86}]}, {"tier": 9, "name": "Halves and quarters", "objective": "FR2.1", "ukYear": "Year 2", "items": [{"id": "t9a", "kind": "share", "data": {"n": 12, "s": 2}, "answer": 6}, {"id": "t9b", "kind": "share", "data": {"n": 8, "s": 4}, "answer": 2}, {"id": "t9c", "kind": "share", "data": {"n": 18, "s": 2}, "answer": 9}]}, {"tier": 10, "name": "Adding across a ten", "objective": "AS2.2", "ukYear": "Year 2", "items": [{"id": "t10a", "kind": "calc", "data": {"e": "47 + 8"}, "answer": 55}, {"id": "t10b", "kind": "calc", "data": {"e": "38 + 6"}, "answer": 44}, {"id": "t10c", "kind": "calc", "data": {"e": "29 + 7"}, "answer": 36}]}, {"tier": 11, "name": "3 and 4 times tables", "objective": "MD3.1", "ukYear": "Year 3", "items": [{"id": "t11a", "kind": "calc", "data": {"e": "3 × 4"}, "answer": 12}, {"id": "t11b", "kind": "calc", "data": {"e": "4 × 6"}, "answer": 24}, {"id": "t11c", "kind": "calc", "data": {"e": "3 × 7"}, "answer": 21}]}, {"tier": 12, "name": "Subtracting with exchange", "objective": "AS3.2", "ukYear": "Year 3", "items": [{"id": "t12a", "kind": "calc", "data": {"e": "52 − 17"}, "answer": 35}, {"id": "t12b", "kind": "calc", "data": {"e": "70 − 24"}, "answer": 46}, {"id": "t12c", "kind": "calc", "data": {"e": "83 − 38"}, "answer": 45}]}]};
+const NS="http://www.w3.org/2000/svg",$=id=>document.getElementById(id),svg=$("game");
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+for(let i=0;i<120;i++){const c=el("circle",{cx:Math.random()*1200,cy:Math.random()*750,r:Math.random()*1.8+.4,fill:"#fff",class:"twinkle"},$("stars"));c.style.animationDelay=(-Math.random()*3)+"s";}
+
+/* ---------- audio ---------- */
+const LINES=["intro1","intro2","how","ok1","ok2","ok3","ok4","miss1","miss2","harder","end1","end2"];
+BANK.tiers.forEach(t=>t.items.forEach(i=>LINES.push("q_"+i.id)));
+let ac=null,master=null,musicGain=null,musicOn=true,cur=null;const buf={};
+function initAudio(){try{ac=new (window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.connect(ac.destination);musicGain=ac.createGain();musicGain.gain.value=.05;const lp=ac.createBiquadFilter();lp.type="lowpass";lp.frequency.value=900;musicGain.connect(lp);lp.connect(master);ac.resume();}catch(e){}}
+async function loadVoices(){await Promise.all(LINES.map(async k=>{try{const r=await fetch("audio/"+k+".mp3");buf[k]=await ac.decodeAudioData(await r.arrayBuffer());}catch(e){}}));}
+const mouth=$("mouth");for(let i=0;i<7;i++)el("rect",{x:-35+i*10,y:2,width:7,height:8,rx:2,fill:"#38e1ff",opacity:.25},mouth);
+let mt=null;function talking(on){clearInterval(mt);const b=[...mouth.children];if(!on){b.forEach(x=>{x.setAttribute("opacity",.25);x.setAttribute("height",8);x.setAttribute("y",2)});return;}mt=setInterval(()=>b.forEach(x=>{const h=4+Math.random()*12;x.setAttribute("height",h);x.setAttribute("y",6-h/2);x.setAttribute("opacity",.9)}),90);}
+function duck(on){if(musicGain)musicGain.gain.setTargetAtTime(musicOn?(on?.02:.05):0,ac.currentTime,.25);}
+function say(k){return new Promise(res=>{if(cur){try{cur.onended=null;cur.stop()}catch(e){}}let d=false;const fin=()=>{if(d)return;d=true;talking(false);duck(false);res();};const b=buf[k];if(!ac||!b){setTimeout(fin,700);return;}const s=ac.createBufferSource();s.buffer=b;s.connect(master);s.onended=fin;cur=s;talking(true);duck(true);s.start();setTimeout(fin,b.duration*1000+500);});}
+function tone(f,t,d,type="sine",v=.2,dest){if(!ac)return null;const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.setValueAtTime(f,t);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(dest||master);o.start(t);o.stop(t+d+.05);return o;}
+const sfx={tap(){ac&&tone(880,ac.currentTime,.06,"triangle",.1)},ok(){if(!ac)return;const t=ac.currentTime;[523,659,784,1047].forEach((f,i)=>tone(f,t+i*.07,.45,"triangle",.13));},
+  soft(){if(!ac)return;const t=ac.currentTime;tone(330,t,.3,"sine",.15);tone(294,t+.15,.4,"sine",.12);},
+  climb(){if(!ac)return;const t=ac.currentTime;const o=tone(200,t,.9,"sawtooth",.05);o&&o.frequency.exponentialRampToValueAtTime(800,t+.8);}};
+let musicT=null;function startMusic(){if(!ac||musicT)return;const ch=[[220,277,330],[196,247,294],[175,220,262],[196,247,330]];let i=0;const play=()=>{const t=ac.currentTime;ch[i%4].forEach(f=>{tone(f,t,4.2,"sine",.5,musicGain);tone(f*2,t+.4,3,"triangle",.1,musicGain);});i++;};play();musicT=setInterval(play,4000);}
+
+/* ---------- altitude ladder ---------- */
+const LY=t=>690-t*46; // tier 0 = launch pad
+const status={}; // tier -> "pass" | "fail" | "assumed"
+function drawLadder(cur){
+  const g=$("ladder");g.innerHTML="";
+  el("line",{x1:90,y1:LY(0),x2:90,y2:LY(12),stroke:"#7fdcff","stroke-width":3,"stroke-dasharray":"6 6",opacity:.6},g);
+  for(let t=1;t<=12;t++){const s=status[t];
+    const fill=s==="pass"?"#5dff8a":s==="assumed"?"#2f8f5a":s==="fail"?"#ff9e3d":t===cur?"#38e1ff":"#14244f";
+    el("circle",{cx:90,cy:LY(t),r:16,fill,stroke:"#bfefff","stroke-width":2,filter:t===cur?"url(#glow)":""},g);
+    const tx=el("text",{x:90,y:LY(t)+1,class:"t-num",style:`font-size:16px;fill:${s||t===cur?"#07102e":"#bfefff"}`},g);tx.textContent=t;}
+}
+function setAltitude(t){$("ship").style.transform=`translate(150px,${LY(t)}px)`;
+  const k=Math.min(1,t/9);const c=(a,b)=>Math.round(a+(b-a)*k);
+  $("sky").setAttribute("fill",`rgb(${c(74,7)},${c(168,11)},${c(238,31)})`);$("stars").setAttribute("opacity",Math.min(1,t/6));$("clouds").setAttribute("opacity",Math.max(0,1-t/3));}
+
+/* ---------- pictures ---------- */
+const pic=$("pic");
+function cell(x,y,p,s=1){const g=el("g",{transform:`translate(${x} ${y}) scale(${s})`},p);el("use",{href:"#cellShape"},g);return g;}
+function tray(cx,cy,n,s=1){const g=el("g",{transform:`translate(${cx} ${cy}) scale(${s})`},pic);
+  el("rect",{x:-190,y:-80,width:380,height:160,rx:20,fill:"#0b1236",stroke:"#38e1ff","stroke-width":2.5},g);
+  for(let i=0;i<10;i++){const x=-148+(i%5)*74,y=-36+Math.floor(i/5)*72;el("rect",{x:x-30,y:y-30,width:60,height:60,rx:12,fill:"#101a40",stroke:"#2d4b8f","stroke-width":2},g);if(i<n)cell(x,y,g);}}
+function drawPic(item){
+  pic.innerHTML="";$("expr").textContent="";const d=item.data;
+  if(item.kind==="calc"){$("expr").setAttribute("y",330);$("expr").setAttribute("style","font-size:96px;fill:#fff");$("expr").textContent=d.e;return;}
+  $("expr").setAttribute("y",190);$("expr").setAttribute("style","font-size:44px;fill:#bfefff");
+  if(item.kind==="bond"){tray(585,350,d.n);$("expr").textContent="? more to make 10";}
+  if(item.kind==="teen"){tray(445,350,10,.68);tray(725,350,d.n-10,.68);$("expr").textContent="How many?";}
+  if(item.kind==="pods"){$("expr").textContent=`${d.k} pods of ${d.m}`;const cols=Math.min(d.k,3),rows=Math.ceil(d.k/3);
+    for(let i=0;i<d.k;i++){const cx=585+((i%3)-(cols-1)/2)*170,cy=350+(Math.floor(i/3)-(rows-1)/2)*150;
+      el("circle",{cx,cy,r:64,fill:"#0b1236",stroke:"#38e1ff","stroke-width":2.5},pic);
+      for(let j=0;j<d.m;j++){const per=d.m>5?5:d.m;const x=cx+((j%per)-(per-1)/2)*22,y=cy+(Math.floor(j/per)-(Math.ceil(d.m/per)-1)/2)*24;const big=d.m<=5?1.7:1;const g=el("g",{transform:`translate(${cx+(x-cx)*big} ${cy+(y-cy)*big}) scale(${big})`},pic);el("use",{href:"#mini"},g);}}}
+  if(item.kind==="rods"){$("expr").textContent="How many?";const w=d.t*56+ (d.o?40+Math.ceil(d.o/2)*44:0);let x0=585-w/2;
+    for(let i=0;i<d.t;i++){const x=x0+i*56;el("rect",{x:x,y:240,width:42,height:230,rx:12,fill:"#0b1236",stroke:"#38e1ff","stroke-width":2.5},pic);for(let j=0;j<10;j++){const g=el("g",{transform:`translate(${x+21} ${254+j*22})`},pic);el("use",{href:"#mini"},g);}}
+    const ox=x0+d.t*56+40;for(let j=0;j<d.o;j++){cell(ox+(j%2)*48,300+Math.floor(j/2)*50,pic,.72);}}
+  if(item.kind==="share"){$("expr").textContent=d.n===18&&d.s===2?"Half of 18":`Share ${d.n} between ${d.s}`;
+    for(let j=0;j<d.n;j++){const per=Math.min(d.n,9);const g=el("g",{transform:`translate(${585+((j%per)-(per-1)/2)*34} ${270+Math.floor(j/per)*34})`},pic);el("use",{href:"#mini"},g);}
+    for(let i=0;i<d.s;i++){const cx=585+(i-(d.s-1)/2)*120,cy=440;el("circle",{cx,cy,r:40,fill:"#e9f0f7",stroke:"#6d7d94","stroke-width":4},pic);el("ellipse",{cx,cy:cy+2,rx:26,ry:20,fill:"#163a7a"},pic);el("ellipse",{cx:cx-9,cy:cy-6,rx:7,ry:5,fill:"#9fd8ff",opacity:.7},pic);el("rect",{x:cx-34,y:cy+50,width:68,height:30,rx:10,fill:"#14244f",stroke:"#38e1ff","stroke-width":2},pic);}}
+}
+
+/* ---------- keypad ---------- */
+let entry="",submit=null,t0=0;
+const KEYS=[["7","8","9"],["4","5","6"],["1","2","3"],["⌫","0","✓"]];
+KEYS.forEach((row,r)=>row.forEach((k,c)=>{const x=900+c*92,y=214+r*88;const g=el("g",{class:"key",transform:`translate(${x} ${y})`},$("keys"));
+  el("rect",{width:82,height:78,rx:16,fill:k==="✓"?"#1f8a5b":"#14244f",stroke:k==="✓"?"#5dff8a":"#38e1ff","stroke-width":2.5},g);
+  const t=el("text",{x:41,y:40,class:"t-num",style:`font-size:${k==="⌫"?30:40}px;fill:#fff`},g);t.textContent=k;
+  g.addEventListener("pointerdown",e=>{e.preventDefault();if(!submit)return;sfx.tap();
+    if(k==="⌫")entry=entry.slice(0,-1);else if(k==="✓"){if(entry){const s=submit;submit=null;keysOn(false);s({val:+entry,ms:performance.now()-t0});}return;}else if(entry.length<3)entry+=k;
+    $("ans").textContent=entry||"?";});}));
+function keysOn(on){$("keys").classList.toggle("off",!on);}
+function ask(){entry="";$("ans").textContent="?";keysOn(true);t0=performance.now();return new Promise(r=>submit=r);}
+let lastQ=null;$("replay").addEventListener("pointerdown",e=>{e.preventDefault();if(lastQ)say(lastQ);});
+
+/* ---------- test engine ---------- */
+const log=[];let missSaid=false,harderSaid=false;
+async function askItem(tier,item){
+  $("lvlLabel").textContent=`LEVEL ${tier.tier} · ${tier.name.toUpperCase()}`;drawLadder(tier.tier);
+  drawPic(item);lastQ="q_"+item.id;$("ans").textContent="?";
+  const sp=say(lastQ);const r=await ask();await sp.catch(()=>{});
+  const ok=r.val===item.answer;log.push({tier:tier.tier,id:item.id,answer:r.val,correct:item.answer,ok,ms:Math.round(r.ms)});
+  if(ok){sfx.ok();$("ans").style.fill="#5dff8a";await say(["ok1","ok2","ok3","ok4"][Math.floor(Math.random()*4)]);}
+  else{sfx.soft();$("ans").style.fill="#ff9e3d";await sleep(500);$("ans").textContent=item.answer;$("ans").style.fill="#7fdcff";
+    if(!missSaid){missSaid=true;await say(Math.random()<.5?"miss1":"miss2");}else await sleep(900);}
+  $("ans").style.fill="#fff";return {ok,ms:r.ms};
+}
+async function runTier(t){
+  const tier=BANK.tiers[t-1];const a=await askItem(tier,tier.items[0]);const b=await askItem(tier,tier.items[1]);
+  let correct=(a.ok?1:0)+(b.ok?1:0);
+  if(correct===1){const c=await askItem(tier,tier.items[2]);if(c.ok)correct++;}
+  return {pass:correct>=2,fast:a.ok&&b.ok&&a.ms<6000&&b.ms<6000};
+}
+async function flightTest(){
+  setAltitude(0);drawLadder(0);keysOn(false);
+  await say("intro1");await say("intro2");await say("how");
+  let t=3,best=0,fails=0,anyPass=false,wentDown=false;
+  while(t>=1&&t<=12){
+    if(t>=8&&!harderSaid){harderSaid=true;await say("harder");}
+    const r=await runTier(t);
+    if(r.pass){status[t]="pass";anyPass=true;fails=0;
+      if(t===3)for(let k=1;k<3;k++)if(!status[k])status[k]="assumed";
+      best=Math.max(best,t);sfx.climb();setAltitude(best);drawLadder(t);await sleep(700);
+      if(wentDown&&t<3){t++;if(status[t])t=Math.max(...Object.keys(status).map(Number))+1;continue;}
+      let next=t+1;if(r.fast&&next<=4&&!status[next]){status[next]="assumed";next++;}
+      t=next;
+    }else{status[t]="fail";fails++;drawLadder(t);
+      if(!anyPass&&t===3){wentDown=true;t=1;continue;}
+      if(!anyPass&&t<3){break;}
+      if(fails>=2)break;t++;}
+  }
+  return best;
+}
+
+/* ---------- results ---------- */
+const KEY="space-flight-test";
+async function results(best){
+  const failed=Object.keys(status).map(Number).filter(t=>status[t]==="fail").sort((a,b)=>a-b);
+  const start=failed.length?failed[0]:Math.min(12,best+1);
+  const startTier=BANK.tiers[start-1];
+  try{localStorage.setItem(KEY,JSON.stringify({date:new Date().toISOString(),best,start,status,log}));}catch(e){}
+  const s=$("screens");s.innerHTML="";const g=el("g",{},s);
+  el("rect",{width:1200,height:750,fill:"#05081a",opacity:.86},g);
+  const t=el("text",{x:600,y:90,class:"t-title","text-anchor":"middle",style:"font-size:46px"},g);t.textContent="FLIGHT TEST COMPLETE";
+  const a=el("text",{x:600,y:140,class:"t-label","text-anchor":"middle",style:"font-size:20px"},g);a.textContent=`HIGHEST LEVEL REACHED: ${best}`;
+  BANK.tiers.forEach((tr,i)=>{const col=i<6?0:1,row=i%6;const x=130+col*480,y=200+row*58;const st=status[tr.tier];
+    const fill=st==="pass"?"#1f6b45":st==="assumed"?"#1a4a35":st==="fail"?"#6b3b12":"#14244f";
+    el("rect",{x,y,width:450,height:46,rx:14,fill,stroke:tr.tier===start?"#ffd84d":"#38e1ff","stroke-width":tr.tier===start?4:1.5},g);
+    const tx=el("text",{x:x+18,y:y+30,style:"font:800 20px var(--round);fill:#fff"},g);tx.textContent=`${tr.tier}. ${tr.name}`;
+    const lab=st==="pass"?"✓ passed":st==="assumed"?"✓ skipped (easy)":st==="fail"?"to practise":"not tested";
+    const tl=el("text",{x:x+432,y:y+30,"text-anchor":"end",style:"font:600 15px var(--round);fill:#bfefff"},g);tl.textContent=tr.tier===start?"★ START HERE":lab;});
+  const n=el("text",{x:600,y:580,"text-anchor":"middle",style:"font:800 24px var(--round);fill:#ffd84d"},g);n.textContent=`Next missions start at Level ${start}: ${startTier.name} (${startTier.objective}, ${startTier.ukYear})`;
+  const okN=log.filter(l=>l.ok).length;const med=log.map(l=>l.ms).sort((x,y)=>x-y)[Math.floor(log.length/2)]||0;
+  const p=el("text",{x:600,y:615,"text-anchor":"middle",style:"font:600 15px var(--round);fill:#8fa3cf"},g);p.textContent=`For parents: ${okN} of ${log.length} correct · typical answer ${(med/1000).toFixed(1)} s · slow answers usually mean counting in ones`;
+  const b=el("g",{style:"cursor:pointer",transform:"translate(600 680)"},g);el("rect",{x:-150,y:-34,width:300,height:68,rx:34,fill:"#ff8a1f",stroke:"#ffd2a3","stroke-width":4},b);const bt=el("text",{x:0,y:2,class:"t-title","text-anchor":"middle","dominant-baseline":"central",style:"font-size:24px;fill:#fff"},b);bt.textContent="FLY AGAIN";
+  b.addEventListener("pointerdown",()=>location.reload());
+  await say("end1");await say("end2");
+}
+
+/* ---------- start ---------- */
+function titleScreen(){return new Promise(res=>{const s=$("screens");const g=el("g",{},s);el("rect",{width:1200,height:750,fill:"#05081a",opacity:.7},g);
+  const t=el("text",{x:600,y:270,class:"t-title","text-anchor":"middle",style:"font-size:70px"},g);t.textContent="FLIGHT TEST";
+  const st=el("text",{x:600,y:320,class:"t-label","text-anchor":"middle",style:"font-size:20px"},g);st.textContent="HOW HIGH CAN YOU FLY?";
+  const b=el("g",{style:"cursor:pointer",transform:"translate(600 450)"},g);el("rect",{x:-160,y:-38,width:320,height:76,rx:38,fill:"#ff8a1f",stroke:"#ffd2a3","stroke-width":4,filter:"url(#shadow)"},b);
+  const bt=el("text",{x:0,y:2,class:"t-title","text-anchor":"middle","dominant-baseline":"central",style:"font-size:28px;fill:#fff"},b);bt.textContent="START TEST";
+  b.addEventListener("pointerdown",e=>{e.preventDefault();initAudio();s.innerHTML="";res();});});}
+async function boot(){await titleScreen();await loadVoices();startMusic();const best=await flightTest();await results(best);}
+$("musicBtn").addEventListener("click",e=>{musicOn=!musicOn;e.target.textContent=musicOn?"Music on":"Music off";if(ac)duck(false);});
+$("restartBtn").addEventListener("click",()=>location.reload());
+setAltitude(0);drawLadder(0);keysOn(false);boot();
+})();
+</script>

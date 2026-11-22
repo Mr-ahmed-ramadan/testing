@@ -1,0 +1,397 @@
+{
+ "tiers": [
+  {
+   "tier": 1,
+   "name": "Pairs to 10",
+   "objective": "AS1.1",
+   "ukYear": "Year 1",
+   "items": [
+    {
+     "id": "t1a",
+     "kind": "bond",
+     "data": {
+      "n": 7
+     },
+     "answer": 3
+    },
+    {
+     "id": "t1b",
+     "kind": "bond",
+     "data": {
+      "n": 4
+     },
+     "answer": 6
+    },
+    {
+     "id": "t1c",
+     "kind": "bond",
+     "data": {
+      "n": 8
+     },
+     "answer": 2
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "name": "Teen numbers",
+   "objective": "NS1.4",
+   "ukYear": "Year 1",
+   "items": [
+    {
+     "id": "t2a",
+     "kind": "teen",
+     "data": {
+      "n": 13
+     },
+     "answer": 13
+    },
+    {
+     "id": "t2b",
+     "kind": "teen",
+     "data": {
+      "n": 16
+     },
+     "answer": 16
+    },
+    {
+     "id": "t2c",
+     "kind": "teen",
+     "data": {
+      "n": 18
+     },
+     "answer": 18
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "name": "Adding past 10",
+   "objective": "AS1.5",
+   "ukYear": "Year 1",
+   "items": [
+    {
+     "id": "t3a",
+     "kind": "calc",
+     "data": {
+      "e": "8 + 5"
+     },
+     "answer": 13
+    },
+    {
+     "id": "t3b",
+     "kind": "calc",
+     "data": {
+      "e": "9 + 7"
+     },
+     "answer": 16
+    },
+    {
+     "id": "t3c",
+     "kind": "calc",
+     "data": {
+      "e": "6 + 8"
+     },
+     "answer": 14
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "name": "Taking away within 20",
+   "objective": "AS1.6",
+   "ukYear": "Year 1",
+   "items": [
+    {
+     "id": "t4a",
+     "kind": "calc",
+     "data": {
+      "e": "14 − 6"
+     },
+     "answer": 8
+    },
+    {
+     "id": "t4b",
+     "kind": "calc",
+     "data": {
+      "e": "12 − 5"
+     },
+     "answer": 7
+    },
+    {
+     "id": "t4c",
+     "kind": "calc",
+     "data": {
+      "e": "16 − 9"
+     },
+     "answer": 7
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "name": "Equal groups",
+   "objective": "MD1.1",
+   "ukYear": "Year 1-2",
+   "items": [
+    {
+     "id": "t5a",
+     "kind": "pods",
+     "data": {
+      "k": 3,
+      "m": 5
+     },
+     "answer": 15
+    },
+    {
+     "id": "t5b",
+     "kind": "pods",
+     "data": {
+      "k": 4,
+      "m": 2
+     },
+     "answer": 8
+    },
+    {
+     "id": "t5c",
+     "kind": "pods",
+     "data": {
+      "k": 6,
+      "m": 10
+     },
+     "answer": 60
+    }
+   ]
+  },
+  {
+   "tier": 6,
+   "name": "Tens and ones",
+   "objective": "NS2.2",
+   "ukYear": "Year 2",
+   "items": [
+    {
+     "id": "t6a",
+     "kind": "rods",
+     "data": {
+      "t": 4,
+      "o": 7
+     },
+     "answer": 47
+    },
+    {
+     "id": "t6b",
+     "kind": "rods",
+     "data": {
+      "t": 6,
+      "o": 3
+     },
+     "answer": 63
+    },
+    {
+     "id": "t6c",
+     "kind": "rods",
+     "data": {
+      "t": 3,
+      "o": 8
+     },
+     "answer": 38
+    }
+   ]
+  },
+  {
+   "tier": 7,
+   "name": "Missing numbers",
+   "objective": "AS1.7",
+   "ukYear": "Year 1-2",
+   "items": [
+    {
+     "id": "t7a",
+     "kind": "calc",
+     "data": {
+      "e": "? + 6 = 15"
+     },
+     "answer": 9
+    },
+    {
+     "id": "t7b",
+     "kind": "calc",
+     "data": {
+      "e": "20 − ? = 13"
+     },
+     "answer": 7
+    },
+    {
+     "id": "t7c",
+     "kind": "calc",
+     "data": {
+      "e": "8 + ? = 17"
+     },
+     "answer": 9
+    }
+   ]
+  },
+  {
+   "tier": 8,
+   "name": "Adding tens",
+   "objective": "AS2.1",
+   "ukYear": "Year 2",
+   "items": [
+    {
+     "id": "t8a",
+     "kind": "calc",
+     "data": {
+      "e": "34 + 20"
+     },
+     "answer": 54
+    },
+    {
+     "id": "t8b",
+     "kind": "calc",
+     "data": {
+      "e": "25 + 40"
+     },
+     "answer": 65
+    },
+    {
+     "id": "t8c",
+     "kind": "calc",
+     "data": {
+      "e": "56 + 30"
+     },
+     "answer": 86
+    }
+   ]
+  },
+  {
+   "tier": 9,
+   "name": "Halves and quarters",
+   "objective": "FR2.1",
+   "ukYear": "Year 2",
+   "items": [
+    {
+     "id": "t9a",
+     "kind": "share",
+     "data": {
+      "n": 12,
+      "s": 2
+     },
+     "answer": 6
+    },
+    {
+     "id": "t9b",
+     "kind": "share",
+     "data": {
+      "n": 8,
+      "s": 4
+     },
+     "answer": 2
+    },
+    {
+     "id": "t9c",
+     "kind": "share",
+     "data": {
+      "n": 18,
+      "s": 2
+     },
+     "answer": 9
+    }
+   ]
+  },
+  {
+   "tier": 10,
+   "name": "Adding across a ten",
+   "objective": "AS2.2",
+   "ukYear": "Year 2",
+   "items": [
+    {
+     "id": "t10a",
+     "kind": "calc",
+     "data": {
+      "e": "47 + 8"
+     },
+     "answer": 55
+    },
+    {
+     "id": "t10b",
+     "kind": "calc",
+     "data": {
+      "e": "38 + 6"
+     },
+     "answer": 44
+    },
+    {
+     "id": "t10c",
+     "kind": "calc",
+     "data": {
+      "e": "29 + 7"
+     },
+     "answer": 36
+    }
+   ]
+  },
+  {
+   "tier": 11,
+   "name": "3 and 4 times tables",
+   "objective": "MD3.1",
+   "ukYear": "Year 3",
+   "items": [
+    {
+     "id": "t11a",
+     "kind": "calc",
+     "data": {
+      "e": "3 × 4"
+     },
+     "answer": 12
+    },
+    {
+     "id": "t11b",
+     "kind": "calc",
+     "data": {
+      "e": "4 × 6"
+     },
+     "answer": 24
+    },
+    {
+     "id": "t11c",
+     "kind": "calc",
+     "data": {
+      "e": "3 × 7"
+     },
+     "answer": 21
+    }
+   ]
+  },
+  {
+   "tier": 12,
+   "name": "Subtracting with exchange",
+   "objective": "AS3.2",
+   "ukYear": "Year 3",
+   "items": [
+    {
+     "id": "t12a",
+     "kind": "calc",
+     "data": {
+      "e": "52 − 17"
+     },
+     "answer": 35
+    },
+    {
+     "id": "t12b",
+     "kind": "calc",
+     "data": {
+      "e": "70 − 24"
+     },
+     "answer": 46
+    },
+    {
+     "id": "t12c",
+     "kind": "calc",
+     "data": {
+      "e": "83 − 38"
+     },
+     "answer": 45
+    }
+   ]
+  }
+ ]
+}
