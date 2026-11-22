@@ -119,7 +119,7 @@ The engine uses these signals to pick the next demo, and the parent view shows t
 
 | Concern | Choice | Why |
 |---|---|---|
-| App shell | **React + TypeScript + Vite**, installable **PWA** | Runs on iPad, Android tablets and laptops from one codebase; can be wrapped with Capacitor for the app stores later |
+| App shell | **React + TypeScript + Vite**, installable **PWA**, responsive from phone to TV | Runs on tablets, phones, laptops and TV browsers from one codebase; can be wrapped with Capacitor for the app stores later |
 | Scenes | **SVG** components | Crisp at any size, easy hit-testing, scenes contain tens of objects rather than thousands |
 | Animation and gestures | **Motion** (motion.dev, formerly Framer Motion) | Springs, layout animations, drag with snapping and timelines in one library; supports reduced motion |
 | 3D solids (Stage 3+) | three.js via react-three-fiber | Rotate, unfold nets |
@@ -171,6 +171,7 @@ app/
 | **M3: Stages 3-4** | P3 scenes; times-tables trainer for the Year 4 check | Ready for the tables check |
 | **M4: Stages 5-6** | Fractions, ratio and SATs practice mode | Ready for KS2 SATs |
 | **M5: Secondary** | P4 scenes; KS3 and GCSE | |
+| **TV mode** (after M2) | Remote-control navigation, big-screen watch mode, answer with arrow keys | Usable on a TV from the sofa |
 
 ## 10. Trying it with him
 
@@ -181,13 +182,22 @@ After each milestone, sit with him for a session and note:
 - Does he **ask to replay** demos? That is good. Does he skip them? Then they may be too slow.
 - Is he **calm**? Any sign of anxiety means slowing the pace.
 
-## 11. Open decisions
+## 11. Decisions (agreed with the parent)
 
-1. **Devices.** iPad, Android tablet, or a laptop? This affects screen layout and touch versus mouse.
-2. **Voice.** English only, or bilingual prompts too?
-3. **Who builds it.** You, a developer, or me step by step? This decides how much the plan should rely on Storybook and tests.
-4. **School scheme.** Does his school use White Rose Maths? If so, lessons should match its wording and term order.
-5. **Art style.** Simple flat shapes (fast to build, clearest) or illustrated characters (more appealing, more work)?
+1. **Devices: tablet first, phones supported, TV later.**
+   - Lessons are designed for a touch tablet (landscape), because dragging and splitting objects is central to how he learns.
+   - Every screen must also work on a phone. Phones suit short practice and review; there is less room for two-model scenes, so those stack vertically.
+   - TV: for now, mirror the tablet to the TV (AirPlay or Chromecast), with no extra work. A remote-controlled **TV mode** (watch the demos big, answer with arrow keys) is a later milestone, since a remote can't do hands-on dragging.
+   - Layouts are fluid from 360 px phones to 1920 px TVs, and touch targets are at least 48 px.
+2. **Voice: English only**, using National Curriculum wording (part-whole, exchange, bar model, partition) so the app and school reinforce each other.
+3. **Builder: Claude, step by step.** Code is written here in small working pieces and pushed to this repo. The parent tests each piece with his son before the next one starts.
+4. **Standard: the National Curriculum is the minimum, and excellence is the goal.**
+   - Every core and tested objective must be mastered. Beyond that, each stage has an **excellence layer**: the Japan and Singapore objectives already marked *beyond*, plus "greater depth" tasks (explain, prove, solve unfamiliar problems, find more than one method).
+   - A stage counts as complete only when its core objectives are mastered **and** he passes a greater-depth challenge for each strand.
+   - School scheme is unknown, so lessons use standard National Curriculum vocabulary, which all the common schemes share.
+5. **Art style: clean flat shapes plus one mascot.**
+   - All maths objects (counters, blocks, frames, bars) are clear flat shapes with consistent colours, so nothing distracts from the maths.
+   - One friendly mascot demonstrates in the *watch* phase, gives hints, and celebrates.
 
 ## 12. Risks
 
