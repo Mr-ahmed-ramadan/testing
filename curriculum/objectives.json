@@ -1,0 +1,7211 @@
+{
+ "stages": [
+  {
+   "stage": 0,
+   "name": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5"
+  },
+  {
+   "stage": 1,
+   "name": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6"
+  },
+  {
+   "stage": 2,
+   "name": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7"
+  },
+  {
+   "stage": 3,
+   "name": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8"
+  },
+  {
+   "stage": 4,
+   "name": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9"
+  },
+  {
+   "stage": 5,
+   "name": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10"
+  },
+  {
+   "stage": 6,
+   "name": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11"
+  },
+  {
+   "stage": 7,
+   "name": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12"
+  },
+  {
+   "stage": 8,
+   "name": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13"
+  },
+  {
+   "stage": 9,
+   "name": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14"
+  },
+  {
+   "stage": 10,
+   "name": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16"
+  },
+  {
+   "stage": 11,
+   "name": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16"
+  }
+ ],
+ "strands": [
+  {
+   "code": "NS",
+   "name": "Number sense & place value"
+  },
+  {
+   "code": "AS",
+   "name": "Addition & subtraction"
+  },
+  {
+   "code": "MD",
+   "name": "Multiplication & division"
+  },
+  {
+   "code": "FR",
+   "name": "Fractions, decimals & percentages"
+  },
+  {
+   "code": "RP",
+   "name": "Ratio & proportion"
+  },
+  {
+   "code": "AL",
+   "name": "Algebra & pattern"
+  },
+  {
+   "code": "ME",
+   "name": "Measurement, money & time"
+  },
+  {
+   "code": "GE",
+   "name": "Geometry & spatial reasoning"
+  },
+  {
+   "code": "ST",
+   "name": "Statistics"
+  },
+  {
+   "code": "PB",
+   "name": "Probability"
+  },
+  {
+   "code": "PS",
+   "name": "Reasoning & problem solving"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "dots",
+   "name": "Dot flash",
+   "description": "Dots, dice faces and finger patterns that appear briefly and then hide.",
+   "motions": [
+    "flash",
+    "regroup",
+    "reveal"
+   ],
+   "usedBy": [
+    "NS0.1",
+    "NS0.4"
+   ]
+  },
+  {
+   "id": "counters",
+   "name": "Counters",
+   "description": "Free two-colour counters and toy objects to drag, line up, group and share.",
+   "motions": [
+    "drag",
+    "line-up",
+    "group",
+    "share",
+    "flip"
+   ],
+   "usedBy": [
+    "NS0.2",
+    "NS0.4",
+    "NS0.5",
+    "NS0.7",
+    "AS0.1",
+    "AS0.3",
+    "AS0.4",
+    "MD0.1",
+    "MD0.2",
+    "PS0.1",
+    "NS1.2",
+    "NS1.6",
+    "AS1.3",
+    "MD1.1",
+    "MD1.2",
+    "AS2.3",
+    "MD2.3",
+    "FR2.1",
+    "PS2.1",
+    "FR3.2",
+    "MD5.2",
+    "MD6.4",
+    "RP6.1",
+    "NS7.2"
+   ]
+  },
+  {
+   "id": "frame",
+   "name": "Ten-frame",
+   "description": "Single or double five/ten-frames that counters snap into, filling left to right.",
+   "motions": [
+    "fill",
+    "snap",
+    "slide-across",
+    "flash"
+   ],
+   "usedBy": [
+    "AS0.2",
+    "AS0.3",
+    "NS1.4",
+    "NS1.7",
+    "AS1.1",
+    "AS1.2",
+    "AS1.4",
+    "AS1.5",
+    "AS1.6",
+    "AS2.1"
+   ]
+  },
+  {
+   "id": "rekenrek",
+   "name": "Bead frame",
+   "description": "Two-row rekenrek with 5 red and 5 white beads per row.",
+   "motions": [
+    "push",
+    "group-of-5",
+    "group-of-10"
+   ],
+   "usedBy": [
+    "NS1.7"
+   ]
+  },
+  {
+   "id": "partwhole",
+   "name": "Part-whole",
+   "description": "Whole circle with two or more part circles; also the Japanese cherry split diagram.",
+   "motions": [
+    "split",
+    "join",
+    "swap-parts"
+   ],
+   "usedBy": [
+    "AS0.1",
+    "AS1.1",
+    "AS1.5",
+    "AS1.6",
+    "AS1.7",
+    "AS2.4"
+   ]
+  },
+  {
+   "id": "track",
+   "name": "Number track",
+   "description": "Numbered squares and cube staircases where each step is one more.",
+   "motions": [
+    "step",
+    "climb",
+    "compare-heights"
+   ],
+   "usedBy": [
+    "NS0.3",
+    "NS0.6"
+   ]
+  },
+  {
+   "id": "numline",
+   "name": "Number line",
+   "description": "Marked, empty, vertical or zoomable number line with animated hops.",
+   "motions": [
+    "hop",
+    "zoom",
+    "stretch",
+    "mark",
+    "reflect-through-zero"
+   ],
+   "usedBy": [
+    "NS1.1",
+    "NS1.3",
+    "NS1.6",
+    "AS1.4",
+    "AS1.6",
+    "NS2.1",
+    "NS2.4",
+    "AS2.3",
+    "NS3.1",
+    "AS3.3",
+    "FR3.1",
+    "FR3.3",
+    "NS4.1",
+    "NS4.2",
+    "NS4.4",
+    "FR4.5",
+    "FR4.7",
+    "NS5.3",
+    "NS5.4",
+    "AS5.2",
+    "FR5.7",
+    "AL5.1",
+    "NS6.1",
+    "NS6.2",
+    "MD6.5",
+    "FR6.2",
+    "FR6.8",
+    "NS7.1",
+    "NS7.2",
+    "NS7.5",
+    "FR7.2",
+    "RP7.2",
+    "AL8.3",
+    "NS9.1",
+    "NS10.1",
+    "NS11.2"
+   ]
+  },
+  {
+   "id": "hundred",
+   "name": "Hundred square",
+   "description": "1-100 grid with highlighting, sliding windows and colour patterns.",
+   "motions": [
+    "highlight",
+    "slide-down",
+    "pattern-paint"
+   ],
+   "usedBy": [
+    "NS1.1",
+    "NS1.2",
+    "NS1.5",
+    "AL1.1",
+    "NS2.1",
+    "MD2.1",
+    "NS3.1",
+    "FR5.8"
+   ]
+  },
+  {
+   "id": "base10",
+   "name": "Base-10 blocks",
+   "description": "Ones cubes, ten rods, hundred flats and thousand cubes.",
+   "motions": [
+    "build",
+    "exchange-10-for-1",
+    "unbundle",
+    "align"
+   ],
+   "usedBy": [
+    "NS2.2",
+    "NS2.3",
+    "NS2.5",
+    "AS2.1",
+    "AS2.2",
+    "AS2.5",
+    "NS3.2",
+    "AS3.1",
+    "AS3.2",
+    "MD3.2"
+   ]
+  },
+  {
+   "id": "pvchart",
+   "name": "Place-value chart",
+   "description": "Columns with place-value counters and a digit slider for x10 and /10.",
+   "motions": [
+    "place",
+    "exchange",
+    "slide-digits",
+    "zoom-decimal"
+   ],
+   "usedBy": [
+    "NS3.2",
+    "NS3.3",
+    "AS3.2",
+    "MD3.3",
+    "NS4.3",
+    "NS4.5",
+    "AS4.1",
+    "MD4.4",
+    "FR4.1",
+    "FR4.6",
+    "NS5.1",
+    "NS5.2",
+    "NS5.5",
+    "AS5.1",
+    "MD5.5",
+    "MD5.6",
+    "FR5.2",
+    "FR5.6",
+    "NS6.1",
+    "MD6.1",
+    "FR6.6",
+    "FR6.7",
+    "NS8.1",
+    "NS11.3"
+   ]
+  },
+  {
+   "id": "array",
+   "name": "Arrays",
+   "description": "Rows and columns of objects that rotate, split and regroup.",
+   "motions": [
+    "build-rows",
+    "rotate",
+    "split",
+    "count-in-rows"
+   ],
+   "usedBy": [
+    "MD1.1",
+    "MD2.1",
+    "MD2.2",
+    "MD2.4",
+    "MD2.5",
+    "MD3.1",
+    "MD4.1",
+    "MD4.2",
+    "MD5.1",
+    "MD5.2",
+    "ME5.2",
+    "MD6.4"
+   ]
+  },
+  {
+   "id": "bar",
+   "name": "Bar model",
+   "description": "Bars that grow out of real objects, split into equal parts and compare lengths.",
+   "motions": [
+    "grow-from-objects",
+    "split",
+    "compare",
+    "label",
+    "unknown-?"
+   ],
+   "usedBy": [
+    "AS1.7",
+    "AS1.9",
+    "PS1.1",
+    "AS2.6",
+    "AL2.1",
+    "AS3.4",
+    "FR3.2",
+    "AS4.2",
+    "MD4.5",
+    "FR4.3",
+    "AS5.2",
+    "MD5.7",
+    "FR5.5",
+    "MD6.1",
+    "FR6.5",
+    "FR6.8",
+    "RP6.1",
+    "RP6.3",
+    "AL6.3",
+    "AL6.4",
+    "PS6.1",
+    "FR7.3",
+    "RP7.1",
+    "RP7.2",
+    "FR8.1",
+    "FR10.1",
+    "RP10.1"
+   ]
+  },
+  {
+   "id": "fractions",
+   "name": "Fraction strips",
+   "description": "Fraction strips, fraction wall, circles and folding paper.",
+   "motions": [
+    "fold",
+    "cut",
+    "stack",
+    "align",
+    "recombine"
+   ],
+   "usedBy": [
+    "FR1.1",
+    "FR1.2",
+    "FR2.1",
+    "FR3.1",
+    "FR3.3",
+    "FR3.4",
+    "FR3.5",
+    "FR3.6",
+    "FR4.1",
+    "FR4.2",
+    "FR4.4",
+    "FR4.5",
+    "FR5.1",
+    "FR5.2",
+    "FR5.3",
+    "FR5.4",
+    "FR5.5",
+    "FR5.8",
+    "FR6.1",
+    "FR6.3",
+    "FR6.4",
+    "FR7.1",
+    "AL11.2"
+   ]
+  },
+  {
+   "id": "areamodel",
+   "name": "Area model",
+   "description": "Rectangle split into parts whose areas show products.",
+   "motions": [
+    "split-sides",
+    "fill-parts",
+    "sum-parts"
+   ],
+   "usedBy": [
+    "MD2.5",
+    "MD3.2",
+    "MD4.1",
+    "MD4.3",
+    "MD4.4",
+    "MD5.4",
+    "MD6.2",
+    "FR6.4",
+    "FR7.1",
+    "AL7.3",
+    "AL8.1"
+   ]
+  },
+  {
+   "id": "balance",
+   "name": "Balance",
+   "description": "A beam balance that tips when sides are unequal and levels when equal.",
+   "motions": [
+    "tip",
+    "level",
+    "remove-both-sides"
+   ],
+   "usedBy": [
+    "AS1.8",
+    "AL2.1",
+    "AL6.3",
+    "AL7.4",
+    "AL8.2"
+   ]
+  },
+  {
+   "id": "clock",
+   "name": "Clock",
+   "description": "Geared analogue clock linked to a digital display and a day timeline.",
+   "motions": [
+    "turn-minute-hand",
+    "sweep",
+    "sync-digital"
+   ],
+   "usedBy": [
+    "ME1.4",
+    "ME2.4",
+    "ME3.4",
+    "ME4.3",
+    "ME5.4"
+   ]
+  },
+  {
+   "id": "money",
+   "name": "Money",
+   "description": "UK coins and notes, purse, shop shelf and till.",
+   "motions": [
+    "drop-in-purse",
+    "swap-coins",
+    "give-change"
+   ],
+   "usedBy": [
+    "ME1.2",
+    "ME2.3",
+    "ME3.3",
+    "FR4.8"
+   ]
+  },
+  {
+   "id": "measure",
+   "name": "Measuring lab",
+   "description": "Ruler, tape, scales, jugs and thermometer with live readings.",
+   "motions": [
+    "lay-along",
+    "pour",
+    "weigh",
+    "read-scale"
+   ],
+   "usedBy": [
+    "ME0.1",
+    "ME1.1",
+    "ME2.1",
+    "ME2.2",
+    "ME3.1",
+    "ME3.2",
+    "ME4.1",
+    "ME5.1",
+    "RP8.1"
+   ]
+  },
+  {
+   "id": "shapes",
+   "name": "Shape lab",
+   "description": "2D shapes, tangrams, geoboard, mirror line and turning shapes.",
+   "motions": [
+    "morph",
+    "rotate",
+    "reflect",
+    "fit",
+    "trace-sides"
+   ],
+   "usedBy": [
+    "AL0.1",
+    "GE0.1",
+    "GE1.1",
+    "GE1.2",
+    "GE2.1",
+    "GE2.3",
+    "GE2.4",
+    "ME3.2",
+    "GE3.3",
+    "AL3.1",
+    "ME4.2",
+    "GE4.1",
+    "GE4.3",
+    "AL4.1",
+    "ME5.2",
+    "GE5.4",
+    "RP6.2",
+    "AL6.2",
+    "ME6.2",
+    "ME6.3",
+    "GE6.3",
+    "AL7.5",
+    "GE7.2",
+    "GE7.3",
+    "GE8.1",
+    "GE9.1",
+    "GE9.5",
+    "NS11.1",
+    "GE11.3"
+   ]
+  },
+  {
+   "id": "solids",
+   "name": "3D solids",
+   "description": "Rotatable solids that unfold into nets and show faces, edges, vertices.",
+   "motions": [
+    "spin",
+    "unfold",
+    "highlight-parts",
+    "fill-cubes"
+   ],
+   "usedBy": [
+    "GE1.1",
+    "GE2.2",
+    "GE3.1",
+    "MD5.3",
+    "ME5.3",
+    "GE5.1",
+    "ME6.4",
+    "GE6.1",
+    "NS7.3",
+    "NS8.2",
+    "GE8.2",
+    "GE10.2",
+    "GE11.2"
+   ]
+  },
+  {
+   "id": "grid",
+   "name": "Coordinate grid",
+   "description": "Grid with plotted points and shapes that translate, reflect, rotate, enlarge.",
+   "motions": [
+    "plot",
+    "slide",
+    "flip",
+    "turn",
+    "enlarge"
+   ],
+   "usedBy": [
+    "GE4.4",
+    "GE4.5",
+    "GE5.5",
+    "RP6.2",
+    "GE6.4",
+    "GE8.3",
+    "GE9.3",
+    "GE9.4",
+    "GE10.3",
+    "GE11.4"
+   ]
+  },
+  {
+   "id": "angles",
+   "name": "Angle turner",
+   "description": "Two arms that turn from a point, a sweeping arc and a protractor.",
+   "motions": [
+    "sweep",
+    "measure",
+    "tear-and-join"
+   ],
+   "usedBy": [
+    "GE3.2",
+    "GE4.2",
+    "GE5.2",
+    "GE5.3",
+    "GE6.1",
+    "GE6.2",
+    "GE7.1",
+    "GE8.4",
+    "GE9.2",
+    "GE10.1",
+    "GE11.1"
+   ]
+  },
+  {
+   "id": "charts",
+   "name": "Chart builder",
+   "description": "Data objects that fly into tallies, pictograms, bars, lines and pies.",
+   "motions": [
+    "stack-into-bars",
+    "plot-points",
+    "wrap-into-pie",
+    "level-towers"
+   ],
+   "usedBy": [
+    "ST2.1",
+    "ST3.1",
+    "ST4.1",
+    "ST5.1",
+    "ST6.1",
+    "ST6.2",
+    "ST7.1",
+    "ST7.2",
+    "ST8.1",
+    "ST8.2",
+    "ST10.1",
+    "ST11.1"
+   ]
+  },
+  {
+   "id": "machine",
+   "name": "Function machine",
+   "description": "A machine that takes numbers in and sends results out by a rule.",
+   "motions": [
+    "feed",
+    "process",
+    "reverse"
+   ],
+   "usedBy": [
+    "AL4.1",
+    "MD6.3",
+    "AL6.1",
+    "AL6.2",
+    "AL7.2",
+    "AL8.6",
+    "AL11.3"
+   ]
+  },
+  {
+   "id": "tiles",
+   "name": "Algebra tiles",
+   "description": "x², x and unit tiles, positive and negative, forming rectangles.",
+   "motions": [
+    "group-like",
+    "build-rectangle",
+    "cancel-zero-pairs"
+   ],
+   "usedBy": [
+    "AL7.1",
+    "AL7.3",
+    "AL8.1",
+    "AL9.1",
+    "AL9.5",
+    "AL10.1",
+    "AL11.1",
+    "PS11.1"
+   ]
+  },
+  {
+   "id": "graph",
+   "name": "Graph plotter",
+   "description": "Coordinate plane where tables of values become points and lines.",
+   "motions": [
+    "plot-from-table",
+    "drag-slider",
+    "trace"
+   ],
+   "usedBy": [
+    "ME6.1",
+    "AL7.5",
+    "AL8.4",
+    "AL8.5",
+    "RP8.2",
+    "AL9.2",
+    "AL9.3",
+    "AL9.4",
+    "RP9.1",
+    "RP9.2",
+    "FR10.1",
+    "AL10.1",
+    "AL10.2",
+    "AL10.3",
+    "AL11.4",
+    "AL11.5",
+    "AL11.6",
+    "AL11.7",
+    "AL11.8",
+    "GE11.5"
+   ]
+  },
+  {
+   "id": "prob",
+   "name": "Chance lab",
+   "description": "Spinners, dice, bags of counters, simulations and tree diagrams.",
+   "motions": [
+    "spin",
+    "roll-many",
+    "grow-branches",
+    "fill-sample-space"
+   ],
+   "usedBy": [
+    "NS7.4",
+    "PB7.1",
+    "PB8.1",
+    "PB8.2",
+    "PB9.1",
+    "NS10.2",
+    "PB10.1",
+    "PB11.1"
+   ]
+  },
+  {
+   "id": "soroban",
+   "name": "Soroban",
+   "description": "Japanese abacus with heaven and earth beads.",
+   "motions": [
+    "flick-bead",
+    "carry"
+   ],
+   "usedBy": [
+    "NS3.4"
+   ]
+  },
+  {
+   "id": "story",
+   "name": "Story stage",
+   "description": "Animated characters act out a problem before it is modelled.",
+   "motions": [
+    "act-out",
+    "freeze-to-model"
+   ],
+   "usedBy": [
+    "AS0.4",
+    "GE0.2",
+    "AS1.3",
+    "AS1.9",
+    "PS1.1",
+    "AS2.6",
+    "MD2.4",
+    "MD3.4",
+    "PS3.1",
+    "PS6.1",
+    "PS10.1"
+   ]
+  },
+  {
+   "id": "calendar",
+   "name": "Time line",
+   "description": "Day, week, month and year strips with events.",
+   "motions": [
+    "slide-days",
+    "cycle-seasons"
+   ],
+   "usedBy": [
+    "ME0.2",
+    "ME1.3",
+    "ME3.4",
+    "ME5.4"
+   ]
+  }
+ ],
+ "objectives": [
+  {
+   "id": "NS0.1",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Subitise up to 5: see how many dots, fingers or objects there are without counting",
+   "visualModel": "Dot cards, dice faces, five-frame flashes",
+   "masteryCheck": "Flash 4 dots for 1 second; child says 4 without counting",
+   "prerequisites": [],
+   "kind": "tested",
+   "source": "EYFS Early Learning Goal (end of Reception)",
+   "scenes": [
+    "dots"
+   ],
+   "animation": "A handful of dots appears for one second then hides. On replay, the dots slide into a familiar shape (a dice 4) so the eye sees the group at once.",
+   "interaction": "Taps the number of fingers that matches the flash; can hold to see it again."
+  },
+  {
+   "id": "NS0.2",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Count objects one-to-one up to 10 and know the last number said tells how many (cardinality)",
+   "visualModel": "Counters moved one at a time into a line",
+   "masteryCheck": "After counting 8 bears, answers 'how many?' with 8 without recounting",
+   "prerequisites": [],
+   "kind": "tested",
+   "source": "Reception Baseline Assessment",
+   "scenes": [
+    "counters"
+   ],
+   "animation": "Each bear hops into a line as a number pops above it. On the last bear the number grows big and a lasso wraps the whole group: that number is how many.",
+   "interaction": "Drags bears one by one into a line, then taps the total."
+  },
+  {
+   "id": "NS0.3",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Say the counting sequence to 20 and beyond; start counting from a number other than 1",
+   "visualModel": "Number track, counting songs",
+   "masteryCheck": "Counts on from 6 to 15 without restarting at 1",
+   "prerequisites": [],
+   "kind": "tested",
+   "source": "EYFS Early Learning Goal (end of Reception)",
+   "scenes": [
+    "track"
+   ],
+   "animation": "A frog hops along a numbered path, each square lighting up as it lands. Then it starts on 6 instead of 1 and carries on without going back.",
+   "interaction": "Hops the frog forward from a given start number."
+  },
+  {
+   "id": "NS0.4",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Recognise numerals 0-10 and match each to a quantity",
+   "visualModel": "Numeral cards beside dot sets",
+   "masteryCheck": "Matches 7 to a set of seven objects",
+   "prerequisites": [
+    "NS0.2"
+   ],
+   "kind": "tested",
+   "source": "Reception Baseline Assessment",
+   "scenes": [
+    "dots",
+    "counters"
+   ],
+   "animation": "A numeral card flies to the group with the same number of objects; the objects pulse once each as they are counted.",
+   "interaction": "Drags numeral cards onto matching groups."
+  },
+  {
+   "id": "NS0.5",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Compare two groups up to 10: more, fewer, the same, by matching as well as counting",
+   "visualModel": "Two rows of counters lined up side by side",
+   "masteryCheck": "Says which row has more when one row is spread out wider",
+   "prerequisites": [
+    "NS0.2"
+   ],
+   "kind": "tested",
+   "source": "EYFS Early Learning Goal (end of Reception)",
+   "scenes": [
+    "counters"
+   ],
+   "animation": "Two rows of cars line up one-to-one; the extra cars in the longer row are left without a partner and glow.",
+   "interaction": "Pairs up objects between two rows to decide which has more."
+  },
+  {
+   "id": "NS0.6",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Find one more and one less than a number to 10",
+   "visualModel": "Number track, staircase of cubes",
+   "masteryCheck": "Says one less than 7 is 6 instantly",
+   "prerequisites": [
+    "NS0.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "track"
+   ],
+   "animation": "A cube staircase: one cube drops on top to make one more, then lifts off for one less; the step heights show the change.",
+   "interaction": "Adds or removes one cube and names the new number."
+  },
+  {
+   "id": "NS0.7",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Understand that a quantity stays the same when it is moved or spread out (conservation)",
+   "visualModel": "Counters rearranged in front of the child",
+   "masteryCheck": "Knows 6 counters in a circle is still 6 without recounting",
+   "prerequisites": [
+    "NS0.2"
+   ],
+   "kind": "beyond",
+   "source": "Research evidence",
+   "scenes": [
+    "counters"
+   ],
+   "animation": "Six counters in a line spread into a big circle and then squeeze into a tight clump, with the count 6 staying fixed above them.",
+   "interaction": "Moves counters around, then predicts the number before checking."
+  },
+  {
+   "id": "AS0.1",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "See numbers to 5 as made of smaller parts (part-whole): 5 is 4 and 1, 3 and 2",
+   "visualModel": "Part-whole diagram, five-frame, fingers",
+   "masteryCheck": "Shows 5 as two parts in two different ways",
+   "prerequisites": [
+    "NS0.1"
+   ],
+   "kind": "tested",
+   "source": "EYFS Early Learning Goal (end of Reception)",
+   "scenes": [
+    "partwhole",
+    "counters"
+   ],
+   "animation": "Five counters sit in the whole circle, then slide apart into two part circles (4 and 1, then 3 and 2), then slide back together.",
+   "interaction": "Splits 5 counters into two parts in different ways."
+  },
+  {
+   "id": "AS0.2",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Recall number bonds to 5 automatically",
+   "visualModel": "Five-frame, hands behind back game",
+   "masteryCheck": "Answers 'I have 2, how many more to make 5?' within 3 seconds",
+   "prerequisites": [
+    "AS0.1"
+   ],
+   "kind": "tested",
+   "source": "EYFS Early Learning Goal (end of Reception)",
+   "scenes": [
+    "frame"
+   ],
+   "animation": "A five-frame shows 2 counters; the empty spaces glow and 3 ghost counters fade in to fill it.",
+   "interaction": "Fills the empty spaces and says how many were missing."
+  },
+  {
+   "id": "AS0.3",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Recall some bonds to 10, including doubles to 5+5",
+   "visualModel": "Ten-frame, Numicon-style shapes, domino doubles",
+   "masteryCheck": "Knows double 4 is 8 without counting",
+   "prerequisites": [
+    "AS0.2"
+   ],
+   "kind": "tested",
+   "source": "EYFS Early Learning Goal (end of Reception)",
+   "scenes": [
+    "frame",
+    "counters"
+   ],
+   "animation": "Identical towers of counters appear side by side like a mirror image: double 4 is two matching rows of 4 on a ten-frame.",
+   "interaction": "Builds doubles on a ten-frame and matches them to totals."
+  },
+  {
+   "id": "AS0.4",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Act out adding to and taking away from small groups in stories",
+   "visualModel": "Toy figures, story mats",
+   "masteryCheck": "Solves '3 ducks, 2 more come, how many?' with objects",
+   "prerequisites": [
+    "NS0.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "story",
+    "counters"
+   ],
+   "animation": "Three ducks swim on a pond, two more paddle in, and the scene freezes into counters on a mat.",
+   "interaction": "Acts out add-to and take-away stories with objects."
+  },
+  {
+   "id": "MD0.1",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Share objects fairly into equal groups and spot when a share is unfair",
+   "visualModel": "Plates and sweets, sharing circles",
+   "masteryCheck": "Shares 6 grapes between 2 plates and checks they are fair",
+   "prerequisites": [
+    "NS0.2"
+   ],
+   "kind": "tested",
+   "source": "EYFS Early Learning Goal (end of Reception)",
+   "scenes": [
+    "counters"
+   ],
+   "animation": "Grapes deal out one at a time to each plate in turn, round and round, until all are shared; plates are then compared side by side.",
+   "interaction": "Deals objects onto plates and checks fairness."
+  },
+  {
+   "id": "MD0.2",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Explore odd and even by pairing objects",
+   "visualModel": "Pairs of socks, two-row ten-frames",
+   "masteryCheck": "Says 7 cubes cannot all be paired up",
+   "prerequisites": [
+    "NS0.2"
+   ],
+   "kind": "tested",
+   "source": "EYFS Early Learning Goal (end of Reception)",
+   "scenes": [
+    "counters"
+   ],
+   "animation": "Socks pair up two by two in a line; with an odd number, one sock is left alone and wiggles.",
+   "interaction": "Pairs objects and sorts numbers into 'all paired' or 'one left over'."
+  },
+  {
+   "id": "AL0.1",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Copy, continue and create repeating patterns (ABAB, ABB, ABC)",
+   "visualModel": "Beads, coloured cubes, claps",
+   "masteryCheck": "Continues red-red-blue three more times",
+   "prerequisites": [],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "Beads slide onto a string in a pattern; the repeating unit gets a soft bracket and then copies itself along the string.",
+   "interaction": "Continues the pattern and creates their own."
+  },
+  {
+   "id": "GE0.1",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Name and describe familiar 2D and 3D shapes; build pictures from shapes",
+   "visualModel": "Pattern blocks, tangram pieces, junk modelling",
+   "masteryCheck": "Makes a house from a square and a triangle",
+   "prerequisites": [],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "Shapes glide together to build a house; then one triangle flips and turns to fit a gap.",
+   "interaction": "Drags shapes to fill a picture outline."
+  },
+  {
+   "id": "GE0.2",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use position words: in front, behind, on top, under, next to, between",
+   "visualModel": "Hide-and-find games, Bee-Bot style floor robot",
+   "masteryCheck": "Places a toy between two others on instruction",
+   "prerequisites": [],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "story"
+   ],
+   "animation": "A cat moves on, under, behind and between boxes, and each position word lights up as the cat lands.",
+   "interaction": "Moves the cat to the spoken position."
+  },
+  {
+   "id": "ME0.1",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Compare length, weight and capacity directly: longer, heavier, holds more",
+   "visualModel": "Balance scale, cups of water, ribbons",
+   "masteryCheck": "Uses a balance to say which of two objects is heavier",
+   "prerequisites": [],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "measure"
+   ],
+   "animation": "Two objects drop onto a balance and it tips; two ribbons line up at the same starting edge to show which is longer.",
+   "interaction": "Compares two objects on the balance or by lining them up."
+  },
+  {
+   "id": "ME0.2",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Sequence daily events with before, after, first, then, next",
+   "visualModel": "Picture cards of the day",
+   "masteryCheck": "Orders four routine pictures correctly",
+   "prerequisites": [],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "calendar"
+   ],
+   "animation": "Picture cards of the day slide into order on a timeline from sunrise to bedtime.",
+   "interaction": "Orders daily picture cards."
+  },
+  {
+   "id": "PS0.1",
+   "stage": 0,
+   "stageName": "Stage 0",
+   "ukYear": "Reception",
+   "age": "4-5",
+   "strand": "PS",
+   "strandName": "Reasoning & problem solving",
+   "objective": "Explain an idea in their own words when asked 'how do you know?'",
+   "visualModel": "Talk prompts, show-me with objects",
+   "masteryCheck": "Gives a reason, not just an answer",
+   "prerequisites": [],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "counters"
+   ],
+   "animation": "A friendly character shows an answer, then rewinds and shows how they know with objects.",
+   "interaction": "Records a spoken or drawn 'how I know'."
+  },
+  {
+   "id": "NS1.1",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Count to and across 100, forwards and backwards, from any number",
+   "visualModel": "Hundred square, bead string",
+   "masteryCheck": "Counts back from 63 to 48 without slips",
+   "prerequisites": [
+    "NS0.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "hundred",
+    "numline"
+   ],
+   "animation": "A spotlight walks across the hundred square; at 39 to 40 it jumps to the next row, showing the decade change. Then it walks backwards.",
+   "interaction": "Counts forwards and backwards by tapping the next square."
+  },
+  {
+   "id": "NS1.2",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Count in 2s, 5s and 10s",
+   "visualModel": "Hands (5s), pairs of shoes (2s), ten-frames (10s)",
+   "masteryCheck": "Counts in 5s to 50 and back",
+   "prerequisites": [
+    "NS1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "hundred",
+    "counters"
+   ],
+   "animation": "Pairs of shoes, hands of 5 and ten-frames appear in rows while the matching numbers on the hundred square light up in a pattern.",
+   "interaction": "Taps the next number in the count and watches the pattern grow."
+  },
+  {
+   "id": "NS1.3",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Read and write numerals to 100 and number words to 20",
+   "visualModel": "Numeral and word cards",
+   "masteryCheck": "Writes 'fifteen' and 15",
+   "prerequisites": [
+    "NS0.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "A number word floats up and morphs into its numeral, with the matching quantity in ten-frames below.",
+   "interaction": "Matches words, numerals and quantities."
+  },
+  {
+   "id": "NS1.4",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "See teen numbers as ten and some more (13 = 10 + 3)",
+   "visualModel": "Full ten-frame plus loose counters, rekenrek",
+   "masteryCheck": "Builds 16 as a full ten and 6 without counting in ones",
+   "prerequisites": [
+    "NS1.7"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "frame"
+   ],
+   "animation": "13 counters fall in; ten fill one frame exactly and then glow as one block, and the extra 3 sit in the next frame. The label morphs: 10 and 3, then 13.",
+   "interaction": "Builds teen numbers as a full ten and some more."
+  },
+  {
+   "id": "NS1.5",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Find one more and one less than any number to 100",
+   "visualModel": "Hundred square",
+   "masteryCheck": "Says one less than 70 is 69",
+   "prerequisites": [
+    "NS0.6",
+    "NS1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "hundred"
+   ],
+   "animation": "A number on the hundred square grows a +1 arrow to the right and a -1 arrow to the left, wrapping at row ends.",
+   "interaction": "Taps one more and one less of a target number."
+  },
+  {
+   "id": "NS1.6",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Show numbers with objects and on a number line; use equal to, more than, less than, most, least",
+   "visualModel": "Number line, cubes",
+   "masteryCheck": "Places 12 and 17 on a 0-20 line and says which is more",
+   "prerequisites": [
+    "NS1.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline",
+    "counters"
+   ],
+   "animation": "Two towers of cubes slide onto a number line at their numbers; the taller one is further along.",
+   "interaction": "Places numbers on a line and compares them."
+  },
+  {
+   "id": "NS1.7",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Subitise structured quantities up to 10 (ten-frame, dice, finger patterns)",
+   "visualModel": "Ten-frame flashes, rekenrek",
+   "masteryCheck": "Says 7 from a 1-second ten-frame flash",
+   "prerequisites": [
+    "NS0.1"
+   ],
+   "kind": "beyond",
+   "source": "Japan",
+   "scenes": [
+    "frame",
+    "rekenrek"
+   ],
+   "animation": "A ten-frame flashes 7 as a full row of 5 and 2 more; on replay the full row glows to show 5 and 2.",
+   "interaction": "Says the flashed number and shows it on the bead frame in one push."
+  },
+  {
+   "id": "AS1.1",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Know all number bonds to 10 fluently, in both orders",
+   "visualModel": "Ten-frame, part-whole model, bonds rainbow",
+   "masteryCheck": "Answers 10 = 6 + ? within 3 seconds, for every pair",
+   "prerequisites": [
+    "AS0.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "frame",
+    "partwhole"
+   ],
+   "animation": "A ten-frame holds 6 red; the 4 empty spaces fill with yellow. Then the frame flips through all bonds of 10 like a flip-book.",
+   "interaction": "Fills the frame to 10 and finds the missing part."
+  },
+  {
+   "id": "AS1.2",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Know and derive number bonds within 20 (14 = 9 + 5)",
+   "visualModel": "Two ten-frames, rekenrek",
+   "masteryCheck": "Explains 9 + 5 using a known fact",
+   "prerequisites": [
+    "AS1.1",
+    "NS1.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "frame"
+   ],
+   "animation": "9 and 5 sit on double ten-frames; one counter jumps across to fill the first ten, leaving 10 and 4.",
+   "interaction": "Uses a known fact to solve a teen bond."
+  },
+  {
+   "id": "AS1.3",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Read, write and interpret statements using +, - and =",
+   "visualModel": "Number sentences matched to pictures",
+   "masteryCheck": "Writes a number sentence for a picture story",
+   "prerequisites": [
+    "AS0.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "story",
+    "counters"
+   ],
+   "animation": "A picture story plays, then each object turns into a symbol: the groups become numbers, joining becomes +, the total becomes = and a number.",
+   "interaction": "Builds a number sentence from a picture by dragging symbols."
+  },
+  {
+   "id": "AS1.4",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Add and subtract one-digit and two-digit numbers within 20, including zero",
+   "visualModel": "Number line jumps, cubes",
+   "masteryCheck": "Solves 15 - 7 with a strategy, not counting all",
+   "prerequisites": [
+    "AS1.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline",
+    "frame"
+   ],
+   "animation": "15 sits on ten-frames; 7 counters fly away, first 5 from the loose part, then 2 from the full ten.",
+   "interaction": "Solves the problem on the model, then types it."
+  },
+  {
+   "id": "AS1.5",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Use the make-ten strategy to add across 10 (8 + 5 = 8 + 2 + 3)",
+   "visualModel": "Two ten-frames, cherry split diagram (Japanese sakuranbo keisan)",
+   "masteryCheck": "Explains 9 + 4 by moving 1 to make 10",
+   "prerequisites": [
+    "AS1.1",
+    "NS1.4"
+   ],
+   "kind": "beyond",
+   "source": "Japan",
+   "scenes": [
+    "frame",
+    "partwhole"
+   ],
+   "animation": "8 and 5 sit on two frames. The 5 splits on a cherry diagram into 2 and 3; the 2 slides over to complete the ten; the full ten glows; the answer is 10 + 3 = 13.",
+   "interaction": "Splits the second number on a cherry and drags the part that makes ten."
+  },
+  {
+   "id": "AS1.6",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Subtract back through 10 (13 - 5 = 13 - 3 - 2) or from 10 (13 - 5 = 10 - 5 + 3)",
+   "visualModel": "Ten-frames, number line",
+   "masteryCheck": "Solves 14 - 6 by splitting the 6",
+   "prerequisites": [
+    "AS1.5"
+   ],
+   "kind": "beyond",
+   "source": "Japan",
+   "scenes": [
+    "frame",
+    "partwhole",
+    "numline"
+   ],
+   "animation": "13 on frames. Take away 5: the 5 splits into 3 and 2; first 3 leave to reach exactly 10, then 2 more; a hop on the number line mirrors each step.",
+   "interaction": "Splits the number to subtract and hops back to 10 first."
+  },
+  {
+   "id": "AS1.7",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Solve missing-number problems such as 7 = ? - 9",
+   "visualModel": "Part-whole model, balance",
+   "masteryCheck": "Finds the missing number in ? + 4 = 11",
+   "prerequisites": [
+    "AS1.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "partwhole",
+    "bar"
+   ],
+   "animation": "A part-whole model with one part hidden behind a question mark; the whole and the known part pull apart to reveal the gap.",
+   "interaction": "Finds the hidden part by moving counters."
+  },
+  {
+   "id": "AS1.8",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Understand = as 'has the same value as', not 'the answer comes next'",
+   "visualModel": "Balance scale, equations written both ways round",
+   "masteryCheck": "Agrees that 8 = 5 + 3 and 4 + 4 = 5 + 3 are true",
+   "prerequisites": [
+    "AS1.3"
+   ],
+   "kind": "beyond",
+   "source": "Research evidence",
+   "scenes": [
+    "balance"
+   ],
+   "animation": "5 + 3 sits on one pan and 8 on the other, and the beam levels. Then 4 + 4 replaces 8 and it stays level: both sides have the same value.",
+   "interaction": "Loads both sides and makes the balance level."
+  },
+  {
+   "id": "AS1.9",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Solve one-step word problems by drawing them, including a simple bar model",
+   "visualModel": "Bar model (Singapore), sketches",
+   "masteryCheck": "Draws a bar for 'Sam has 6, Ali has 3 more'",
+   "prerequisites": [
+    "AS1.4"
+   ],
+   "kind": "beyond",
+   "source": "Singapore",
+   "scenes": [
+    "story",
+    "bar"
+   ],
+   "animation": "Sam's 6 apples line up and shrink into a bar; Ali's apples line up beside them, longer by 3, and become a longer bar.",
+   "interaction": "Draws bars from objects and labels the parts."
+  },
+  {
+   "id": "MD1.1",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Solve one-step multiplication and division problems using objects, pictures and arrays",
+   "visualModel": "Arrays of counters, egg boxes",
+   "masteryCheck": "Makes 3 groups of 4 and finds the total",
+   "prerequisites": [
+    "NS1.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "array",
+    "counters"
+   ],
+   "animation": "Eggs drop into 3 rows of 4 in a box; each row lights up in turn as the count goes 4, 8, 12.",
+   "interaction": "Builds equal groups and arrays."
+  },
+  {
+   "id": "MD1.2",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Double and halve numbers to 20",
+   "visualModel": "Mirror, ten-frames",
+   "masteryCheck": "Knows double 7 and half of 14",
+   "prerequisites": [
+    "AS0.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "counters"
+   ],
+   "animation": "A mirror slides beside 7 counters and creates a copy; then a group of 14 splits down the middle into two equal halves.",
+   "interaction": "Doubles with the mirror and halves by splitting."
+  },
+  {
+   "id": "FR1.1",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Recognise a half as one of two equal parts of a shape, object or quantity",
+   "visualModel": "Folding paper, sharing counters",
+   "masteryCheck": "Says whether a shape is cut into halves or not",
+   "prerequisites": [
+    "MD0.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "A paper square folds in half; the two halves lie exactly on top of each other. An unequal cut does not match and wobbles.",
+   "interaction": "Folds and cuts shapes, then checks if the parts match."
+  },
+  {
+   "id": "FR1.2",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Recognise a quarter as one of four equal parts",
+   "visualModel": "Folding paper, pizza pictures",
+   "masteryCheck": "Finds a quarter of 8 counters",
+   "prerequisites": [
+    "FR1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "A pizza is cut in half and then half again; four equal slices spread apart and one lights up.",
+   "interaction": "Cuts shapes and groups into four equal parts."
+  },
+  {
+   "id": "ME1.1",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Compare, describe and measure length, mass, capacity and time, starting with non-standard units",
+   "visualModel": "Cubes, hand spans, balance",
+   "masteryCheck": "Measures a book in cubes and compares two books",
+   "prerequisites": [
+    "ME0.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "measure"
+   ],
+   "animation": "Cubes snap along a pencil one by one, counting up; the same cubes then measure a book.",
+   "interaction": "Measures objects with cubes."
+  },
+  {
+   "id": "ME1.2",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Recognise UK coins and notes and their values",
+   "visualModel": "Real or play coins",
+   "masteryCheck": "Picks out the 20p coin",
+   "prerequisites": [],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "money"
+   ],
+   "animation": "Coins grow to show their value as small stacks of 1p coins (5p becomes 5 pennies).",
+   "interaction": "Sorts coins and picks a named coin."
+  },
+  {
+   "id": "ME1.3",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Know days of the week, months and seasons; sequence events",
+   "visualModel": "Calendar, picture timeline",
+   "masteryCheck": "Names the day after Thursday",
+   "prerequisites": [
+    "ME0.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "calendar"
+   ],
+   "animation": "A week strip rolls like a wheel; the days cycle back to Monday. Seasons orbit around a year circle.",
+   "interaction": "Puts days and months in order on the wheel."
+  },
+  {
+   "id": "ME1.4",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Tell the time to the hour and half past; draw the hands",
+   "visualModel": "Geared clock",
+   "masteryCheck": "Sets a clock to half past 3",
+   "prerequisites": [
+    "ME1.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "clock"
+   ],
+   "animation": "The minute hand sweeps a full circle while the hour hand steps to the next number; half past shows the minute hand painting half the face.",
+   "interaction": "Turns the hands to the hour or half past."
+  },
+  {
+   "id": "GE1.1",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Recognise and name 2D shapes (rectangle, square, circle, triangle) and 3D shapes (cuboid, cube, pyramid, sphere)",
+   "visualModel": "Shape sorting, feely bag",
+   "masteryCheck": "Finds the cube from a feely bag by touch",
+   "prerequisites": [
+    "GE0.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes",
+    "solids"
+   ],
+   "animation": "A cube spins, then its faces peel off and lie flat as squares; a sphere rolls and a cube does not.",
+   "interaction": "Sorts shapes and solids and matches faces."
+  },
+  {
+   "id": "GE1.2",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Describe position, direction and movement, including whole, half, quarter and three-quarter turns",
+   "visualModel": "Body turns, floor robot",
+   "masteryCheck": "Turns a quarter turn on instruction",
+   "prerequisites": [
+    "GE0.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "An arrow turns quarter, half, three-quarter and whole turns, leaving a coloured sweep showing how much of the circle was turned.",
+   "interaction": "Turns an object by the spoken amount."
+  },
+  {
+   "id": "AL1.1",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Spot and continue number patterns on a hundred square",
+   "visualModel": "Coloured hundred square",
+   "masteryCheck": "Continues 5, 10, 15 and says the rule",
+   "prerequisites": [
+    "NS1.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "hundred"
+   ],
+   "animation": "Counting in 5s paints the hundred square and the painted squares form two straight columns.",
+   "interaction": "Predicts the next painted square."
+  },
+  {
+   "id": "PS1.1",
+   "stage": 1,
+   "stageName": "Stage 1",
+   "ukYear": "Year 1",
+   "age": "5-6",
+   "strand": "PS",
+   "strandName": "Reasoning & problem solving",
+   "objective": "Draw a picture of a problem and explain thinking using 'because'",
+   "visualModel": "Free sketching, bar model",
+   "masteryCheck": "Explains an answer with a drawing",
+   "prerequisites": [
+    "PS0.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "story",
+    "bar"
+   ],
+   "animation": "A word problem is acted out; the scene freezes and is redrawn as a simple sketch beside the answer.",
+   "interaction": "Draws the problem with simple shapes."
+  },
+  {
+   "id": "NS2.1",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Count in steps of 2, 3 and 5 from 0, and in 10s from any number",
+   "visualModel": "Number line, bead string",
+   "masteryCheck": "Counts on in 10s from 23",
+   "prerequisites": [
+    "NS1.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline",
+    "hundred"
+   ],
+   "animation": "A kangaroo hops in 3s along a number line, leaving jump arcs; counting in 10s from 23 slides straight down the hundred square.",
+   "interaction": "Predicts where the next hop lands."
+  },
+  {
+   "id": "NS2.2",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Know the value of each digit in a two-digit number; partition in different ways (34 = 30 + 4 = 20 + 14)",
+   "visualModel": "Base-10 blocks, place-value counters, arrow cards",
+   "masteryCheck": "Shows 43 in two different ways",
+   "prerequisites": [
+    "NS1.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "base10"
+   ],
+   "animation": "34 is built from 3 rods and 4 cubes. One rod breaks into 10 cubes, making 2 rods and 14 cubes: still 34.",
+   "interaction": "Builds a number and then partitions it a second way."
+  },
+  {
+   "id": "NS2.3",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Compare and order numbers to 100 using <, > and =",
+   "visualModel": "Base-10 blocks side by side",
+   "masteryCheck": "Writes 47 < 74 and explains why",
+   "prerequisites": [
+    "NS2.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "base10"
+   ],
+   "animation": "47 and 74 are built side by side; the rods line up first, so the side with more tens wins, whatever the ones.",
+   "interaction": "Compares two numbers by building them, then places the < or > sign."
+  },
+  {
+   "id": "NS2.4",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Place and estimate numbers on a 0-100 number line",
+   "visualModel": "Empty number line",
+   "masteryCheck": "Marks 70 roughly in the right place on a blank 0-100 line",
+   "prerequisites": [
+    "NS2.2"
+   ],
+   "kind": "beyond",
+   "source": "Research evidence",
+   "scenes": [
+    "numline"
+   ],
+   "animation": "A 0-100 line zooms; halfway is marked 50, then the line splits into tenths; 70 slides into place.",
+   "interaction": "Drags numbers onto an empty line and sees how close they are."
+  },
+  {
+   "id": "NS2.5",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Read and write numbers to 100 in words",
+   "visualModel": "Word cards",
+   "masteryCheck": "Writes 'sixty-eight'",
+   "prerequisites": [
+    "NS1.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "base10"
+   ],
+   "animation": "'Sixty-eight' is spoken and builds 6 rods and 8 cubes as each part of the word is said.",
+   "interaction": "Writes the word for a built number."
+  },
+  {
+   "id": "AS2.1",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Recall addition and subtraction facts to 20 fluently; derive related facts to 100 (3 + 4 = 7 so 30 + 40 = 70)",
+   "visualModel": "Ten-frames, base-10 tens rods",
+   "masteryCheck": "Answers 20 mixed facts in one minute",
+   "prerequisites": [
+    "AS1.2",
+    "AS1.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "frame",
+    "base10"
+   ],
+   "animation": "3 + 4 = 7 in cubes, then each cube grows into a ten rod: 30 + 40 = 70.",
+   "interaction": "Turns a known fact into a tens fact."
+  },
+  {
+   "id": "AS2.2",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Add and subtract: 2-digit and 1-digit, 2-digit and tens, two 2-digit numbers, three 1-digit numbers",
+   "visualModel": "Base-10 blocks, number line",
+   "masteryCheck": "Solves 46 + 27 and explains the exchange",
+   "prerequisites": [
+    "AS2.1",
+    "NS2.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "base10"
+   ],
+   "animation": "46 + 27: ones join to make 13; ten of them snap into a new rod (exchange) and move to the tens.",
+   "interaction": "Adds and subtracts with blocks, doing the exchange by hand."
+  },
+  {
+   "id": "AS2.3",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Know addition is commutative and subtraction is not",
+   "visualModel": "Cubes in two colours",
+   "masteryCheck": "Says why 9 - 3 is not the same as 3 - 9",
+   "prerequisites": [
+    "AS1.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "counters",
+    "numline"
+   ],
+   "animation": "3 + 9 and 9 + 3 land on the same point of the line. 9 - 3 works, but 3 - 9 runs out of counters.",
+   "interaction": "Tests whether swapping numbers changes the answer."
+  },
+  {
+   "id": "AS2.4",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Use inverse relationships and fact families to check calculations",
+   "visualModel": "Part-whole triangle",
+   "masteryCheck": "Writes all four facts for 6, 8, 14",
+   "prerequisites": [
+    "AS2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "partwhole"
+   ],
+   "animation": "A part-whole triangle with 6, 8 and 14 spins to show four facts: two additions and two subtractions.",
+   "interaction": "Writes all four facts from one picture."
+  },
+  {
+   "id": "AS2.5",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Know pairs of multiples of 10 that make 100 (70 + 30)",
+   "visualModel": "Ten tens rods, 100 bead string",
+   "masteryCheck": "Answers 100 = 40 + ? instantly",
+   "prerequisites": [
+    "AS1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "base10"
+   ],
+   "animation": "Ten rods make 100; 7 rods slide left and 3 right, showing 70 + 30.",
+   "interaction": "Finds the partner to 100."
+  },
+  {
+   "id": "AS2.6",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Solve two-step word problems with a bar model (part-whole and comparison)",
+   "visualModel": "Bar model",
+   "masteryCheck": "Draws and solves a two-step comparison problem",
+   "prerequisites": [
+    "AS1.9",
+    "AS2.2"
+   ],
+   "kind": "beyond",
+   "source": "Singapore",
+   "scenes": [
+    "story",
+    "bar"
+   ],
+   "animation": "A two-step story plays; the bars build in two steps, the first answer feeding the second bar.",
+   "interaction": "Builds a two-step bar model and labels the unknown."
+  },
+  {
+   "id": "MD2.1",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Recall the 2, 5 and 10 times tables; recognise odd and even numbers",
+   "visualModel": "Arrays, counting stick",
+   "masteryCheck": "Answers mixed ×2, ×5, ×10 facts in 3 seconds each",
+   "prerequisites": [
+    "NS2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "array",
+    "hundred"
+   ],
+   "animation": "Hands of 5 appear one by one in a row while the count of 5s climbs; 2s light every other square.",
+   "interaction": "Answers facts and sees the array for each one."
+  },
+  {
+   "id": "MD2.2",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Understand multiplication as repeated addition and arrays; know it is commutative",
+   "visualModel": "Arrays, number line jumps",
+   "masteryCheck": "Shows 4 × 3 = 3 × 4 with an array",
+   "prerequisites": [
+    "MD1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "array"
+   ],
+   "animation": "4 rows of 3 rotate a quarter turn to become 3 rows of 4; the total stays 12.",
+   "interaction": "Builds an array and rotates it."
+  },
+  {
+   "id": "MD2.3",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Understand division as sharing and as grouping; write ×, ÷ and = statements",
+   "visualModel": "Counters in groups",
+   "masteryCheck": "Shows 12 ÷ 3 both as sharing and grouping",
+   "prerequisites": [
+    "MD1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "counters"
+   ],
+   "animation": "12 sweets share into 3 bags one at a time (sharing), then group into bags of 3 (grouping); both show 4.",
+   "interaction": "Uses both sharing and grouping on the same problem."
+  },
+  {
+   "id": "MD2.4",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Solve multiplication and division problems in context",
+   "visualModel": "Bar model, arrays",
+   "masteryCheck": "Solves 'How many bags of 5 from 30 apples?'",
+   "prerequisites": [
+    "MD2.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "story",
+    "array"
+   ],
+   "animation": "30 apples drop into bags of 5, with each full bag counted 5, 10, 15 ...",
+   "interaction": "Chooses grouping or sharing for a story."
+  },
+  {
+   "id": "MD2.5",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Know all times tables to 9 × 9 (Japanese kuku, Grade 2)",
+   "visualModel": "Arrays, chant cards, area grid",
+   "masteryCheck": "Answers 7 × 8 within 3 seconds",
+   "prerequisites": [
+    "MD2.2"
+   ],
+   "kind": "beyond",
+   "source": "Japan",
+   "scenes": [
+    "array",
+    "areamodel"
+   ],
+   "animation": "7 x 8 appears as an array split into 5 x 8 and 2 x 8; the parts glow and add.",
+   "interaction": "Builds a times-table fact as an array and splits it into easier facts."
+  },
+  {
+   "id": "FR2.1",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Find and name 1/3, 1/4, 2/4 and 3/4 of a length, shape or set; know 2/4 = 1/2",
+   "visualModel": "Fraction strips, folded paper, counters",
+   "masteryCheck": "Finds 3/4 of 12 counters",
+   "prerequisites": [
+    "FR1.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions",
+    "counters"
+   ],
+   "animation": "12 counters arrange into 4 equal groups; 3 of the groups light up. Then a strip folds into quarters and 2/4 covers exactly 1/2.",
+   "interaction": "Finds fractions of shapes and sets."
+  },
+  {
+   "id": "ME2.1",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Choose units and measure length (cm, m), mass (kg, g), temperature (°C) and capacity (l, ml)",
+   "visualModel": "Rulers, scales, jugs, thermometer",
+   "masteryCheck": "Reads a scale to the nearest labelled unit",
+   "prerequisites": [
+    "ME1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "measure"
+   ],
+   "animation": "A ruler slides under an object from the 0 mark; the end lines up and the reading pops up. Scales and jugs work the same way.",
+   "interaction": "Measures and reads the scales."
+  },
+  {
+   "id": "ME2.2",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Compare and order lengths, mass and capacity using <, > and =",
+   "visualModel": "Measuring tools",
+   "masteryCheck": "Orders three jugs by capacity",
+   "prerequisites": [
+    "ME2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "measure"
+   ],
+   "animation": "Three jugs pour into identical glasses side by side so their heights can be compared.",
+   "interaction": "Orders objects by measurement."
+  },
+  {
+   "id": "ME2.3",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Use £ and p; combine coins to make amounts; find change",
+   "visualModel": "Coins, shop role play",
+   "masteryCheck": "Makes 37p in two ways; finds change from 50p",
+   "prerequisites": [
+    "ME1.2",
+    "AS2.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "money"
+   ],
+   "animation": "37p is built from coins; then 20p, 10p, 5p and 2p swap for other coins making the same total.",
+   "interaction": "Pays an amount in two ways and gives change."
+  },
+  {
+   "id": "ME2.4",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Tell time to 5 minutes, including quarter past and quarter to; know minutes in an hour, hours in a day",
+   "visualModel": "Geared clock, counting in 5s",
+   "masteryCheck": "Reads 10:25 on an analogue clock",
+   "prerequisites": [
+    "ME1.4",
+    "NS2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "clock"
+   ],
+   "animation": "The minute hand sweeps in 5-minute jumps while a counter counts in 5s. Quarter past paints a quarter of the face.",
+   "interaction": "Sets the clock to a spoken time."
+  },
+  {
+   "id": "GE2.1",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Describe 2D shapes by sides and vertical line symmetry",
+   "visualModel": "Mirrors, folding",
+   "masteryCheck": "Counts sides and finds the mirror line",
+   "prerequisites": [
+    "GE1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A mirror line slides across a shape; the shape folds over the line and matches exactly, or does not.",
+   "interaction": "Finds lines of symmetry by folding."
+  },
+  {
+   "id": "GE2.2",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Describe 3D shapes by edges, vertices and faces",
+   "visualModel": "Real solids, straws and putty",
+   "masteryCheck": "Says a cube has 8 vertices",
+   "prerequisites": [
+    "GE1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "solids"
+   ],
+   "animation": "A cube spins with its edges glowing one by one, then its vertices pulse, then its faces fill with colour.",
+   "interaction": "Counts edges, vertices and faces by tapping them."
+  },
+  {
+   "id": "GE2.3",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Describe rotations as clockwise and anticlockwise turns; know a quarter turn is a right angle",
+   "visualModel": "Floor robot, body turns",
+   "masteryCheck": "Turns a shape a quarter turn clockwise",
+   "prerequisites": [
+    "GE1.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A shape turns clockwise like the clock hands; a quarter turn leaves a right-angle corner mark.",
+   "interaction": "Turns shapes clockwise or anticlockwise."
+  },
+  {
+   "id": "GE2.4",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Compose and split shapes; mentally rotate and fit shapes (tangrams, pentominoes)",
+   "visualModel": "Tangrams, pentominoes, digital puzzles",
+   "masteryCheck": "Completes a tangram outline",
+   "prerequisites": [
+    "GE0.1"
+   ],
+   "kind": "beyond",
+   "source": "Japan",
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "Tangram pieces fly into an outline; one piece spins and flips until it fits.",
+   "interaction": "Solves tangram and pentomino puzzles."
+  },
+  {
+   "id": "ST2.1",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Read and make tally charts, pictograms, block diagrams and tables",
+   "visualModel": "Pictograms with picture keys",
+   "masteryCheck": "Answers 'how many more' questions from a pictogram",
+   "prerequisites": [
+    "NS2.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Pets walk into a pictogram row by row; tallies are scratched, then bundled into gates of 5.",
+   "interaction": "Builds a pictogram from objects and answers questions."
+  },
+  {
+   "id": "AL2.1",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Solve missing-number sentences with a box as the unknown (? + 7 = 15)",
+   "visualModel": "Balance, bar model",
+   "masteryCheck": "Finds the box in 20 - ? = 13",
+   "prerequisites": [
+    "AS1.7"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "balance",
+    "bar"
+   ],
+   "animation": "? + 7 = 15 sits on a balance; 7 is taken from both sides and the box is left equal to 8.",
+   "interaction": "Finds the unknown by balancing."
+  },
+  {
+   "id": "PS2.1",
+   "stage": 2,
+   "stageName": "Stage 2",
+   "ukYear": "Year 2",
+   "age": "6-7",
+   "strand": "PS",
+   "strandName": "Reasoning & problem solving",
+   "objective": "Reason about always / sometimes / never statements",
+   "visualModel": "Sorting cards",
+   "masteryCheck": "Decides 'odd + odd is always even' and shows why",
+   "prerequisites": [
+    "PS1.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "counters"
+   ],
+   "animation": "Odd towers (with one sticking-out cube) join in pairs; the two loose cubes always click together.",
+   "interaction": "Tests statements with models."
+  },
+  {
+   "id": "NS3.1",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Count in 4s, 8s, 50s and 100s; find 10 or 100 more or less",
+   "visualModel": "Counting stick, place-value chart",
+   "masteryCheck": "Says 100 more than 947",
+   "prerequisites": [
+    "NS2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline",
+    "hundred"
+   ],
+   "animation": "A number gains 100 more: a hundred flat drops onto its blocks and only the hundreds digit changes.",
+   "interaction": "Adds or takes 10 or 100 and sees which digit changes."
+  },
+  {
+   "id": "NS3.2",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Know place value in three-digit numbers; compare and order to 1000",
+   "visualModel": "Base-10 blocks, place-value counters",
+   "masteryCheck": "Shows 305 with counters and explains the zero",
+   "prerequisites": [
+    "NS2.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "base10",
+    "pvchart"
+   ],
+   "animation": "305 is built with 3 flats and 5 cubes; the empty tens column glows to show what the zero means.",
+   "interaction": "Builds and compares three-digit numbers."
+  },
+  {
+   "id": "NS3.3",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Read and write numbers to 1000 in numerals and words",
+   "visualModel": "Place-value chart",
+   "masteryCheck": "Writes 'six hundred and eight'",
+   "prerequisites": [
+    "NS3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Each part of 'six hundred and eight' drops into its column.",
+   "interaction": "Writes numbers from blocks and words."
+  },
+  {
+   "id": "NS3.4",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Show numbers to 1000 on a soroban (Japanese abacus)",
+   "visualModel": "Soroban, digital abacus",
+   "masteryCheck": "Sets 472 on a soroban",
+   "prerequisites": [
+    "NS3.2"
+   ],
+   "kind": "beyond",
+   "source": "Japan",
+   "scenes": [
+    "soroban"
+   ],
+   "animation": "Beads flick up and down to set 472; the heaven bead counts 5.",
+   "interaction": "Sets numbers on the soroban."
+  },
+  {
+   "id": "AS3.1",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Add and subtract mentally: a three-digit number and ones, tens or hundreds",
+   "visualModel": "Place-value chart",
+   "masteryCheck": "Solves 456 + 30 mentally",
+   "prerequisites": [
+    "NS3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "base10"
+   ],
+   "animation": "456 + 30: three rods slide in; only the tens column changes.",
+   "interaction": "Solves mental additions with blocks shown faintly."
+  },
+  {
+   "id": "AS3.2",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Use column addition and subtraction up to three digits, with exchanging",
+   "visualModel": "Place-value counters beside the written column",
+   "masteryCheck": "Solves 503 - 267 and explains each exchange",
+   "prerequisites": [
+    "AS2.2",
+    "NS3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "base10",
+    "pvchart"
+   ],
+   "animation": "503 - 267: with no tens to exchange, a hundred flat breaks into ten rods and one rod breaks into ten ones. Each exchange appears in the written column at the same time.",
+   "interaction": "Does the column method with counters synced to the written digits."
+  },
+  {
+   "id": "AS3.3",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Estimate answers and use inverse operations to check",
+   "visualModel": "Rounding on a number line",
+   "masteryCheck": "Estimates 298 + 405 as about 700",
+   "prerequisites": [
+    "AS3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "298 slides to 300 and 405 to 400, and the estimate appears next to the exact answer.",
+   "interaction": "Estimates first, then checks."
+  },
+  {
+   "id": "AS3.4",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Solve missing-number and multi-step problems",
+   "visualModel": "Bar model",
+   "masteryCheck": "Solves a two-step money problem",
+   "prerequisites": [
+    "AS2.6"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar"
+   ],
+   "animation": "A multi-step problem builds bar by bar; the unknown is a question-marked bar.",
+   "interaction": "Builds bars for multi-step stories."
+  },
+  {
+   "id": "MD3.1",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Recall the 3, 4 and 8 times tables",
+   "visualModel": "Arrays; doubling 2s to 4s to 8s",
+   "masteryCheck": "Answers mixed ×3, ×4, ×8 facts in 3 seconds each",
+   "prerequisites": [
+    "MD2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "array"
+   ],
+   "animation": "An array of 2s doubles to 4s, then to 8s, the rows copying themselves.",
+   "interaction": "Uses doubling to find x4 and x8 facts."
+  },
+  {
+   "id": "MD3.2",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Multiply a two-digit by a one-digit number, mental to formal",
+   "visualModel": "Area model, base-10 arrays",
+   "masteryCheck": "Solves 23 × 4 with an area model",
+   "prerequisites": [
+    "MD3.1",
+    "NS3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "areamodel",
+    "base10"
+   ],
+   "animation": "23 x 4: four rows of 2 rods and 3 cubes; the rods and cubes separate into 80 and 12, which add.",
+   "interaction": "Splits the rectangle and fills the parts."
+  },
+  {
+   "id": "MD3.3",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Divide a two-digit by a one-digit number mentally and with jottings",
+   "visualModel": "Place-value counters shared out",
+   "masteryCheck": "Solves 48 ÷ 4",
+   "prerequisites": [
+    "MD3.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "48 counters share into 4 groups: tens first, then ones.",
+   "interaction": "Shares place-value counters."
+  },
+  {
+   "id": "MD3.4",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Solve scaling and correspondence problems (3 hats and 4 coats make 12 outfits)",
+   "visualModel": "Tables, tree sketches",
+   "masteryCheck": "Lists all outfits systematically",
+   "prerequisites": [
+    "MD2.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "story"
+   ],
+   "animation": "3 hats and 4 coats combine; each hat draws lines to every coat, making a grid of 12 outfits.",
+   "interaction": "Lists all combinations in a table."
+  },
+  {
+   "id": "FR3.1",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Count up and down in tenths; know tenths come from dividing by 10",
+   "visualModel": "Fraction strips in tenths, number line",
+   "masteryCheck": "Counts 7/10, 8/10, 9/10, 1",
+   "prerequisites": [
+    "FR2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions",
+    "numline"
+   ],
+   "animation": "A whole strip splits into 10 parts; tenths hop along the line to 10/10, which is 1.",
+   "interaction": "Counts in tenths on the line."
+  },
+  {
+   "id": "FR3.2",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Find unit and non-unit fractions of a set of objects",
+   "visualModel": "Bar model, counters",
+   "masteryCheck": "Finds 2/5 of 20",
+   "prerequisites": [
+    "FR2.1",
+    "MD3.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar",
+    "counters"
+   ],
+   "animation": "20 counters drop into a bar split in 5; two parts light up showing 8.",
+   "interaction": "Finds fractions of amounts with the bar."
+  },
+  {
+   "id": "FR3.3",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Place fractions on a number line and treat them as numbers",
+   "visualModel": "Number line, fraction strips",
+   "masteryCheck": "Marks 3/4 between 0 and 1",
+   "prerequisites": [
+    "FR2.1"
+   ],
+   "kind": "beyond",
+   "source": "Research evidence",
+   "scenes": [
+    "numline",
+    "fractions"
+   ],
+   "animation": "Fraction strips lie on a number line; the ends of the strips become points like 3/4.",
+   "interaction": "Places fractions on a number line."
+  },
+  {
+   "id": "FR3.4",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Recognise equivalent fractions with small denominators",
+   "visualModel": "Fraction wall",
+   "masteryCheck": "Shows 2/6 = 1/3 on a fraction wall",
+   "prerequisites": [
+    "FR3.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "1/3 lies on the fraction wall; two 1/6 pieces slide under it and match exactly.",
+   "interaction": "Finds equivalent fractions on the wall."
+  },
+  {
+   "id": "FR3.5",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Add and subtract fractions with the same denominator within one whole",
+   "visualModel": "Fraction strips",
+   "masteryCheck": "Solves 2/7 + 3/7",
+   "prerequisites": [
+    "FR3.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "2/7 and 3/7 strips join end to end into 5/7.",
+   "interaction": "Adds and subtracts strips."
+  },
+  {
+   "id": "FR3.6",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Compare and order unit fractions and fractions with the same denominator",
+   "visualModel": "Fraction wall",
+   "masteryCheck": "Explains why 1/8 < 1/5",
+   "prerequisites": [
+    "FR3.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "A cake cut into 8 and one cut into 5: the 1/8 slice is visibly smaller.",
+   "interaction": "Orders unit fractions by size."
+  },
+  {
+   "id": "ME3.1",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Measure, compare, add and subtract lengths (m, cm, mm), mass and capacity",
+   "visualModel": "Rulers, scales, jugs",
+   "masteryCheck": "Adds 1 m 20 cm and 45 cm",
+   "prerequisites": [
+    "ME2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "measure"
+   ],
+   "animation": "1 m 20 cm and 45 cm lie end to end on a metre stick.",
+   "interaction": "Adds lengths on the stick."
+  },
+  {
+   "id": "ME3.2",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Measure the perimeter of simple 2D shapes",
+   "visualModel": "String round a shape, squared paper",
+   "masteryCheck": "Finds the perimeter of a rectangle",
+   "prerequisites": [
+    "ME3.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes",
+    "measure"
+   ],
+   "animation": "A string traces round a rectangle, then pulls straight along a ruler.",
+   "interaction": "Traces and measures perimeters."
+  },
+  {
+   "id": "ME3.3",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Add and subtract amounts of money and give change",
+   "visualModel": "Coins, shop role play",
+   "masteryCheck": "Finds change from £5 for £3.65",
+   "prerequisites": [
+    "ME2.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "money"
+   ],
+   "animation": "£5 pays for £3.65; coins count up from £3.65 to £5.",
+   "interaction": "Counts up to give change."
+  },
+  {
+   "id": "ME3.4",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Tell time on analogue clocks with Roman numerals I-XII and on 12- and 24-hour clocks; use seconds, am/pm, days in each month",
+   "visualModel": "Clocks, calendar",
+   "masteryCheck": "Reads a time on a Roman-numeral clock",
+   "prerequisites": [
+    "ME2.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "clock",
+    "calendar"
+   ],
+   "animation": "A 24-hour ring wraps round the 12-hour clock; afternoon numbers light up.",
+   "interaction": "Matches analogue, 12-hour and 24-hour times."
+  },
+  {
+   "id": "GE3.1",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Draw 2D shapes and make 3D shapes",
+   "visualModel": "Squared paper, modelling kits",
+   "masteryCheck": "Builds a cuboid from straws",
+   "prerequisites": [
+    "GE2.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "solids"
+   ],
+   "animation": "Straws and putty assemble into a cuboid edge by edge.",
+   "interaction": "Builds 3D shapes."
+  },
+  {
+   "id": "GE3.2",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Recognise angles as turns and as properties of shapes; identify right angles and angles greater or smaller",
+   "visualModel": "Right-angle checker from folded paper",
+   "masteryCheck": "Sorts angles against a right-angle checker",
+   "prerequisites": [
+    "GE2.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "angles"
+   ],
+   "animation": "An arm turns from a point and the sweep grows; a right-angle corner checker snaps on at a quarter turn.",
+   "interaction": "Turns arms to make angles bigger or smaller than a right angle."
+  },
+  {
+   "id": "GE3.3",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Identify horizontal, vertical, perpendicular and parallel lines",
+   "visualModel": "Geoboards, grid paper",
+   "masteryCheck": "Finds parallel lines in a classroom photo",
+   "prerequisites": [
+    "GE3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "Train tracks slide forever and never meet (parallel); two roads cross with a square corner (perpendicular).",
+   "interaction": "Sorts pairs of lines."
+  },
+  {
+   "id": "ST3.1",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Interpret and present data in bar charts, pictograms and tables",
+   "visualModel": "Bar charts with scales in 2s, 5s, 10s",
+   "masteryCheck": "Answers two-step questions from a bar chart",
+   "prerequisites": [
+    "ST2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Pictogram icons stack and melt into a bar chart with a scale in 2s.",
+   "interaction": "Builds a bar chart and reads values between marks."
+  },
+  {
+   "id": "AL3.1",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Describe a pattern or rule in words and use a symbol for an unknown",
+   "visualModel": "Growing patterns with cubes",
+   "masteryCheck": "Says how many cubes in the 10th pattern",
+   "prerequisites": [
+    "AL2.1"
+   ],
+   "kind": "beyond",
+   "source": "Japan",
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A growing cube pattern adds one L-shape each step; a table fills alongside.",
+   "interaction": "Predicts and builds the next steps."
+  },
+  {
+   "id": "PS3.1",
+   "stage": 3,
+   "stageName": "Stage 3",
+   "ukYear": "Year 3",
+   "age": "7-8",
+   "strand": "PS",
+   "strandName": "Reasoning & problem solving",
+   "objective": "Try several approaches to a non-routine problem and compare them (structured problem solving)",
+   "visualModel": "Japanese lesson structure: problem, try, share, compare",
+   "masteryCheck": "Finds two methods and says which is more efficient",
+   "prerequisites": [
+    "PS2.1"
+   ],
+   "kind": "beyond",
+   "source": "Japan",
+   "scenes": [
+    "story"
+   ],
+   "animation": "Three children solve the same problem with different pictures; the pictures line up to compare them.",
+   "interaction": "Solves a problem two ways and picks the neatest."
+  },
+  {
+   "id": "NS4.1",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Count in multiples of 6, 7, 9, 25 and 1000; find 1000 more or less",
+   "visualModel": "Counting stick",
+   "masteryCheck": "Counts in 25s to 300",
+   "prerequisites": [
+    "NS3.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "Jumps of 25 on a line make four jumps per 100, like coins in £1.",
+   "interaction": "Predicts landing points."
+  },
+  {
+   "id": "NS4.2",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Count backwards through zero to include negative numbers",
+   "visualModel": "Vertical number line, thermometer",
+   "masteryCheck": "Says 3 steps below 1 is -2",
+   "prerequisites": [
+    "NS4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "A thermometer cools; the red line drops past 0 into negative numbers.",
+   "interaction": "Counts back past zero."
+  },
+  {
+   "id": "NS4.3",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Know place value in four-digit numbers; order and compare beyond 1000",
+   "visualModel": "Place-value counters, chart",
+   "masteryCheck": "Orders 4087, 4870, 4780",
+   "prerequisites": [
+    "NS3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Thousands, hundreds, tens and ones columns fill; numbers are compared column by column from the left.",
+   "interaction": "Orders four-digit numbers."
+  },
+  {
+   "id": "NS4.4",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Round any number to the nearest 10, 100 or 1000",
+   "visualModel": "Number line between two multiples",
+   "masteryCheck": "Rounds 3650 to the nearest 1000",
+   "prerequisites": [
+    "NS4.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "3650 sits between 3000 and 4000; it rolls downhill to the nearer thousand.",
+   "interaction": "Rounds by placing on a hill-shaped line."
+  },
+  {
+   "id": "NS4.5",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Read Roman numerals to 100 and know how the system changed over time",
+   "visualModel": "Clock faces, chapter numbers",
+   "masteryCheck": "Reads XLIV as 44",
+   "prerequisites": [
+    "ME3.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Roman symbols stack: X X X X then turn into XL with a subtracting arrow.",
+   "interaction": "Builds numbers with Roman symbols."
+  },
+  {
+   "id": "AS4.1",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Use column addition and subtraction with up to four digits",
+   "visualModel": "Place-value counters",
+   "masteryCheck": "Solves 4005 - 1738",
+   "prerequisites": [
+    "AS3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "4005 - 1738: exchanges cascade across the zeros, synced with the written column.",
+   "interaction": "Does column calculations with exchanges shown."
+  },
+  {
+   "id": "AS4.2",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Solve two-step problems, choosing operations and methods",
+   "visualModel": "Bar model",
+   "masteryCheck": "Explains why they chose each operation",
+   "prerequisites": [
+    "AS3.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar"
+   ],
+   "animation": "Two-step problem bars build, then the operation for each step lights up.",
+   "interaction": "Chooses operations with bars."
+  },
+  {
+   "id": "MD4.1",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Recall all multiplication and division facts to 12 × 12",
+   "visualModel": "Arrays, area grid, games with spaced practice",
+   "masteryCheck": "25 mixed facts, 6 seconds each, 23+ correct",
+   "prerequisites": [
+    "MD3.1",
+    "MD2.5"
+   ],
+   "kind": "tested",
+   "source": "Multiplication Tables Check (Year 4, June)",
+   "scenes": [
+    "array",
+    "areamodel"
+   ],
+   "animation": "Every fact shows as an array on a 12 x 12 grid; 7 x 8 is shown inside 7 x 10 with a strip taken away.",
+   "interaction": "Practises facts with the array available, then faded."
+  },
+  {
+   "id": "MD4.2",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Multiply by 0 and 1, divide by 1, multiply three numbers together",
+   "visualModel": "Arrays",
+   "masteryCheck": "Solves 2 × 6 × 5 by choosing a good order",
+   "prerequisites": [
+    "MD4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "array"
+   ],
+   "animation": "2 x 6 x 5 turns into a 3D block of cubes; turning the block shows 10 x 6.",
+   "interaction": "Chooses a good order."
+  },
+  {
+   "id": "MD4.3",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Use factor pairs and the distributive law in mental calculation (39 × 7 = 40 × 7 - 7)",
+   "visualModel": "Area model",
+   "masteryCheck": "Calculates 19 × 6 mentally",
+   "prerequisites": [
+    "MD4.1",
+    "MD3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "areamodel"
+   ],
+   "animation": "39 x 7 appears as 40 x 7 with a thin strip of 1 x 7 removed.",
+   "interaction": "Adjusts and compensates on the area model."
+  },
+  {
+   "id": "MD4.4",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Use short multiplication for two- and three-digit numbers by a one-digit number",
+   "visualModel": "Place-value counters beside the column",
+   "masteryCheck": "Solves 346 × 7",
+   "prerequisites": [
+    "MD4.1",
+    "MD3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart",
+    "areamodel"
+   ],
+   "animation": "346 x 7: hundreds, tens and ones each copy 7 times; exchanges ripple up, synced with the written method.",
+   "interaction": "Does short multiplication with the model."
+  },
+  {
+   "id": "MD4.5",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Solve integer scaling and harder correspondence problems",
+   "visualModel": "Bar model, tables",
+   "masteryCheck": "Solves 'a giraffe is 4 times as tall as a 1.3 m child'",
+   "prerequisites": [
+    "MD3.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar"
+   ],
+   "animation": "The child's bar stretches to 4 copies to show the giraffe's height.",
+   "interaction": "Scales bars."
+  },
+  {
+   "id": "FR4.1",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Recognise hundredths from dividing by 100 and dividing tenths by 10",
+   "visualModel": "100 square, place-value chart",
+   "masteryCheck": "Shades 0.07 of a hundred square",
+   "prerequisites": [
+    "FR3.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart",
+    "fractions"
+   ],
+   "animation": "A 100 square zooms from a whole into tenths and then hundredths; one tiny square lights up as 0.01.",
+   "interaction": "Shades hundredths."
+  },
+  {
+   "id": "FR4.2",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Recognise families of equivalent fractions",
+   "visualModel": "Fraction wall, multiplication grid",
+   "masteryCheck": "Lists four fractions equal to 2/3",
+   "prerequisites": [
+    "FR3.4",
+    "MD4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "2/3 strip; lines split each third in 2, 3 then 4, showing 4/6, 6/9, 8/12 with no change in size.",
+   "interaction": "Splits strips to find equivalent fractions."
+  },
+  {
+   "id": "FR4.3",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Find non-unit fractions of quantities (3/5 of 40)",
+   "visualModel": "Bar model",
+   "masteryCheck": "Solves 3/8 of 64",
+   "prerequisites": [
+    "FR3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar"
+   ],
+   "animation": "64 drops into a bar of 8 parts; 3 parts light up.",
+   "interaction": "Finds non-unit fractions of amounts."
+  },
+  {
+   "id": "FR4.4",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Add and subtract fractions with the same denominator, including beyond 1",
+   "visualModel": "Fraction strips, number line",
+   "masteryCheck": "Solves 5/6 + 4/6",
+   "prerequisites": [
+    "FR3.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "5/6 + 4/6 overflows one whole; the extra 3/6 spills into a second whole.",
+   "interaction": "Adds strips beyond 1."
+  },
+  {
+   "id": "FR4.5",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Know decimal equivalents of tenths, hundredths, 1/4, 1/2 and 3/4",
+   "visualModel": "Hundred square, number line",
+   "masteryCheck": "Writes 3/4 as 0.75",
+   "prerequisites": [
+    "FR4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline",
+    "fractions"
+   ],
+   "animation": "Fraction strips and a decimal number line align: 3/4 sits at 0.75.",
+   "interaction": "Matches fractions to decimals."
+  },
+  {
+   "id": "FR4.6",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Divide one- and two-digit numbers by 10 and 100",
+   "visualModel": "Place-value slider (digits move, point stays)",
+   "masteryCheck": "Writes 37 ÷ 100 = 0.37",
+   "prerequisites": [
+    "FR4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Digits slide two places right when dividing by 100; the decimal point stays fixed.",
+   "interaction": "Slides digits for /10 and /100."
+  },
+  {
+   "id": "FR4.7",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Round 1-place decimals to the nearest whole; compare decimals to 2 places",
+   "visualModel": "Number line",
+   "masteryCheck": "Orders 0.5, 0.45, 0.54",
+   "prerequisites": [
+    "FR4.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "Zoom between 0.4 and 0.6 to place 0.45 and 0.54.",
+   "interaction": "Orders decimals by zooming in."
+  },
+  {
+   "id": "FR4.8",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Solve simple money problems with decimals to 2 places",
+   "visualModel": "Coins, price tags",
+   "masteryCheck": "Totals £2.45 + £1.80",
+   "prerequisites": [
+    "FR4.7",
+    "ME3.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "money"
+   ],
+   "animation": "£2.45 and £1.80 in coins combine; 100p swaps for £1.",
+   "interaction": "Adds prices with coins."
+  },
+  {
+   "id": "ME4.1",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Convert between units (km/m, m/cm, cm/mm, hours/minutes)",
+   "visualModel": "Conversion number lines",
+   "masteryCheck": "Writes 3.5 km as 3500 m",
+   "prerequisites": [
+    "ME3.1",
+    "FR4.6"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "measure"
+   ],
+   "animation": "A 1 km road zooms into 1000 one-metre steps.",
+   "interaction": "Converts with a zoom slider."
+  },
+  {
+   "id": "ME4.2",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Find perimeter of rectilinear shapes and area by counting squares",
+   "visualModel": "Squared paper, geoboard",
+   "masteryCheck": "Finds area of an L-shape by counting",
+   "prerequisites": [
+    "ME3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "An L-shape fills with unit squares that count up.",
+   "interaction": "Counts squares and traces perimeters."
+  },
+  {
+   "id": "ME4.3",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Convert between analogue and digital 12- and 24-hour times",
+   "visualModel": "Dual clock",
+   "masteryCheck": "Writes 3:40 pm as 15:40",
+   "prerequisites": [
+    "ME3.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "clock"
+   ],
+   "animation": "An afternoon clock face peels back to show the 13-24 ring.",
+   "interaction": "Converts 12 and 24-hour times."
+  },
+  {
+   "id": "GE4.1",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Compare and classify triangles and quadrilaterals by their properties",
+   "visualModel": "Venn/Carroll sorting, geoboards",
+   "masteryCheck": "Sorts quadrilaterals by parallel sides",
+   "prerequisites": [
+    "GE3.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "Quadrilaterals morph into each other; parallel sides and right angles highlight as they appear or disappear.",
+   "interaction": "Sorts shapes into a Venn diagram."
+  },
+  {
+   "id": "GE4.2",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Identify acute and obtuse angles; order angles up to two right angles",
+   "visualModel": "Angle fans, right-angle checker",
+   "masteryCheck": "Orders four angles by size",
+   "prerequisites": [
+    "GE3.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "angles"
+   ],
+   "animation": "An angle opens from acute through right to obtuse, and its name changes as it passes each mark.",
+   "interaction": "Orders angles."
+  },
+  {
+   "id": "GE4.3",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Identify lines of symmetry in different orientations; complete a symmetric figure",
+   "visualModel": "Mirrors, grid paper",
+   "masteryCheck": "Completes a figure across a diagonal line",
+   "prerequisites": [
+    "GE2.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "Diagonal mirror lines flip a shape onto itself.",
+   "interaction": "Completes symmetric figures."
+  },
+  {
+   "id": "GE4.4",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use coordinates in the first quadrant; plot points to draw a polygon",
+   "visualModel": "Grid games (battleships)",
+   "masteryCheck": "Plots the fourth corner of a square",
+   "prerequisites": [
+    "GE3.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "grid"
+   ],
+   "animation": "A point walks along the x-axis, then up the y-axis: 'along the corridor, then up the stairs'.",
+   "interaction": "Plots points to complete shapes."
+  },
+  {
+   "id": "GE4.5",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Describe translations left, right, up and down",
+   "visualModel": "Grid, sliding cut-out shapes",
+   "masteryCheck": "Describes a move as 3 right, 2 up",
+   "prerequisites": [
+    "GE4.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "grid"
+   ],
+   "animation": "A shape slides 3 right and 2 up, leaving a ghost trail.",
+   "interaction": "Moves shapes and describes the move."
+  },
+  {
+   "id": "ST4.1",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Use bar charts and time graphs for discrete and continuous data; solve sum and difference problems",
+   "visualModel": "Line graph of temperature",
+   "masteryCheck": "Reads a value between gridlines",
+   "prerequisites": [
+    "ST3.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Temperature readings plot as points over a day and join into a line.",
+   "interaction": "Reads values between gridlines."
+  },
+  {
+   "id": "AL4.1",
+   "stage": 4,
+   "stageName": "Stage 4",
+   "ukYear": "Year 4",
+   "age": "8-9",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Write a rule in words and then with a letter (perimeter of a square = 4 × s)",
+   "visualModel": "Growing patterns, function machines",
+   "masteryCheck": "Writes a rule for a pattern of matchsticks",
+   "prerequisites": [
+    "AL3.1"
+   ],
+   "kind": "beyond",
+   "source": "Singapore",
+   "scenes": [
+    "machine",
+    "shapes"
+   ],
+   "animation": "A square's sides are measured, 4 x s appears, and s changes on a slider as the square grows.",
+   "interaction": "Writes a rule and tests it with the slider."
+  },
+  {
+   "id": "NS5.1",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Read, write, order and compare numbers to 1,000,000",
+   "visualModel": "Place-value chart to millions",
+   "masteryCheck": "Orders five six-digit numbers",
+   "prerequisites": [
+    "NS4.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Millions columns slide in; the number gets a comma every 3 digits.",
+   "interaction": "Reads and orders large numbers."
+  },
+  {
+   "id": "NS5.2",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Count forwards and backwards in powers of 10",
+   "visualModel": "Place-value chart",
+   "masteryCheck": "Counts back in 10,000s from 92,000",
+   "prerequisites": [
+    "NS5.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Counting back in 10,000s: only one column ticks.",
+   "interaction": "Counts in powers of 10."
+  },
+  {
+   "id": "NS5.3",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Use negative numbers in context; find intervals across zero",
+   "visualModel": "Thermometer, vertical number line",
+   "masteryCheck": "Finds the difference between -4 °C and 7 °C",
+   "prerequisites": [
+    "NS4.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "A vertical thermometer from -4 to 7 shows the jump to zero and the jump on from zero.",
+   "interaction": "Finds differences across zero."
+  },
+  {
+   "id": "NS5.4",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Round any number to 1,000,000 to the nearest 10, 100, 1000, 10,000 or 100,000",
+   "visualModel": "Number line",
+   "masteryCheck": "Rounds 456,789 to the nearest 10,000",
+   "prerequisites": [
+    "NS4.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "Zooming number line; the number rolls to the nearest marker at the chosen scale.",
+   "interaction": "Rounds at different scales."
+  },
+  {
+   "id": "NS5.5",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Read Roman numerals to 1000 (M) and years in Roman numerals",
+   "visualModel": "Building inscriptions",
+   "masteryCheck": "Reads MMXXVI",
+   "prerequisites": [
+    "NS4.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "MMXXVI breaks into 1000 + 1000 + 10 + 10 + 5 + 1.",
+   "interaction": "Builds and reads years."
+  },
+  {
+   "id": "AS5.1",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Add and subtract numbers with more than four digits, written and mental",
+   "visualModel": "Column method, number line",
+   "masteryCheck": "Solves 120,450 - 87,996",
+   "prerequisites": [
+    "AS4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Large subtraction with exchanges cascading, synced to the written method.",
+   "interaction": "Does column work with a model on demand."
+  },
+  {
+   "id": "AS5.2",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "AS",
+   "strandName": "Addition & subtraction",
+   "objective": "Solve multi-step problems; use rounding to check",
+   "visualModel": "Bar model",
+   "masteryCheck": "Explains if an answer is reasonable",
+   "prerequisites": [
+    "AS4.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar",
+    "numline"
+   ],
+   "animation": "The answer is compared with a rounded estimate; if far off, a warning wobble shows.",
+   "interaction": "Checks answers by estimate."
+  },
+  {
+   "id": "MD5.1",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Identify multiples, factors and common factors",
+   "visualModel": "Arrays, factor rainbows",
+   "masteryCheck": "Lists all factors of 36",
+   "prerequisites": [
+    "MD4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "array"
+   ],
+   "animation": "36 counters rearrange into every possible rectangle (1x36, 2x18 ... 6x6).",
+   "interaction": "Finds factors by building rectangles."
+  },
+  {
+   "id": "MD5.2",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Know primes to 19 by heart and find primes to 100; split numbers into prime factors",
+   "visualModel": "Sieve of Eratosthenes, factor trees",
+   "masteryCheck": "Writes 60 as 2 × 2 × 3 × 5",
+   "prerequisites": [
+    "MD5.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "array",
+    "counters"
+   ],
+   "animation": "Prime numbers refuse to form any rectangle except one row; 60 splits on a factor tree.",
+   "interaction": "Builds factor trees."
+  },
+  {
+   "id": "MD5.3",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Recognise square and cube numbers and their notation (² and ³)",
+   "visualModel": "Real squares and cubes of cubes",
+   "masteryCheck": "Says 4³ = 64 and shows it with cubes",
+   "prerequisites": [
+    "MD4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "solids"
+   ],
+   "animation": "4 cubes become a 4 x 4 square, then the square stacks 4 layers high into a cube of 64.",
+   "interaction": "Builds squares and cubes."
+  },
+  {
+   "id": "MD5.4",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Multiply up to four digits by one or two digits, including long multiplication",
+   "visualModel": "Area model beside long multiplication",
+   "masteryCheck": "Solves 1,342 × 26",
+   "prerequisites": [
+    "MD4.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "areamodel"
+   ],
+   "animation": "1342 x 26 is shown as an area split into parts, and each part matches a line of long multiplication.",
+   "interaction": "Fills parts and matches them to the written method."
+  },
+  {
+   "id": "MD5.5",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Divide up to four digits by one digit using short division; interpret remainders",
+   "visualModel": "Place-value counters, bus-stop method",
+   "masteryCheck": "Solves 4,327 ÷ 6 and says what the remainder means",
+   "prerequisites": [
+    "MD4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "4327 counters share into 6 groups column by column; exchanges move left to right; the remainder is left over.",
+   "interaction": "Does short division with counters."
+  },
+  {
+   "id": "MD5.6",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Multiply and divide whole numbers and decimals by 10, 100 and 1000",
+   "visualModel": "Place-value slider",
+   "masteryCheck": "Writes 4.7 × 100 = 470",
+   "prerequisites": [
+    "FR4.6"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Digits slide left three places for x1000; the point stays still; zeros fill the gaps.",
+   "interaction": "Slides digits to multiply and divide."
+  },
+  {
+   "id": "MD5.7",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Solve problems involving scaling by simple fractions and simple rates",
+   "visualModel": "Bar model",
+   "masteryCheck": "Solves 'half as long again'",
+   "prerequisites": [
+    "MD4.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar"
+   ],
+   "animation": "A bar grows by half of itself to show 'half as long again'.",
+   "interaction": "Scales bars by fractions."
+  },
+  {
+   "id": "FR5.1",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Compare and order fractions whose denominators are multiples of the same number",
+   "visualModel": "Fraction wall",
+   "masteryCheck": "Orders 2/3, 5/6, 7/12",
+   "prerequisites": [
+    "FR4.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "2/3, 5/6 and 7/12 strips are cut into twelfths so their lengths can be compared.",
+   "interaction": "Orders fractions using the wall."
+  },
+  {
+   "id": "FR5.2",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Identify equivalent fractions, including tenths and hundredths",
+   "visualModel": "Hundred square",
+   "masteryCheck": "Writes 3/10 = 30/100",
+   "prerequisites": [
+    "FR4.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart",
+    "fractions"
+   ],
+   "animation": "A 10-strip splits each tenth into 10, showing 3/10 = 30/100.",
+   "interaction": "Matches tenths and hundredths."
+  },
+  {
+   "id": "FR5.3",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Convert between mixed numbers and improper fractions",
+   "visualModel": "Fraction strips beyond 1",
+   "masteryCheck": "Writes 17/5 as 3 2/5",
+   "prerequisites": [
+    "FR4.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "17 fifths pile up; every 5 fifths snap into a whole bar, leaving 3 whole and 2/5.",
+   "interaction": "Converts by snapping wholes."
+  },
+  {
+   "id": "FR5.4",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Add and subtract fractions with the same or related denominators",
+   "visualModel": "Fraction strips",
+   "masteryCheck": "Solves 3/4 + 5/8",
+   "prerequisites": [
+    "FR5.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "3/4 is cut into eighths and joined with 5/8.",
+   "interaction": "Adds related fractions."
+  },
+  {
+   "id": "FR5.5",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Multiply proper fractions and mixed numbers by whole numbers",
+   "visualModel": "Bar model, repeated addition",
+   "masteryCheck": "Solves 2 3/4 × 3",
+   "prerequisites": [
+    "FR5.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar",
+    "fractions"
+   ],
+   "animation": "2 3/4 is copied three times and the wholes and quarters are grouped.",
+   "interaction": "Multiplies with strips."
+  },
+  {
+   "id": "FR5.6",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Read and write decimals as fractions (0.71 = 71/100); know thousandths",
+   "visualModel": "Place-value chart to thousandths",
+   "masteryCheck": "Writes 0.035 as a fraction",
+   "prerequisites": [
+    "FR4.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Zooming a thousandths chart; 0.035 shows as 35 tiny slices of a thousand.",
+   "interaction": "Writes decimals as fractions."
+  },
+  {
+   "id": "FR5.7",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Round decimals with 2 places; order decimals to 3 places",
+   "visualModel": "Number line zoom",
+   "masteryCheck": "Orders 0.3, 0.301, 0.31",
+   "prerequisites": [
+    "FR4.7"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "Number line zoom levels: 0.3, 0.301 and 0.31 separate only when zoomed in.",
+   "interaction": "Orders decimals by zooming."
+  },
+  {
+   "id": "FR5.8",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Understand percent as 'per hundred'; convert between key fractions, decimals and percentages",
+   "visualModel": "Hundred square, double number line",
+   "masteryCheck": "Says 2/5 = 0.4 = 40%",
+   "prerequisites": [
+    "FR5.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "hundred",
+    "fractions"
+   ],
+   "animation": "A 100 square: 2/5 paints 40 squares, which shows 0.4 and 40% together.",
+   "interaction": "Converts between fraction, decimal and percentage."
+  },
+  {
+   "id": "ME5.1",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Convert between metric units; know approximate imperial equivalents (inches, pounds, pints)",
+   "visualModel": "Conversion lines",
+   "masteryCheck": "Says 1 inch is about 2.5 cm",
+   "prerequisites": [
+    "ME4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "measure"
+   ],
+   "animation": "An inch ruler and a cm ruler slide together side by side.",
+   "interaction": "Estimates conversions."
+  },
+  {
+   "id": "ME5.2",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Find perimeter of composite shapes and area of rectangles (cm², m²); estimate irregular areas",
+   "visualModel": "Squared paper",
+   "masteryCheck": "Finds the area of a 12 cm by 7 cm rectangle",
+   "prerequisites": [
+    "ME4.2",
+    "MD4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes",
+    "array"
+   ],
+   "animation": "A rectangle fills row by row with unit squares, which becomes length x width.",
+   "interaction": "Calculates area and checks by filling."
+  },
+  {
+   "id": "ME5.3",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Estimate volume and capacity; use cm³",
+   "visualModel": "Cube models",
+   "masteryCheck": "Builds a 3 × 2 × 2 shape and says its volume",
+   "prerequisites": [
+    "MD5.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "solids"
+   ],
+   "animation": "Cubes stack into a 3 x 2 x 2 box layer by layer.",
+   "interaction": "Builds volumes."
+  },
+  {
+   "id": "ME5.4",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Solve problems with time and read timetables",
+   "visualModel": "Bus and train timetables",
+   "masteryCheck": "Plans a journey from a timetable",
+   "prerequisites": [
+    "ME4.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "clock",
+    "calendar"
+   ],
+   "animation": "A bus moves along a timetable route as times highlight.",
+   "interaction": "Plans a journey."
+  },
+  {
+   "id": "GE5.1",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Identify 3D shapes from 2D drawings and nets",
+   "visualModel": "Isometric drawings, nets to fold",
+   "masteryCheck": "Matches a net to its cube",
+   "prerequisites": [
+    "GE3.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "solids"
+   ],
+   "animation": "Nets fold up into solids in 3D.",
+   "interaction": "Matches nets to solids."
+  },
+  {
+   "id": "GE5.2",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Measure and draw angles in degrees with a protractor; name acute, obtuse and reflex",
+   "visualModel": "Protractor, digital angle tool",
+   "masteryCheck": "Draws a 135° angle",
+   "prerequisites": [
+    "GE4.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "angles"
+   ],
+   "animation": "A protractor slides onto the angle; the sweep is read from the correct zero.",
+   "interaction": "Measures and draws angles."
+  },
+  {
+   "id": "GE5.3",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Know angles at a point total 360°, on a straight line 180°; find missing angles",
+   "visualModel": "Paper-tearing angle demos",
+   "masteryCheck": "Finds a missing angle on a line",
+   "prerequisites": [
+    "GE5.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "angles"
+   ],
+   "animation": "Angles at a point are cut out and slide together to make a full circle (360°).",
+   "interaction": "Finds missing angles."
+  },
+  {
+   "id": "GE5.4",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use properties of rectangles; tell regular from irregular polygons",
+   "visualModel": "Geoboard",
+   "masteryCheck": "Explains why a rhombus is not regular",
+   "prerequisites": [
+    "GE4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A rhombus stretches; its sides stay equal but its angles change, so it is not regular.",
+   "interaction": "Tests shapes for regularity."
+  },
+  {
+   "id": "GE5.5",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Reflect and translate shapes on a grid",
+   "visualModel": "Coordinate grid",
+   "masteryCheck": "Reflects a triangle in a line",
+   "prerequisites": [
+    "GE4.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "grid"
+   ],
+   "animation": "A triangle flips over a mirror line; each vertex travels at right angles to the line.",
+   "interaction": "Reflects and translates."
+  },
+  {
+   "id": "ST5.1",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Solve problems with line graphs; read and complete two-way tables",
+   "visualModel": "Line graphs, timetables",
+   "masteryCheck": "Reads change between two points on a line graph",
+   "prerequisites": [
+    "ST4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "charts"
+   ],
+   "animation": "A line graph is drawn as a story; the steep part is a fast change.",
+   "interaction": "Reads changes."
+  },
+  {
+   "id": "AL5.1",
+   "stage": 5,
+   "stageName": "Stage 5",
+   "ukYear": "Year 5",
+   "age": "9-10",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Continue and describe number sequences with a constant step, including decimals and negatives",
+   "visualModel": "Number line",
+   "masteryCheck": "Continues 2.4, 2.1, 1.8",
+   "prerequisites": [
+    "AL4.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "Hops of -0.3 on a number line continue the sequence.",
+   "interaction": "Predicts terms."
+  },
+  {
+   "id": "NS6.1",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Read, write, order and compare numbers to 10,000,000; round to any degree of accuracy",
+   "visualModel": "Place-value chart",
+   "masteryCheck": "Rounds 7,456,320 to the nearest 100,000",
+   "prerequisites": [
+    "NS5.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "pvchart",
+    "numline"
+   ],
+   "animation": "A number rolls to the nearest 100,000 on a zoomed line.",
+   "interaction": "Rounds large numbers."
+  },
+  {
+   "id": "NS6.2",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Use negative numbers in context and calculate intervals across zero",
+   "visualModel": "Number line",
+   "masteryCheck": "Solves -6 + 9",
+   "prerequisites": [
+    "NS5.3"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "numline"
+   ],
+   "animation": "-6 + 9 hops right through zero.",
+   "interaction": "Calculates across zero."
+  },
+  {
+   "id": "MD6.1",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Divide up to four digits by two digits using long division; show remainders as whole numbers, fractions or decimals",
+   "visualModel": "Long division with a multiples list",
+   "masteryCheck": "Solves 4,784 ÷ 23",
+   "prerequisites": [
+    "MD5.5",
+    "MD5.4"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "pvchart",
+    "bar"
+   ],
+   "animation": "4784 ÷ 23: the multiples of 23 appear as a ladder; each step of long division takes the biggest chunk.",
+   "interaction": "Does long division with the multiples ladder."
+  },
+  {
+   "id": "MD6.2",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Multiply up to four digits by two digits using long multiplication",
+   "visualModel": "Area model",
+   "masteryCheck": "Solves 3,429 × 47 accurately",
+   "prerequisites": [
+    "MD5.4"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "areamodel"
+   ],
+   "animation": "3429 x 47 is shown as an area split; the two partial products match the two rows of long multiplication.",
+   "interaction": "Multiplies with the area model."
+  },
+  {
+   "id": "MD6.3",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Use the order of operations, including brackets",
+   "visualModel": "Expression trees",
+   "masteryCheck": "Solves 4 + 6 × (8 - 3)",
+   "prerequisites": [
+    "MD5.4"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "machine"
+   ],
+   "animation": "4 + 6 x (8 - 3): brackets glow first and the expression tree collapses step by step.",
+   "interaction": "Evaluates in the right order."
+  },
+  {
+   "id": "MD6.4",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Find common factors, common multiples and primes",
+   "visualModel": "Venn diagram of factors",
+   "masteryCheck": "Finds the lowest common multiple of 6 and 8",
+   "prerequisites": [
+    "MD5.2"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "array",
+    "counters"
+   ],
+   "animation": "Multiples of 6 and 8 hop on two number lines until they first land together at 24.",
+   "interaction": "Finds the LCM and HCF."
+  },
+  {
+   "id": "MD6.5",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "MD",
+   "strandName": "Multiplication & division",
+   "objective": "Calculate mentally with mixed operations and large numbers; estimate to check",
+   "visualModel": "Number line, rounding",
+   "masteryCheck": "Completes a 30-minute arithmetic paper",
+   "prerequisites": [
+    "MD6.3"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "numline"
+   ],
+   "animation": "A quick estimate appears beside each arithmetic answer.",
+   "interaction": "Practises arithmetic with estimate checks."
+  },
+  {
+   "id": "FR6.1",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Simplify fractions using common factors; use common denominators",
+   "visualModel": "Fraction wall",
+   "masteryCheck": "Simplifies 18/24",
+   "prerequisites": [
+    "FR5.1",
+    "MD6.4"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "18/24 groups its pieces in sixes, giving 3/4 with no change in size.",
+   "interaction": "Simplifies by grouping."
+  },
+  {
+   "id": "FR6.2",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Compare and order fractions, including fractions greater than 1",
+   "visualModel": "Number line",
+   "masteryCheck": "Orders 5/3, 1 1/2, 7/4",
+   "prerequisites": [
+    "FR6.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "numline"
+   ],
+   "animation": "5/3, 1 1/2 and 7/4 land on a line beyond 1.",
+   "interaction": "Orders fractions greater than 1."
+  },
+  {
+   "id": "FR6.3",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Add and subtract fractions with different denominators and mixed numbers",
+   "visualModel": "Fraction strips, common-denominator grids",
+   "masteryCheck": "Solves 2 1/3 - 3/4",
+   "prerequisites": [
+    "FR6.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "2 1/3 - 3/4: the strips are cut to twelfths and pieces are removed.",
+   "interaction": "Adds and subtracts unlike fractions."
+  },
+  {
+   "id": "FR6.4",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Multiply simple pairs of proper fractions (1/4 × 1/2 = 1/8)",
+   "visualModel": "Area model on a square",
+   "masteryCheck": "Shows 2/3 × 3/4 with an area diagram",
+   "prerequisites": [
+    "FR5.5"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "areamodel",
+    "fractions"
+   ],
+   "animation": "A square is shaded 3/4 one way and 2/3 the other; the overlap is 6/12.",
+   "interaction": "Multiplies fractions by shading overlaps."
+  },
+  {
+   "id": "FR6.5",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Divide proper fractions by whole numbers (1/3 ÷ 2 = 1/6)",
+   "visualModel": "Bar model",
+   "masteryCheck": "Solves 3/5 ÷ 2",
+   "prerequisites": [
+    "FR6.4"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "bar"
+   ],
+   "animation": "3/5 splits into 2 equal parts, and each part is 3/10.",
+   "interaction": "Divides fractions by whole numbers."
+  },
+  {
+   "id": "FR6.6",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Convert fractions to decimals by division (3/8 = 0.375)",
+   "visualModel": "Short division",
+   "masteryCheck": "Writes 5/8 as a decimal",
+   "prerequisites": [
+    "MD5.5",
+    "FR5.6"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "5 ÷ 8 shares counters into 8 groups, exchanging into tenths, hundredths and thousandths.",
+   "interaction": "Converts fractions to decimals."
+  },
+  {
+   "id": "FR6.7",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Multiply one-digit decimals by whole numbers; divide giving answers to 2 decimal places",
+   "visualModel": "Place-value counters",
+   "masteryCheck": "Solves 0.7 × 8 and 9 ÷ 4",
+   "prerequisites": [
+    "MD5.6"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "0.7 is copied 8 times; ten tenths exchange into a one.",
+   "interaction": "Multiplies decimals by whole numbers."
+  },
+  {
+   "id": "FR6.8",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Find percentages of amounts and use them to compare",
+   "visualModel": "Bar model, double number line",
+   "masteryCheck": "Finds 35% of 60",
+   "prerequisites": [
+    "FR5.8"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "bar",
+    "numline"
+   ],
+   "animation": "A double number line: 100% = 60, 10% = 6, then 35% builds from 30% + 5%.",
+   "interaction": "Finds percentages by building them."
+  },
+  {
+   "id": "RP6.1",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Compare relative sizes using multiplication and division ('for every 2 red, 3 blue')",
+   "visualModel": "Bar model, ratio tables",
+   "masteryCheck": "Solves 'for every 2 boys there are 3 girls; 15 girls, how many boys?'",
+   "prerequisites": [
+    "MD5.7"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "bar",
+    "counters"
+   ],
+   "animation": "2 boys and 3 girls repeat as a pattern until there are 15 girls.",
+   "interaction": "Builds ratio patterns."
+  },
+  {
+   "id": "RP6.2",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Find missing values using integer multiplication facts; use scale factors and similar shapes",
+   "visualModel": "Double number line, enlargement on grids",
+   "masteryCheck": "Finds the missing side of an enlarged shape",
+   "prerequisites": [
+    "RP6.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "grid",
+    "shapes"
+   ],
+   "animation": "A shape enlarges x3 on a grid and every side stretches by the same factor.",
+   "interaction": "Finds missing sides."
+  },
+  {
+   "id": "RP6.3",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Solve unequal sharing and grouping problems using fractions and multiples",
+   "visualModel": "Bar model",
+   "masteryCheck": "Shares £45 in the ratio 2:7",
+   "prerequisites": [
+    "RP6.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "bar"
+   ],
+   "animation": "£45 shared 2:7: nine equal boxes, each worth £5.",
+   "interaction": "Shares in a ratio with bars."
+  },
+  {
+   "id": "AL6.1",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Use simple formulae",
+   "visualModel": "Function machines",
+   "masteryCheck": "Uses cost = 3n + 2 for n = 5",
+   "prerequisites": [
+    "AL4.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "machine"
+   ],
+   "animation": "n goes into the machine 3n + 2 and the output comes out.",
+   "interaction": "Uses formulae in the machine."
+  },
+  {
+   "id": "AL6.2",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Generate and describe linear number sequences",
+   "visualModel": "Pattern tables",
+   "masteryCheck": "Finds the 10th term of 3, 7, 11",
+   "prerequisites": [
+    "AL5.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "shapes",
+    "machine"
+   ],
+   "animation": "A pattern grows by 4 each step; the step number feeds a machine to predict the 10th term.",
+   "interaction": "Finds terms from the rule."
+  },
+  {
+   "id": "AL6.3",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Write missing-number problems algebraically",
+   "visualModel": "Bar model, balance",
+   "masteryCheck": "Writes and solves 2a + 5 = 17",
+   "prerequisites": [
+    "AL2.1",
+    "AL6.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "balance",
+    "bar"
+   ],
+   "animation": "2a + 5 = 17 sits on a balance; 5 is removed from both sides, then the sides halve.",
+   "interaction": "Solves by balancing."
+  },
+  {
+   "id": "AL6.4",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Find pairs of numbers that satisfy an equation with two unknowns; list possibilities systematically",
+   "visualModel": "Tables",
+   "masteryCheck": "Lists all whole-number pairs with a + b = 7 and a > b",
+   "prerequisites": [
+    "AL6.3"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "bar"
+   ],
+   "animation": "a + b = 7: a bar of 7 slides its divider through every whole-number split.",
+   "interaction": "Lists all solutions systematically."
+  },
+  {
+   "id": "ME6.1",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Convert units of measure using decimals to 3 places; convert miles and km",
+   "visualModel": "Conversion graph",
+   "masteryCheck": "Writes 5 miles as about 8 km",
+   "prerequisites": [
+    "ME5.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "graph"
+   ],
+   "animation": "A conversion line between miles and km; a point slides along it.",
+   "interaction": "Converts with the graph."
+  },
+  {
+   "id": "ME6.2",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Know shapes with the same area can have different perimeters, and vice versa",
+   "visualModel": "Squared paper, pentominoes",
+   "masteryCheck": "Draws two shapes with area 12 and different perimeters",
+   "prerequisites": [
+    "ME5.2"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "12 squares rearrange into different shapes; the perimeter counter changes but the area does not.",
+   "interaction": "Makes the same area with different perimeters."
+  },
+  {
+   "id": "ME6.3",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Calculate the area of parallelograms and triangles using formulae",
+   "visualModel": "Cut-and-move rearrangement",
+   "masteryCheck": "Finds the area of a triangle with base 8 and height 5",
+   "prerequisites": [
+    "ME5.2"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A triangle copies, rotates and joins to make a parallelogram, which slices into a rectangle.",
+   "interaction": "Derives and applies area formulae."
+  },
+  {
+   "id": "ME6.4",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "ME",
+   "strandName": "Measurement, money & time",
+   "objective": "Calculate volume of cubes and cuboids (cm³, m³) using a formula",
+   "visualModel": "Cube building",
+   "masteryCheck": "Finds volume of a 4 × 3 × 5 cuboid",
+   "prerequisites": [
+    "ME5.3"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "solids"
+   ],
+   "animation": "A cuboid fills layer by layer: base area x height.",
+   "interaction": "Calculates volumes."
+  },
+  {
+   "id": "GE6.1",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Draw 2D shapes from given lengths and angles; recognise and build nets",
+   "visualModel": "Protractor, net folding",
+   "masteryCheck": "Draws a triangle with sides 6 cm and 4 cm and angle 50°",
+   "prerequisites": [
+    "GE5.1",
+    "GE5.2"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "solids",
+    "angles"
+   ],
+   "animation": "A triangle is drawn from given sides and an angle; a net folds into a cube.",
+   "interaction": "Draws shapes and nets."
+  },
+  {
+   "id": "GE6.2",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Find missing angles in triangles, quadrilaterals and regular polygons; know vertically opposite angles",
+   "visualModel": "Paper-tearing demos",
+   "masteryCheck": "Finds the interior angle of a regular hexagon",
+   "prerequisites": [
+    "GE5.3"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "angles"
+   ],
+   "animation": "A triangle's corners tear off and line up into a straight line (180°).",
+   "interaction": "Finds missing angles."
+  },
+  {
+   "id": "GE6.3",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Name parts of a circle (radius, diameter, circumference); know diameter is twice the radius",
+   "visualModel": "Compasses, string",
+   "masteryCheck": "Says diameter 14 cm means radius 7 cm",
+   "prerequisites": [
+    "GE5.4"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A radius sweeps round to trace a circle; two radii line up into a diameter.",
+   "interaction": "Labels circle parts."
+  },
+  {
+   "id": "GE6.4",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use coordinates in all four quadrants; translate and reflect shapes",
+   "visualModel": "Four-quadrant grid",
+   "masteryCheck": "Reflects a shape in the y-axis",
+   "prerequisites": [
+    "GE5.5",
+    "NS6.2"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "grid"
+   ],
+   "animation": "The grid extends into four quadrants; a shape reflects in the y-axis.",
+   "interaction": "Plots and transforms in all four quadrants."
+  },
+  {
+   "id": "ST6.1",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Interpret and construct pie charts and line graphs",
+   "visualModel": "Pie chart as a 'fraction circle'",
+   "masteryCheck": "Reads 1/4 of a pie of 40 as 10",
+   "prerequisites": [
+    "ST5.1",
+    "FR6.8"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Bar segments wrap into a circle to form a pie chart.",
+   "interaction": "Reads and builds pie charts."
+  },
+  {
+   "id": "ST6.2",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Calculate and interpret the mean",
+   "visualModel": "Levelling towers of cubes",
+   "masteryCheck": "Finds the mean of 4, 7, 9, 12",
+   "prerequisites": [
+    "MD5.5"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Towers of cubes level out to equal heights, and that height is the mean.",
+   "interaction": "Levels towers to find means."
+  },
+  {
+   "id": "PS6.1",
+   "stage": 6,
+   "stageName": "Stage 6",
+   "ukYear": "Year 6",
+   "age": "10-11",
+   "strand": "PS",
+   "strandName": "Reasoning & problem solving",
+   "objective": "Solve multi-step reasoning problems and justify answers in writing",
+   "visualModel": "Bar model, worked examples",
+   "masteryCheck": "Explains each step of a two-mark reasoning question",
+   "prerequisites": [
+    "PS3.1"
+   ],
+   "kind": "tested",
+   "source": "KS2 SATs (Year 6, May)",
+   "scenes": [
+    "bar",
+    "story"
+   ],
+   "animation": "A worked example replays step by step with each step's picture.",
+   "interaction": "Solves reasoning problems with pictures."
+  },
+  {
+   "id": "NS7.1",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Order integers, decimals and fractions, including negatives, on one number line",
+   "visualModel": "Number line",
+   "masteryCheck": "",
+   "prerequisites": [
+    "NS6.2",
+    "FR6.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "Fractions, decimals and negatives all drop onto one number line.",
+   "interaction": "Places mixed numbers on the line."
+  },
+  {
+   "id": "NS7.2",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Use the four operations with negative numbers",
+   "visualModel": "Two-colour counters, number line",
+   "masteryCheck": "",
+   "prerequisites": [
+    "NS6.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "counters",
+    "numline"
+   ],
+   "animation": "Red (negative) and yellow (positive) counters pair up and vanish as zero pairs.",
+   "interaction": "Calculates with zero pairs."
+  },
+  {
+   "id": "NS7.3",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Use powers and roots: squares, cubes, square roots, cube roots, index notation",
+   "visualModel": "Area and volume models",
+   "masteryCheck": "",
+   "prerequisites": [
+    "MD5.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "solids"
+   ],
+   "animation": "Squares grow into cubes; square roots shrink back to the side length.",
+   "interaction": "Links powers to shapes."
+  },
+  {
+   "id": "NS7.4",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Use prime factorisation to find HCF and LCM",
+   "visualModel": "Venn diagram of prime factors",
+   "masteryCheck": "",
+   "prerequisites": [
+    "MD6.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "prob"
+   ],
+   "animation": "Prime factors drop into a Venn diagram; the overlap gives the HCF.",
+   "interaction": "Uses Venn diagrams for HCF and LCM."
+  },
+  {
+   "id": "NS7.5",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Round to decimal places and significant figures; estimate answers",
+   "visualModel": "Number line",
+   "masteryCheck": "",
+   "prerequisites": [
+    "NS6.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "A number rolls to the nearest marker at the chosen number of significant figures.",
+   "interaction": "Rounds with a zoom line."
+  },
+  {
+   "id": "FR7.1",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Use the four operations with fractions and mixed numbers",
+   "visualModel": "Area model, bar model",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR6.3",
+    "FR6.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "areamodel",
+    "fractions"
+   ],
+   "animation": "Fraction division is shown as 'how many of these fit into that'.",
+   "interaction": "Calculates with fraction models."
+  },
+  {
+   "id": "FR7.2",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Convert between fractions, decimals and percentages, including simple recurring decimals",
+   "visualModel": "Double number line",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR6.6"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "A recurring decimal's digits loop round on the number line.",
+   "interaction": "Converts between forms."
+  },
+  {
+   "id": "FR7.3",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Calculate percentage increase and decrease using multipliers",
+   "visualModel": "Bar model",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR6.8"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar"
+   ],
+   "animation": "A bar stretches by 15%; the multiplier 1.15 appears.",
+   "interaction": "Applies multipliers."
+  },
+  {
+   "id": "AL7.1",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Use algebraic notation (3y, ab, a², a/b) and collect like terms",
+   "visualModel": "Algebra tiles",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL6.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "tiles"
+   ],
+   "animation": "x tiles and unit tiles group by type to collect like terms.",
+   "interaction": "Simplifies with tiles."
+  },
+  {
+   "id": "AL7.2",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Substitute numbers into expressions and formulae",
+   "visualModel": "Function machines",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL6.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "machine"
+   ],
+   "animation": "Values slide into a formula machine.",
+   "interaction": "Substitutes values."
+  },
+  {
+   "id": "AL7.3",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Expand single brackets and factorise simple expressions",
+   "visualModel": "Algebra tiles, area model",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL7.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "tiles",
+    "areamodel"
+   ],
+   "animation": "3(x + 2) is built as a rectangle with sides 3 and x + 2.",
+   "interaction": "Expands and factorises with rectangles."
+  },
+  {
+   "id": "AL7.4",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Solve linear equations in one or two steps",
+   "visualModel": "Balance model, bar model",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL6.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "balance"
+   ],
+   "animation": "An equation on a balance; the same action on both sides keeps it level.",
+   "interaction": "Solves on a balance."
+  },
+  {
+   "id": "AL7.5",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Find term-to-term and position-to-term (nth term) rules for linear sequences",
+   "visualModel": "Pattern tables",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL6.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "graph",
+    "shapes"
+   ],
+   "animation": "A growing pattern's term numbers and terms plot as points in a line.",
+   "interaction": "Finds nth-term rules."
+  },
+  {
+   "id": "RP7.1",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Use ratio notation, simplify ratios, share in a ratio",
+   "visualModel": "Bar model, ratio tables",
+   "masteryCheck": "",
+   "prerequisites": [
+    "RP6.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar"
+   ],
+   "animation": "Ratio bars share an amount into equal boxes.",
+   "interaction": "Shares in a ratio."
+  },
+  {
+   "id": "RP7.2",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Solve direct proportion problems with the unitary method",
+   "visualModel": "Double number line",
+   "masteryCheck": "",
+   "prerequisites": [
+    "RP6.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar",
+    "numline"
+   ],
+   "animation": "A double number line scales through the unit value.",
+   "interaction": "Uses the unitary method."
+  },
+  {
+   "id": "GE7.1",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use angle facts with parallel lines (alternate, corresponding), triangles and polygons",
+   "visualModel": "Dynamic geometry",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE6.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "angles"
+   ],
+   "animation": "A transversal crosses parallel lines; matching angles flash together (alternate or corresponding).",
+   "interaction": "Finds angles."
+  },
+  {
+   "id": "GE7.2",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Construct bisectors and triangles with ruler and compasses",
+   "visualModel": "Compasses",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE6.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "Compass arcs sweep and intersect to construct bisectors.",
+   "interaction": "Constructs with tools."
+  },
+  {
+   "id": "GE7.3",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Find perimeter and area of triangles, parallelograms, trapezia and compound shapes",
+   "visualModel": "Cut-and-rearrange",
+   "masteryCheck": "",
+   "prerequisites": [
+    "ME6.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A trapezium copies and rotates into a parallelogram.",
+   "interaction": "Finds compound areas."
+  },
+  {
+   "id": "ST7.1",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Find mean, median, mode and range; choose a suitable average",
+   "visualModel": "Ordered data lines",
+   "masteryCheck": "",
+   "prerequisites": [
+    "ST6.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Data sorts into order: the middle glows (median), the tallest stack is the mode, the levelled towers give the mean.",
+   "interaction": "Chooses the best average."
+  },
+  {
+   "id": "ST7.2",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Draw and interpret bar charts, pie charts, frequency tables and stem-and-leaf diagrams",
+   "visualModel": "Chart builder",
+   "masteryCheck": "",
+   "prerequisites": [
+    "ST6.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "charts"
+   ],
+   "animation": "The same data morphs between bar, pie and stem-and-leaf.",
+   "interaction": "Builds charts."
+  },
+  {
+   "id": "PB7.1",
+   "stage": 7,
+   "stageName": "Stage 7",
+   "ukYear": "Year 7 (KS3)",
+   "age": "11-12",
+   "strand": "PB",
+   "strandName": "Probability",
+   "objective": "Use the 0-1 probability scale; know P(not A) = 1 - P(A)",
+   "visualModel": "Probability line, spinners",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR6.6"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "prob"
+   ],
+   "animation": "A spinner spins 1000 times; the results settle at their place on the 0-1 line.",
+   "interaction": "Places events on the scale."
+  },
+  {
+   "id": "NS8.1",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Write and calculate with numbers in standard form",
+   "visualModel": "Place-value chart",
+   "masteryCheck": "",
+   "prerequisites": [
+    "NS7.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "Digits slide many places; the power of 10 counts the slides.",
+   "interaction": "Converts to standard form."
+  },
+  {
+   "id": "NS8.2",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Use the laws of indices for integer powers",
+   "visualModel": "Expanded products",
+   "masteryCheck": "",
+   "prerequisites": [
+    "NS7.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "solids"
+   ],
+   "animation": "2³ x 2² expands into five 2s multiplied together.",
+   "interaction": "Applies index laws."
+  },
+  {
+   "id": "FR8.1",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Solve reverse percentage, repeated percentage change and simple/compound interest problems",
+   "visualModel": "Bar model, multiplier chains",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR7.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "bar"
+   ],
+   "animation": "The bar after a 20% rise is split back into 120% to find the original.",
+   "interaction": "Solves reverse percentages."
+  },
+  {
+   "id": "AL8.1",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Expand products of two brackets",
+   "visualModel": "Area model, algebra tiles",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL7.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "tiles",
+    "areamodel"
+   ],
+   "animation": "(x + 2)(x + 3) forms a rectangle of tiles: x², 5x and 6.",
+   "interaction": "Expands double brackets."
+  },
+  {
+   "id": "AL8.2",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Solve equations with unknowns on both sides and with brackets; form equations from context",
+   "visualModel": "Balance model",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL7.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "balance"
+   ],
+   "animation": "x terms on both sides; equal amounts are removed from each pan.",
+   "interaction": "Solves equations."
+  },
+  {
+   "id": "AL8.3",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Solve linear inequalities and show them on a number line",
+   "visualModel": "Number line",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL8.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "An inequality shades a ray on the number line, with an open or closed circle.",
+   "interaction": "Solves and shows inequalities."
+  },
+  {
+   "id": "AL8.4",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Plot linear graphs; interpret gradient and intercept (y = mx + c)",
+   "visualModel": "Dynamic graphing",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL7.2",
+    "GE6.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "graph"
+   ],
+   "animation": "Sliders for m and c tilt and lift the line.",
+   "interaction": "Explores y = mx + c."
+  },
+  {
+   "id": "AL8.5",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Interpret real-life graphs (distance-time, conversion)",
+   "visualModel": "Graph stories",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL8.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "graph"
+   ],
+   "animation": "A walker's journey traces a distance-time graph live.",
+   "interaction": "Interprets real-life graphs."
+  },
+  {
+   "id": "AL8.6",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Rearrange simple formulae",
+   "visualModel": "Balance model, function machines",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL8.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "machine"
+   ],
+   "animation": "A formula machine runs in reverse.",
+   "interaction": "Rearranges formulae."
+  },
+  {
+   "id": "RP8.1",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Use compound measures: speed, density, pressure",
+   "visualModel": "Formula triangles, unit tables",
+   "masteryCheck": "",
+   "prerequisites": [
+    "RP7.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "measure"
+   ],
+   "animation": "A car moves; the distance and time bars give the speed.",
+   "interaction": "Calculates compound measures."
+  },
+  {
+   "id": "RP8.2",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Recognise inverse proportion; compare best buys",
+   "visualModel": "Tables, graphs",
+   "masteryCheck": "",
+   "prerequisites": [
+    "RP7.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "graph"
+   ],
+   "animation": "Workers increase while the time bar shrinks.",
+   "interaction": "Compares proportions."
+  },
+  {
+   "id": "GE8.1",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Calculate circumference and area of circles using π",
+   "visualModel": "Unrolled circle, sector rearrangement",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE6.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A circle's sectors rearrange into a near-rectangle of πr by r.",
+   "interaction": "Calculates circle area."
+  },
+  {
+   "id": "GE8.2",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Find volume and surface area of prisms and cylinders",
+   "visualModel": "Nets, layers of cubes",
+   "masteryCheck": "",
+   "prerequisites": [
+    "ME6.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "solids"
+   ],
+   "animation": "A prism is built by sliding its cross-section along.",
+   "interaction": "Finds volume and surface area."
+  },
+  {
+   "id": "GE8.3",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Rotate, reflect, translate and enlarge shapes (positive scale factors)",
+   "visualModel": "Dynamic geometry",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE6.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "grid"
+   ],
+   "animation": "Shapes rotate about a centre and enlarge from a point, with ray lines.",
+   "interaction": "Performs transformations."
+  },
+  {
+   "id": "GE8.4",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use bearings and scale drawings",
+   "visualModel": "Maps, protractor",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE5.2",
+    "RP7.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "angles"
+   ],
+   "animation": "A compass needle on a map; a bearing sweeps clockwise from north.",
+   "interaction": "Measures bearings."
+  },
+  {
+   "id": "ST8.1",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Draw and interpret scatter graphs and correlation",
+   "visualModel": "Scatter plots of real data",
+   "masteryCheck": "",
+   "prerequisites": [
+    "ST7.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Points scatter and a line of best fit settles through them.",
+   "interaction": "Interprets correlation."
+  },
+  {
+   "id": "ST8.2",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Estimate averages from grouped frequency tables",
+   "visualModel": "Grouped tables",
+   "masteryCheck": "",
+   "prerequisites": [
+    "ST7.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Grouped bars collapse to their midpoints.",
+   "interaction": "Estimates the mean."
+  },
+  {
+   "id": "PB8.1",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "PB",
+   "strandName": "Probability",
+   "objective": "List sample spaces for two events; compare experimental and theoretical probability",
+   "visualModel": "Two-way tables, simulations",
+   "masteryCheck": "",
+   "prerequisites": [
+    "PB7.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "prob"
+   ],
+   "animation": "Two dice fill a 6 x 6 sample space grid.",
+   "interaction": "Lists outcomes."
+  },
+  {
+   "id": "PB8.2",
+   "stage": 8,
+   "stageName": "Stage 8",
+   "ukYear": "Year 8 (KS3)",
+   "age": "12-13",
+   "strand": "PB",
+   "strandName": "Probability",
+   "objective": "Use Venn diagrams and set notation",
+   "visualModel": "Venn diagrams",
+   "masteryCheck": "",
+   "prerequisites": [
+    "PB8.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "prob"
+   ],
+   "animation": "Items drop into overlapping circles.",
+   "interaction": "Uses Venn diagrams."
+  },
+  {
+   "id": "NS9.1",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Use error intervals and upper and lower bounds",
+   "visualModel": "Number line intervals",
+   "masteryCheck": "",
+   "prerequisites": [
+    "NS7.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "numline"
+   ],
+   "animation": "A rounded value expands into an interval on the line.",
+   "interaction": "Finds bounds."
+  },
+  {
+   "id": "AL9.1",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Factorise quadratics x² + bx + c and solve by factorising",
+   "visualModel": "Algebra tiles",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL8.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "tiles"
+   ],
+   "animation": "Tiles for x² + 5x + 6 rearrange into a rectangle; its sides are the factors.",
+   "interaction": "Factorises with tiles."
+  },
+  {
+   "id": "AL9.2",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Solve simultaneous linear equations algebraically and graphically",
+   "visualModel": "Graphs crossing",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL8.2",
+    "AL8.4"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "graph"
+   ],
+   "animation": "Two lines plot and cross; the crossing point is the solution.",
+   "interaction": "Solves simultaneous equations."
+  },
+  {
+   "id": "AL9.3",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Plot quadratic graphs; find roots and turning points",
+   "visualModel": "Dynamic graphing",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL9.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "graph"
+   ],
+   "animation": "A parabola draws from its table; the roots and turning point glow.",
+   "interaction": "Explores quadratic graphs."
+  },
+  {
+   "id": "AL9.4",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Recognise quadratic, geometric and Fibonacci-type sequences",
+   "visualModel": "Difference tables",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL7.5"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "graph"
+   ],
+   "animation": "Difference tables cascade beneath sequences.",
+   "interaction": "Classifies sequences."
+  },
+  {
+   "id": "AL9.5",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Write simple algebraic arguments and proofs ('show that')",
+   "visualModel": "Worked examples",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL8.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "tiles"
+   ],
+   "animation": "Odd and even tile shapes join to show a general proof.",
+   "interaction": "Writes proofs."
+  },
+  {
+   "id": "GE9.1",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use Pythagoras' theorem in 2D",
+   "visualModel": "Squares on the sides, dissection proof",
+   "masteryCheck": "",
+   "prerequisites": [
+    "NS7.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "Squares on the two short sides cut up and fill the square on the hypotenuse.",
+   "interaction": "Applies Pythagoras."
+  },
+  {
+   "id": "GE9.2",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use right-angled trigonometry (sin, cos, tan)",
+   "visualModel": "Unit circle, similar triangles",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE9.1",
+    "RP6.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "angles"
+   ],
+   "animation": "A right triangle scales up; its side ratios stay the same for a fixed angle.",
+   "interaction": "Uses trig ratios."
+  },
+  {
+   "id": "GE9.3",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use congruence criteria and similarity",
+   "visualModel": "Dynamic geometry",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE8.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "grid"
+   ],
+   "animation": "Shapes overlay after transformations to test congruence.",
+   "interaction": "Tests congruence and similarity."
+  },
+  {
+   "id": "GE9.4",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use column vectors: add, subtract and scale",
+   "visualModel": "Arrows on a grid",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE8.3"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "grid"
+   ],
+   "animation": "Arrows chain nose to tail to add vectors.",
+   "interaction": "Adds vectors."
+  },
+  {
+   "id": "GE9.5",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Construct loci",
+   "visualModel": "Compasses",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE7.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A goat on a rope sweeps out its grazing locus.",
+   "interaction": "Constructs loci."
+  },
+  {
+   "id": "RP9.1",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Write direct and inverse proportion algebraically (y ∝ x, y ∝ 1/x)",
+   "visualModel": "Graphs",
+   "masteryCheck": "",
+   "prerequisites": [
+    "RP8.2"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "graph"
+   ],
+   "animation": "A k slider changes direct and inverse curves.",
+   "interaction": "Models proportion."
+  },
+  {
+   "id": "RP9.2",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Model growth and decay",
+   "visualModel": "Multiplier chains, graphs",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR8.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "graph"
+   ],
+   "animation": "Repeated multiplier bars grow into an exponential curve.",
+   "interaction": "Models growth and decay."
+  },
+  {
+   "id": "PB9.1",
+   "stage": 9,
+   "stageName": "Stage 9",
+   "ukYear": "Year 9 (KS3)",
+   "age": "13-14",
+   "strand": "PB",
+   "strandName": "Probability",
+   "objective": "Use tree diagrams for independent and dependent events",
+   "visualModel": "Tree diagrams",
+   "masteryCheck": "",
+   "prerequisites": [
+    "PB8.1"
+   ],
+   "kind": "core",
+   "source": null,
+   "scenes": [
+    "prob"
+   ],
+   "animation": "Tree branches grow with their probabilities.",
+   "interaction": "Uses tree diagrams."
+  },
+  {
+   "id": "NS10.1",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Calculate fluently without a calculator, giving exact answers with fractions and π",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR7.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "numline"
+   ],
+   "animation": "Exact answers are kept as fractions and π; a slider shows the decimal approximation.",
+   "interaction": "Calculates exactly."
+  },
+  {
+   "id": "NS10.2",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Use the product rule for counting combinations",
+   "visualModel": "Tables, tree sketches",
+   "masteryCheck": "",
+   "prerequisites": [
+    "MD3.4"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "prob"
+   ],
+   "animation": "A grid of combinations fills row by row.",
+   "interaction": "Counts combinations."
+  },
+  {
+   "id": "FR10.1",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "FR",
+   "strandName": "Fractions, decimals & percentages",
+   "objective": "Solve financial percentage problems: compound interest, depreciation, VAT",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR8.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "graph",
+    "bar"
+   ],
+   "animation": "Year-by-year bars grow by compound interest.",
+   "interaction": "Solves finance problems."
+  },
+  {
+   "id": "RP10.1",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "RP",
+   "strandName": "Ratio & proportion",
+   "objective": "Combine ratios and link ratios to fractions and linear functions",
+   "visualModel": "Bar model",
+   "masteryCheck": "",
+   "prerequisites": [
+    "RP7.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "bar"
+   ],
+   "animation": "Two ratios merge on a shared bar.",
+   "interaction": "Combines ratios."
+  },
+  {
+   "id": "AL10.1",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Solve quadratic equations by factorising and find approximate roots from graphs",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL9.1",
+    "AL9.3"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "tiles",
+    "graph"
+   ],
+   "animation": "Factorised parts link to the roots on the graph.",
+   "interaction": "Solves quadratics."
+  },
+  {
+   "id": "AL10.2",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Recognise and sketch linear, quadratic, cubic and reciprocal graphs",
+   "visualModel": "Dynamic graphing",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL9.3"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "graph"
+   ],
+   "animation": "The graph family morphs between linear, quadratic, cubic and reciprocal.",
+   "interaction": "Sketches graphs."
+  },
+  {
+   "id": "AL10.3",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Find the equation of a line through two points; parallel lines",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL8.4"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "graph"
+   ],
+   "animation": "A line is drawn through two points; rise and run are shown.",
+   "interaction": "Finds line equations."
+  },
+  {
+   "id": "GE10.1",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Know exact trig values for 0°, 30°, 45°, 60° and 90°",
+   "visualModel": "Special triangles",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE9.2"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "angles"
+   ],
+   "animation": "Special triangles cut from a square and an equilateral triangle.",
+   "interaction": "Recalls exact values."
+  },
+  {
+   "id": "GE10.2",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Find volume and surface area of spheres, cones and pyramids; arc length and sector area",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE8.1",
+    "GE8.2"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "solids"
+   ],
+   "animation": "A cone's volume is shown as a third of a cylinder, poured in three times.",
+   "interaction": "Calculates volumes."
+  },
+  {
+   "id": "GE10.3",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use similarity and enlargement, including fractional scale factors",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE9.3"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "grid"
+   ],
+   "animation": "Enlargement with a fractional scale factor shrinks a shape.",
+   "interaction": "Uses similarity."
+  },
+  {
+   "id": "ST10.1",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Understand sampling and bias; compare distributions using averages and spread",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "ST7.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Samples are drawn from a population; biased samples drift.",
+   "interaction": "Compares distributions."
+  },
+  {
+   "id": "PB10.1",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "PB",
+   "strandName": "Probability",
+   "objective": "Use frequency trees, Venn diagrams and tree diagrams to find probabilities",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "PB9.1",
+    "PB8.2"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "prob"
+   ],
+   "animation": "A frequency tree fills from 100 people.",
+   "interaction": "Uses frequency trees."
+  },
+  {
+   "id": "PS10.1",
+   "stage": 10,
+   "stageName": "Stage 10",
+   "ukYear": "GCSE Foundation (Y10-11)",
+   "age": "14-16",
+   "strand": "PS",
+   "strandName": "Reasoning & problem solving",
+   "objective": "Solve multi-step problems that combine topics and explain reasoning",
+   "visualModel": "Worked examples, mixed practice",
+   "masteryCheck": "",
+   "prerequisites": [
+    "PS6.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "story"
+   ],
+   "animation": "Mixed-topic problems are broken into picture steps.",
+   "interaction": "Solves multi-step problems."
+  },
+  {
+   "id": "NS11.1",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Simplify surds and rationalise denominators",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "NS7.3"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "A square of area 8 has side √8 = 2√2, shown on a grid.",
+   "interaction": "Simplifies surds."
+  },
+  {
+   "id": "NS11.2",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Use fractional and negative indices",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "NS8.2"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "numline"
+   ],
+   "animation": "Index patterns continue down past zero into fractions.",
+   "interaction": "Uses negative and fractional indices."
+  },
+  {
+   "id": "NS11.3",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "NS",
+   "strandName": "Number sense & place value",
+   "objective": "Convert recurring decimals to fractions and prove it",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR7.2"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "pvchart"
+   ],
+   "animation": "x = 0.777...; 10x slides the digits along and the repeating tails cancel.",
+   "interaction": "Converts recurring decimals."
+  },
+  {
+   "id": "AL11.1",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Solve quadratics using the formula and by completing the square",
+   "visualModel": "Algebra tiles (completing the square)",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL10.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "tiles"
+   ],
+   "animation": "x² + 6x is completed into a square by adding the missing corner tiles.",
+   "interaction": "Completes the square."
+  },
+  {
+   "id": "AL11.2",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Simplify and solve equations with algebraic fractions",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "FR7.1",
+    "AL9.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "fractions"
+   ],
+   "animation": "Algebraic fraction strips are cut to a common denominator.",
+   "interaction": "Combines algebraic fractions."
+  },
+  {
+   "id": "AL11.3",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Use function notation, composite and inverse functions",
+   "visualModel": "Function machines",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL7.2"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "machine"
+   ],
+   "animation": "Machines chain together for composite functions; reversing gives the inverse.",
+   "interaction": "Composes and inverts functions."
+  },
+  {
+   "id": "AL11.4",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Find approximate solutions by iteration",
+   "visualModel": "Spreadsheet",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL10.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "graph"
+   ],
+   "animation": "Iteration steps cobweb towards a root.",
+   "interaction": "Iterates to a solution."
+  },
+  {
+   "id": "AL11.5",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Transform graphs (y = f(x + a), y = f(x) + a, reflections)",
+   "visualModel": "Dynamic graphing",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL10.2"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "graph"
+   ],
+   "animation": "Graphs shift and flip with sliders.",
+   "interaction": "Transforms graphs."
+  },
+  {
+   "id": "AL11.6",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Estimate gradients and areas under graphs and interpret them as rates",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL8.5"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "graph"
+   ],
+   "animation": "A tangent slides along a curve; strips fill the area beneath it.",
+   "interaction": "Estimates gradients and areas."
+  },
+  {
+   "id": "AL11.7",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Solve quadratic inequalities and non-linear simultaneous equations",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL11.1",
+    "AL9.2"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "graph"
+   ],
+   "animation": "Shading shows where a parabola is above or below zero.",
+   "interaction": "Solves inequalities."
+  },
+  {
+   "id": "AL11.8",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "AL",
+   "strandName": "Algebra & pattern",
+   "objective": "Use the equation of a circle centred at the origin and find tangents",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE9.1",
+    "AL10.3"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "graph"
+   ],
+   "animation": "A radius rotates to draw x² + y² = r², and a tangent touches it.",
+   "interaction": "Finds tangents."
+  },
+  {
+   "id": "GE11.1",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use the sine rule, cosine rule and ½ab sin C",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE9.2"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "angles"
+   ],
+   "animation": "Any triangle splits with a height to show where the sine rule comes from.",
+   "interaction": "Uses the sine and cosine rules."
+  },
+  {
+   "id": "GE11.2",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Apply Pythagoras and trigonometry in 3D",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE11.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "solids"
+   ],
+   "animation": "Right triangles are highlighted inside a 3D box.",
+   "interaction": "Solves 3D problems."
+  },
+  {
+   "id": "GE11.3",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Prove and apply circle theorems",
+   "visualModel": "Dynamic geometry",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE7.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "shapes"
+   ],
+   "animation": "Points slide on a circle and the angle stays the same.",
+   "interaction": "Proves circle theorems."
+  },
+  {
+   "id": "GE11.4",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Use vectors in geometric proofs",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE9.4"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "grid"
+   ],
+   "animation": "Vector paths combine to prove two lines are parallel.",
+   "interaction": "Writes vector proofs."
+  },
+  {
+   "id": "GE11.5",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "GE",
+   "strandName": "Geometry & spatial reasoning",
+   "objective": "Sketch trigonometric and exponential graphs",
+   "visualModel": "Unit circle animation",
+   "masteryCheck": "",
+   "prerequisites": [
+    "GE10.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "graph"
+   ],
+   "animation": "A point on the unit circle traces out the sine wave.",
+   "interaction": "Sketches trig graphs."
+  },
+  {
+   "id": "ST11.1",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "ST",
+   "strandName": "Statistics",
+   "objective": "Draw and interpret histograms, cumulative frequency and box plots",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "ST10.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "charts"
+   ],
+   "animation": "Bars change width so that area shows frequency.",
+   "interaction": "Builds histograms."
+  },
+  {
+   "id": "PB11.1",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "PB",
+   "strandName": "Probability",
+   "objective": "Calculate conditional probabilities",
+   "visualModel": "Two-way tables, trees",
+   "masteryCheck": "",
+   "prerequisites": [
+    "PB10.1"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "prob"
+   ],
+   "animation": "A two-way table filters down to the given condition.",
+   "interaction": "Calculates conditional probability."
+  },
+  {
+   "id": "PS11.1",
+   "stage": 11,
+   "stageName": "Stage 11",
+   "ukYear": "GCSE Higher only (Y10-11)",
+   "age": "14-16",
+   "strand": "PS",
+   "strandName": "Reasoning & problem solving",
+   "objective": "Construct rigorous algebraic proofs",
+   "visualModel": "",
+   "masteryCheck": "",
+   "prerequisites": [
+    "AL9.5"
+   ],
+   "kind": "tested",
+   "source": "GCSE Mathematics",
+   "scenes": [
+    "tiles"
+   ],
+   "animation": "General tile arrangements show why a result is true for all n.",
+   "interaction": "Writes rigorous proofs."
+  }
+ ]
+}

@@ -1,0 +1,372 @@
+<title>Maths Mastery Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: exercise-book page on a faint squared grid; a single reading column with wide data blocks. Accents borrow the red/yellow two-sided counters found in every UK classroom. */
+:root{
+  --paper:#f7f8fb; --grid:#e3e8f2; --ink:#1d2a44; --ink-soft:#4c5a78; --rule:#cfd6e4;
+  --card:#ffffff; --counter-red:#d23b3b; --counter-yellow:#f2b705; --blue:#2856c7; --blue-soft:#e6ecfb;
+  --green:#1f8a5b; --green-soft:#e1f3ea; --amber-soft:#fdf2cf; --red-soft:#fbe5e5;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#121827; --grid:#1b2336; --ink:#e7ebf5; --ink-soft:#a3aec6; --rule:#2c3650;
+  --card:#192135; --counter-red:#ef6363; --counter-yellow:#f5c84a; --blue:#86a8ff; --blue-soft:#22315a;
+  --green:#5cd19a; --green-soft:#183a2c; --amber-soft:#3b3214; --red-soft:#3d1f22; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#121827; --grid:#1b2336; --ink:#e7ebf5; --ink-soft:#a3aec6; --rule:#2c3650;
+  --card:#192135; --counter-red:#ef6363; --counter-yellow:#f5c84a; --blue:#86a8ff; --blue-soft:#22315a;
+  --green:#5cd19a; --green-soft:#183a2c; --amber-soft:#3b3214; --red-soft:#3d1f22; color-scheme:dark}
+
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;}
+.wrap{max-width:1040px;margin:0 auto;padding-block:40px 80px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.75rem;font-weight:700;margin-bottom:.6rem}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.prose{max-width:68ch;display:flex;flex-direction:column;gap:.9rem}
+section{display:flex;flex-direction:column;gap:1.1rem;padding-block:2.4rem;border-top:2px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--counter-yellow);outline-offset:2px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center;padding-bottom:2rem}
+.hero .lede{font-size:1.2rem;color:var(--ink-soft);max-width:56ch;margin-top:1rem}
+.tenframe{display:grid;grid-template-columns:repeat(5,44px);grid-template-rows:repeat(2,44px);border:3px solid var(--ink);background:var(--card)}
+.tenframe span{border:1.5px solid var(--ink);display:grid;place-items:center}
+.tenframe span i{width:30px;height:30px;border-radius:50%;display:block}
+.tenframe .r{background:var(--counter-red)} .tenframe .y{background:var(--counter-yellow)}
+.tf-cap{font-family:var(--mono);font-size:.8rem;color:var(--ink-soft);margin-top:8px;text-align:center}
+@media (prefers-reduced-motion:no-preference){.tenframe span i{animation:pop .4s ease-out backwards}
+  .tenframe span:nth-child(n) i{animation-delay:calc(var(--d)*90ms)}}
+@keyframes pop{from{transform:scale(.3)}to{transform:scale(1)}}
+@media (max-width:640px){.hero{grid-template-columns:1fr}.tenframe{grid-template-columns:repeat(5,36px);grid-template-rows:repeat(2,36px)}.tenframe span i{width:24px;height:24px}}
+
+/* findings */
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.finding{background:var(--card);border:1.5px solid var(--rule);padding:18px;display:flex;flex-direction:column;gap:6px}
+.finding b{font-family:var(--display);font-size:1.05rem}
+
+/* age chart */
+.agechart{background:var(--card);border:1.5px solid var(--rule);padding:18px;overflow-x:auto}
+.agechart .row{display:grid;grid-template-columns:110px 1fr;align-items:center;gap:10px;min-width:520px;height:34px}
+.agechart .lab{font-weight:700;font-size:.95rem}
+.track{position:relative;height:22px}
+.bar{position:absolute;top:0;bottom:0;border-radius:3px;font-size:.72rem;font-family:var(--mono);display:flex;align-items:center;padding-left:6px;white-space:nowrap;overflow:hidden}
+.bar.play{background:var(--green-soft);color:var(--green)}
+.bar.formal{background:var(--blue);color:var(--card)}
+.axis{display:grid;grid-template-columns:110px 1fr;gap:10px;min-width:520px}
+.axis .ticks{position:relative;height:20px;font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+.axis .ticks span{position:absolute;transform:translateX(-50%)}
+.you{position:absolute;top:-6px;bottom:-6px;width:0;border-left:2px dashed var(--counter-red)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:var(--ink-soft);margin-top:10px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+/* table */
+.tablewrap{overflow-x:auto;background:var(--card);border:1.5px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+td:first-child{font-family:var(--display);font-weight:700;white-space:nowrap}
+td.take{background:var(--amber-soft)}
+tr:last-child td{border-bottom:0}
+
+.principles{counter-reset:p;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px 28px;list-style:none;padding:0;margin:0}
+.principles li{display:flex;flex-direction:column;gap:2px;padding-left:0}
+.principles b{font-family:var(--display)}
+.note{background:var(--blue-soft);border-left:4px solid var(--blue);padding:16px 18px;max-width:72ch}
+
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px}
+.ev{background:var(--card);border:1.5px solid var(--rule);padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.ev .yr{font-family:var(--mono);font-size:.75rem;color:var(--ink-soft)}
+.ev b{font-family:var(--display)}
+.ev.stat{border-color:var(--counter-red)}
+.ev small{color:var(--ink-soft);font-size:.82rem;line-height:1.4}
+
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.tools span{background:var(--card);border:1.5px solid var(--ink);padding:4px 10px;font-size:.88rem;border-radius:999px}
+
+.gates{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px;counter-reset:g}
+.gate{background:var(--card);border:1.5px solid var(--rule);padding:12px 14px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.gate:hover{border-color:var(--blue)}
+.gate .n{grid-row:span 2;font-family:var(--display);font-weight:800;font-size:1.4rem;color:var(--counter-red);counter-increment:g}
+.gate .n::before{content:counter(g)}
+.gate code{font-family:var(--mono);font-size:.75rem;color:var(--ink-soft)}
+
+/* explorer */
+.stagebar{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;align-items:end;height:120px;overflow-x:auto}
+.sb{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;height:100%;cursor:pointer;background:none;border:0;padding:0;font:inherit;color:inherit;min-width:0}
+.sb .stack{display:flex;flex-direction:column-reverse;border:1.5px solid transparent}
+.sb[aria-pressed="true"] .stack{border-color:var(--ink)}
+.sb .stack i{display:block}
+.sb .k-core{background:var(--blue)} .sb .k-tested{background:var(--counter-red)} .sb .k-beyond{background:var(--counter-yellow)}
+.sb .lbl{font-family:var(--mono);font-size:.7rem;text-align:center;margin-top:4px;color:var(--ink-soft)}
+.sb[aria-pressed="true"] .lbl{color:var(--ink);font-weight:500}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.controls select,.controls input{font:inherit;font-size:.95rem;padding:8px 10px;border:1.5px solid var(--rule);background:var(--card);color:var(--ink);border-radius:6px;min-width:0}
+.controls input{flex:1 1 220px}
+.seg{display:flex;border:1.5px solid var(--rule);border-radius:6px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:.88rem;padding:7px 12px;background:var(--card);color:var(--ink);border:0;border-right:1px solid var(--rule);cursor:pointer}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.stagehead{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
+.stagehead .meta{color:var(--ink-soft);font-size:.95rem}
+.strandgroup{display:flex;flex-direction:column;gap:8px}
+.strandgroup h3{font-size:1rem;color:var(--ink-soft);font-weight:700;padding-top:10px}
+.obj{background:var(--card);border:1.5px solid var(--rule);padding:12px 14px;display:grid;grid-template-columns:76px minmax(0,1fr);gap:4px 12px}
+.obj.flash{border-color:var(--counter-red);box-shadow:0 0 0 3px var(--red-soft)}
+.obj .id{font-family:var(--mono);font-size:.8rem;padding-top:3px}
+.obj .txt{font-weight:700;line-height:1.4}
+.obj .det{grid-column:2;display:flex;flex-direction:column;gap:2px;font-size:.88rem;color:var(--ink-soft)}
+.obj .det em{font-style:normal;color:var(--ink);font-weight:700}
+.pill{display:inline-block;font-family:var(--mono);font-size:.68rem;padding:1px 7px;border-radius:999px;margin-left:6px;vertical-align:2px;font-weight:500}
+.pill.tested{background:var(--red-soft);color:var(--counter-red)}
+.pill.beyond{background:var(--amber-soft);color:var(--ink)}
+.pre{font-family:var(--mono);font-size:.75rem;background:none;border:1px solid var(--rule);color:var(--blue);padding:0 6px;border-radius:4px;cursor:pointer;margin-right:4px}
+.empty{color:var(--ink-soft);padding:20px 0}
+@media (max-width:560px){.obj{grid-template-columns:1fr}.obj .det{grid-column:1}.stagebar{height:90px}}
+.sources{font-size:.88rem;color:var(--ink-soft);columns:2 300px;gap:28px}
+.sources li{break-inside:avoid;margin-bottom:6px}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Curriculum analysis · learning-objective inventory</div>
+    <h1>Maths Mastery Map</h1>
+    <p class="lede">What England, Japan, Singapore and Finland each get right about teaching maths to young children, and a 285-objective path from first counting to GCSE that covers everything the English curriculum tests and adds the best ideas from other countries.</p>
+  </div>
+  <div>
+    <div class="tenframe" aria-label="A ten-frame showing 7 as 5 red counters and 2 yellow">
+      <span><i class="r" style="--d:0"></i></span><span><i class="r" style="--d:1"></i></span><span><i class="r" style="--d:2"></i></span><span><i class="r" style="--d:3"></i></span><span><i class="r" style="--d:4"></i></span>
+      <span><i class="y" style="--d:5"></i></span><span><i class="y" style="--d:6"></i></span><span></span><span></span><span></span>
+    </div>
+    <div class="tf-cap">7 = 5 + 2, and 3 more makes 10</div>
+  </div>
+</header>
+
+<section>
+  <div class="eyebrow">The short version</div>
+  <h2>Five findings that shape the app</h2>
+  <div class="findings">
+    <div class="finding"><b>England already borrowed from Asia.</b><span>Since 2014 the national curriculum, the NCETM "teaching for mastery" programme and schemes like White Rose and Maths No Problem! have been built on Shanghai and Singapore methods. You don't need to escape the British system so much as teach it more visually, more slowly at the start, and with more depth.</span></div>
+    <div class="finding"><b>England starts formal maths early.</b><span>A Japanese child starts Grade 1 at 6, a Finnish child at 7. At 6 your son is in Year 1 or 2 and is being asked for things a Finnish child his age meets through play. Being "behind" at 6 often means missing foundations rather than lacking ability.</span></div>
+    <div class="finding"><b>The early gaps are usually small and specific.</b><span>Struggling 6-year-olds usually lack one of a handful of skills: seeing small quantities at a glance, knowing that the last number counted is the total, splitting numbers into parts, and bonds to 10. Fix these and later topics get much easier. The 12 starting objectives below are those skills.</span></div>
+    <div class="finding"><b>Japan's make-ten method is the best single addition for his age.</b><span>Japanese Grade 1 builds all adding and subtracting across 10 on splitting numbers around ten (8 + 5 = 8 + 2 + 3). It is visual, it scales up to place value, and English schools teach it only lightly.</span></div>
+    <div class="finding"><b>Copy how Brilliant and Math Academy are built, not just how they look.</b><span>What makes these apps work is a prerequisite graph, short interactive problems, mastery gates and spaced review. This inventory is already in that shape: every objective has prerequisites, a visual model and a mastery check.</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Starting ages</div>
+  <h2>When each system starts formal maths</h2>
+  <div class="agechart" id="agechart"></div>
+  <p class="prose" style="color:var(--ink-soft);font-size:.95rem">Ages are approximate. Finland's pre-primary year at 6 is compulsory but play-based; Singapore children start Primary 1 in the January of the year they turn 7.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Systems compared</div>
+  <h2>What each approach does best, and what to take from it</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Approach</th><th>How it teaches</th><th>Strengths</th><th>Limits</th><th>Take for the app</th></tr></thead>
+    <tbody>
+      <tr><td>England</td><td>National Curriculum (2014) set year by year. Most schools follow White Rose small steps; NCETM mastery is used widely.</td><td>Clear yearly targets; strong arithmetic fluency; tests are public, so you know what will be assessed.</td><td>Formal work starts early; fast pace for children who lack foundations; a lot of preparation for tests.</td><td class="take">The objective list and test calendar. Use the same words his school uses (part-whole, bar model, exchange).</td></tr>
+      <tr><td>Japan</td><td>Sansū Course of Study. Lessons are built around one rich problem: children try it alone, then the class compares methods (neriage) and summarises.</td><td>Deep understanding of few ideas; make-ten strategy; all times tables by end of Grade 2; strong geometry; soroban in Grades 3-4.</td><td>Relies on highly trained teachers and class discussion, which is hard to reproduce for one child.</td><td class="take">Make-ten and break-ten strategies, the problem-first lesson shape ("how many ways can you solve it?"), and early times tables as a stretch goal.</td></tr>
+      <tr><td>Singapore</td><td>Concrete, Pictorial, Abstract (CPA): handle objects, then draw them, then write symbols. Problem solving is at the centre of the framework.</td><td>The bar model links word problems, fractions, ratio and algebra with one picture. PISA 2022 maths: 1st (575).</td><td>Textbook-heavy; the pace can be demanding at upper primary.</td><td class="take">CPA in every lesson and the bar model as the main tool for word problems from Stage 1 to KS3 algebra.</td></tr>
+      <tr><td>Finland</td><td>Play-based pre-primary at 6, school from 7. Teachers are trusted and highly trained, with little standardised testing and little homework.</td><td>Low maths anxiety, play and outdoor maths, and real-world tasks.</td><td>PISA maths fell from 548 (2006) to 484 (2022), below the UK (489). The approach is warm but now underperforms.</td><td class="take">The pacing and tone: no pressure, playful practice, maths away from the screen. Don't copy the content.</td></tr>
+      <tr><td>Abacus / UCMAS</td><td>Abacus training, then picturing the abacus to calculate mentally (anzan).</td><td>Very fast mental calculation; children enjoy it; it uses visual imagery.</td><td>Research shows gains in calculation, but little evidence it transfers to fractions, reasoning or problem solving. Can become calculation without understanding.</td><td class="take">The soroban as one place-value tool from Stage 3. A side module, not the core.</td></tr>
+      <tr><td>Brilliant, Beast Academy, Math Academy</td><td>Interactive visual problems; comic-led puzzles (Beast); a prerequisite graph with spaced repetition (Math Academy).</td><td>Learning by doing, quick feedback, adapts to the child, measurable mastery.</td><td>Brilliant is aimed at teens and adults; none of them match the UK test calendar.</td><td class="take">The app architecture: a prerequisite graph, a placement test, mastery gates, spaced review, and interactive manipulatives instead of videos.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="eyebrow">What the evidence says</div>
+  <h2>Teaching principles for the app</h2>
+  <ul class="principles">
+    <li><b>Concrete, then pictures, then symbols</b><span>Every new idea starts with something he can move, then a drawing, then digits, with the supports withdrawn gradually (EEF, Singapore).</span></li>
+    <li><b>Reuse a few representations</b><span>Use one small set of models all the way up. A bar model he learns at 6 still works for ratio at 11 and equations at 13.</span></li>
+    <li><b>Fluency comes from understanding</b><span>Number facts are learned through strategies (make ten, doubles, near doubles), then practised. Drill comes last.</span></li>
+    <li><b>Mastery before moving on</b><span>He moves on when the check is passed on three separate days, not when a page is finished.</span></li>
+    <li><b>Spaced retrieval</b><span>Mastered skills come back after 1, 3, 7, 21 and 60 days. Most forgetting happens without this.</span></li>
+    <li><b>Short and daily</b><span>Ten to fifteen focused minutes every day work better than an hour at the weekend (EEF recommends daily maths time).</span></li>
+    <li><b>Talk and explain</b><span>Add "How do you know?" and "Show me another way" prompts. Explaining builds understanding (Japan, NCETM).</span></li>
+    <li><b>Protect confidence</b><span>No timers at the start, mistakes treated as useful information, and celebrate effort and strategy. Maths anxiety starts early and lasts.</span></li>
+  </ul>
+  <div class="note prose">
+    <p><b>About "visual learner".</b> Research hasn't supported the idea that teaching to a preferred learning style helps (Pashler et al., 2008). What is well supported is that <em>every</em> child learns maths better with good visual and physical models next to the symbols. So your instinct is right, for a different reason: build the app around pictures and manipulatives because maths is easier to understand that way, and keep the words and symbols alongside them.</p>
+    <p>If he still struggles with comparing small quantities or subitising after a few months of solid practice, ask his school's SENCo about a dyscalculia screen. Children can't be diagnosed reliably at 6, but early support helps.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">England's test calendar</div>
+  <h2>What he will be tested on, and when</h2>
+  <div class="timeline">
+    <div class="ev"><span class="yr">Reception · first 6 weeks</span><b>Reception Baseline</b><small>Short check of early number. Not reported to parents.</small></div>
+    <div class="ev"><span class="yr">Reception · summer</span><b>EYFS Profile</b><small>Early Learning Goals: Number and Numerical Patterns.</small></div>
+    <div class="ev"><span class="yr">Year 2 · May</span><b>KS1 tests</b><small>Optional since 2023/24. Many schools still use them.</small></div>
+    <div class="ev stat"><span class="yr">Year 4 · June</span><b>Multiplication Tables Check</b><small>25 questions up to 12 × 12, 6 seconds each. Statutory.</small></div>
+    <div class="ev stat"><span class="yr">Year 6 · May</span><b>KS2 SATs</b><small>Arithmetic paper (30 min) and two reasoning papers (40 min each). Statutory.</small></div>
+    <div class="ev"><span class="yr">Year 8 · proposed</span><b>Diagnostic check</b><small>Recommended by the 2025 Curriculum and Assessment Review.</small></div>
+    <div class="ev stat"><span class="yr">Year 11</span><b>GCSE Maths</b><small>Foundation (grades 1-5) or Higher (grades 4-9).</small></div>
+  </div>
+  <p class="prose" style="color:var(--ink-soft);font-size:.95rem">The review reported in November 2025. A revised national curriculum is due in 2027 and taught from September 2028. Most primary maths content stays the same, so the objectives below should need only small updates.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Shared visual toolkit</div>
+  <h2>Twelve models that carry him from Reception to GCSE</h2>
+  <div class="tools">
+    <span>Five- and ten-frames</span><span>Rekenrek (bead frame)</span><span>Part-whole diagram</span><span>Number line (marked and empty)</span><span>Base-10 blocks</span><span>Place-value counters and chart</span><span>Arrays</span><span>Bar model</span><span>Fraction wall and strips</span><span>Area model</span><span>Balance scale</span><span>Algebra tiles</span>
+  </div>
+  <p class="prose">Build these as interactive, draggable components once and reuse them in every lesson. Each objective in the inventory names which model to use.</p>
+</section>
+
+<section id="start">
+  <div class="eyebrow">Where to start</div>
+  <h2>The 12 starting objectives for a struggling 6-year-old</h2>
+  <p class="prose">Start a placement test here, even if he is in Year 2. Go back a stage wherever he is unsure. Most of what he will learn in the next two years depends on these. Tap one to see it in the inventory.</p>
+  <div class="gates" id="gates"></div>
+</section>
+
+<section id="inventory">
+  <div class="eyebrow">Inventory</div>
+  <h2>Learning objectives, Stage 0 to GCSE</h2>
+  <p class="prose">Each bar is one stage, coloured by <span style="color:var(--blue);font-weight:700">core curriculum</span>, <span style="color:var(--counter-red);font-weight:700">tested in a statutory exam</span> and <span style="color:var(--ink);font-weight:700;background:var(--amber-soft);padding:0 4px">beyond England (other countries or research)</span>. Pick a stage to see its objectives.</p>
+  <div class="stagebar" id="stagebar" role="group" aria-label="Stages"></div>
+  <div class="controls">
+    <select id="strand" aria-label="Strand"><option value="">All strands</option></select>
+    <div class="seg" id="kindseg" role="group" aria-label="Type">
+      <button data-k="" aria-pressed="true">All</button><button data-k="core" aria-pressed="false">Core</button><button data-k="tested" aria-pressed="false">Tested</button><button data-k="beyond" aria-pressed="false">Beyond</button>
+    </div>
+    <input id="q" type="search" placeholder="Search all stages, e.g. fractions, clock, bar model">
+  </div>
+  <div id="list" style="display:flex;flex-direction:column;gap:6px"><p class="empty">Loading objectives…</p></div>
+</section>
+
+<section>
+  <div class="eyebrow">Sources</div>
+  <ul class="sources">
+    <li>DfE, <a href="https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study">National curriculum in England: mathematics programmes of study</a> (2014)</li>
+    <li>DfE, <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2">EYFS statutory framework</a> (Early Learning Goals)</li>
+    <li>DfE, <a href="https://www.gov.uk/government/publications/curriculum-and-assessment-review-final-report-government-response">Curriculum and Assessment Review: final report and government response</a> (Nov 2025)</li>
+    <li>NCETM, <a href="https://www.ncetm.org.uk/teaching-for-mastery/">Teaching for Mastery</a> and Mastering Number</li>
+    <li>EEF, <a href="https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/early-maths">Improving Mathematics in the Early Years and Key Stage 1</a></li>
+    <li>EEF, <a href="https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/maths-ks-2-3">Improving Mathematics in Key Stages 2 and 3</a></li>
+    <li>MEXT Japan, Courses of Study for Elementary School: Arithmetic (2017)</li>
+    <li>Finnish National Agency for Education, National Core Curriculum for Basic Education (2014)</li>
+    <li>Singapore MOE, Primary Mathematics Syllabus and Mathematics Framework</li>
+    <li>OECD, PISA 2022 Results, Volume I</li>
+    <li>Pashler, McDaniel, Rohrer &amp; Bjork (2008), Learning Styles: Concepts and Evidence</li>
+    <li>Siegler &amp; Booth (2004), number-line estimation and mathematical achievement</li>
+    <li>Barner et al. (2016), abacus mental arithmetic training, Child Development</li>
+  </ul>
+</section>
+</div>
+
+<script>
+(function(){
+  // ---- age chart ----
+  const minA=3,maxA=12, pct=a=>((a-minA)/(maxA-minA)*100);
+  const rows=[
+    ["England",[[4,5,"play","Reception"],[5,12,"formal","Year 1 onward"]]],
+    ["Japan",[[3,6,"play","Kindergarten"],[6,12,"formal","Grade 1 at 6"]]],
+    ["Singapore",[[4,6.5,"play","Kindergarten"],[6.5,12,"formal","Primary 1"]]],
+    ["Finland",[[3,7,"play","ECEC + pre-primary"],[7,12,"formal","Grade 1 at 7"]]],
+  ];
+  const ac=document.getElementById("agechart");
+  let h="";
+  rows.forEach(([n,bars])=>{
+    h+=`<div class="row"><span class="lab">${n}</span><div class="track">`+
+      bars.map(([a,b,c,t])=>`<span class="bar ${c}" style="left:${pct(a)}%;width:${pct(b)-pct(a)}%">${t}</span>`).join("")+
+      `<span class="you" style="left:${pct(6)}%"></span></div></div>`;
+  });
+  h+=`<div class="axis"><span></span><div class="ticks">`;
+  for(let a=minA;a<=maxA;a++) h+=`<span style="left:${pct(a)}%">${a}</span>`;
+  h+=`</div></div><div class="legend"><span><i style="background:var(--green-soft);border:1px solid var(--green)"></i>Play-based early years</span><span><i style="background:var(--blue)"></i>Formal school maths</span><span><i style="border-left:2px dashed var(--counter-red);width:0;height:12px;border-radius:0"></i>Age 6, your son now</span></div>`;
+  ac.innerHTML=h;
+
+  // ---- inventory ----
+  const GATES=["NS0.1","NS0.2","NS0.5","AS0.1","AS0.2","NS1.7","AS1.1","NS1.4","AS1.5","AS1.8","NS2.2","NS2.4"];
+  const st={stage:0,strand:"",kind:"",q:""};
+  let D=null, byId={}, sceneName={};
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+  fetch("objectives.json").then(r=>r.json()).then(d=>{D=d;d.objectives.forEach(o=>byId[o.id]=o);(d.scenes||[]).forEach(s=>sceneName[s.id]=s.name);init();})
+    .catch(()=>{document.getElementById("list").innerHTML='<p class="empty">The objectives file could not be loaded. Reload the page to try again.</p>';});
+
+  function init(){
+    const sel=document.getElementById("strand");
+    D.strands.forEach(s=>sel.insertAdjacentHTML("beforeend",`<option value="${s.code}">${esc(s.name)}</option>`));
+    sel.onchange=e=>{st.strand=e.target.value;render();};
+    document.querySelectorAll("#kindseg button").forEach(b=>b.onclick=()=>{st.kind=b.dataset.k;
+      document.querySelectorAll("#kindseg button").forEach(x=>x.setAttribute("aria-pressed",x===b));render();});
+    document.getElementById("q").oninput=e=>{st.q=e.target.value.trim().toLowerCase();render();};
+    // stage bar
+    const max=Math.max(...D.stages.map(s=>D.objectives.filter(o=>o.stage===s.stage).length));
+    document.getElementById("stagebar").innerHTML=D.stages.map(s=>{
+      const os=D.objectives.filter(o=>o.stage===s.stage);
+      const seg=k=>{const n=os.filter(o=>o.kind===k).length;return n?`<i class="k-${k}" style="height:${n/max*86}px"></i>`:"";};
+      const short=s.stage<=6?(s.stage===0?"R":"Y"+s.stage):s.stage<=9?"Y"+s.stage:(s.stage===10?"GCSE F":"GCSE H");
+      return `<button class="sb" data-s="${s.stage}" aria-pressed="${s.stage===st.stage}" title="${esc(s.name+" · "+s.ukYear+" · "+os.length+" objectives")}"><span class="stack">${seg("core")}${seg("tested")}${seg("beyond")}</span><span class="lbl">${short}</span></button>`;
+    }).join("");
+    document.querySelectorAll(".sb").forEach(b=>b.onclick=()=>{st.stage=+b.dataset.s;st.q="";document.getElementById("q").value="";render();});
+    // gates
+    document.getElementById("gates").innerHTML=GATES.map(id=>{const o=byId[id];
+      return `<button class="gate" data-id="${id}"><span class="n"></span><span>${esc(o.objective)}</span><code>${id} · ${esc(o.ukYear)}</code></button>`;}).join("");
+    document.querySelectorAll(".gate").forEach(b=>b.onclick=()=>jump(b.dataset.id));
+    render();
+  }
+
+  function card(o,showStage){
+    const pill=o.kind==="tested"?`<span class="pill tested">${esc(o.source)}</span>`:o.kind==="beyond"?`<span class="pill beyond">from ${esc(o.source)}</span>`:"";
+    const det=[];
+    if(showStage) det.push(`<span><em>Stage:</em> ${esc(o.stageName)} · ${esc(o.ukYear)} · age ${esc(o.age)}</span>`);
+    if(o.animation) det.push(`<span><em>Watch:</em> ${esc(o.animation)}</span>`);
+    if(o.interaction) det.push(`<span><em>Do:</em> ${esc(o.interaction)}</span>`);
+    if(o.scenes) det.push(`<span><em>Scenes:</em> ${o.scenes.map(id=>esc(sceneName[id]||id)).join(", ")}</span>`);
+    if(o.masteryCheck) det.push(`<span><em>Mastered when:</em> ${esc(o.masteryCheck)}</span>`);
+    if(o.prerequisites.length) det.push(`<span><em>Needs:</em> ${o.prerequisites.map(p=>`<button class="pre" data-id="${p}" title="${esc(byId[p].objective)}">${p}</button>`).join("")}</span>`);
+    return `<div class="obj" id="o-${o.id}"><span class="id">${o.id}</span><span class="txt">${esc(o.objective)}${pill}</span>${det.length?`<div class="det">${det.join("")}</div>`:""}</div>`;
+  }
+
+  function render(){
+    document.querySelectorAll(".sb").forEach(b=>b.setAttribute("aria-pressed",(+b.dataset.s===st.stage)&&!st.q));
+    let os=D.objectives.filter(o=>(!st.strand||o.strand===st.strand)&&(!st.kind||o.kind===st.kind));
+    let html="";
+    if(st.q){
+      os=os.filter(o=>(o.objective+" "+o.visualModel+" "+(o.animation||"")+" "+o.masteryCheck+" "+o.id+" "+o.strandName).toLowerCase().includes(st.q));
+      html=`<div class="stagehead"><h3>${os.length} matching objectives</h3><span class="meta">across all stages</span></div>`+os.map(o=>card(o,true)).join("");
+    }else{
+      os=os.filter(o=>o.stage===st.stage);
+      const s=D.stages[st.stage];
+      html=`<div class="stagehead"><h3 style="font-size:1.4rem">${esc(s.name)}</h3><span class="meta">${esc(s.ukYear)} · age ${esc(s.age)} · ${os.length} objectives</span></div>`;
+      D.strands.forEach(sd=>{const g=os.filter(o=>o.strand===sd.code);if(!g.length)return;
+        html+=`<div class="strandgroup"><h3>${esc(sd.name)}</h3>${g.map(o=>card(o,false)).join("")}</div>`;});
+    }
+    if(!os.length) html+=`<p class="empty">No objectives match these filters. Clear the search or choose "All".</p>`;
+    const L=document.getElementById("list");L.innerHTML=html;
+    L.querySelectorAll(".pre").forEach(b=>b.onclick=()=>jump(b.dataset.id));
+  }
+
+  function jump(id){
+    const o=byId[id];st.stage=o.stage;st.q="";st.strand="";st.kind="";
+    document.getElementById("q").value="";document.getElementById("strand").value="";
+    document.querySelectorAll("#kindseg button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.k===""));
+    render();
+    const el=document.getElementById("o-"+id);
+    if(el){el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});
+      el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),1800);}
+  }
+})();
+</script>
