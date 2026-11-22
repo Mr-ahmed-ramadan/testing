@@ -1,0 +1,59 @@
+{
+  "voice": "bm_fable",
+  "speed": 1.0,
+  "characters": {
+    "bolt": "bm_fable",
+    "mission_control": "bm_george"
+  },
+  "lines": {
+    "intro1": "Captain! Bolt here, your co-pilot. Our rocket needs fuel to blast off.",
+    "intro2": "Fuel cells come in trays of ten. A full tray means full power.",
+    "demo1": "Watch me. This tray has seven cells. Seven needs three more to make ten.",
+    "demo2": "Three in, and it's full. Ten!",
+    "l1_go": "Your turn, Captain. Drag fuel cells in until the tray is full.",
+    "l1_predict": "New rule. Before we load it, tell me: how many more does this tray need?",
+    "full1": "Full tray! Power up!",
+    "full2": "Ten! Nice work, Captain.",
+    "full3": "Tray's full. The engines love it.",
+    "over": "Whoa! Too many! Fuel's spilling everywhere.",
+    "under": "Not quite. Look, there are still gaps in the tray.",
+    "hint": "Look at the empty gaps. What goes with this number to make ten?",
+    "l2_intro": "Mission part two. The scanner only flashes for a second. Don't count. Just look! How many cells?",
+    "l2_tip": "Top tip. A full row is five. So five, and two more, is seven.",
+    "sharp1": "Sharp eyes!",
+    "sharp2": "Spot on, Captain!",
+    "l3_intro": "Final part. Launch countdown! Fill each tray as fast as you can.",
+    "ready": "Fuel tank full. Mission control, we are ready!",
+    "complete": "Mission complete! Brilliant flying, Captain.",
+    "best": "And that's a new best time!",
+    "next": "Next stop, Planet Teen. See you there, Captain!",
+    "welcome_back": "Welcome back, Captain! Ready to beat your best?",
+    "countdown": {
+      "text": "Three. Two. One. Lift off!",
+      "voice": "bm_george"
+    },
+    "mc_go": {
+      "text": "Mission control here. Fuel Up mission is go.",
+      "voice": "bm_george"
+    },
+    "bond_1": "One needs nine more to make ten.",
+    "bond_2": "Two needs eight more to make ten.",
+    "bond_3": "Three needs seven more to make ten.",
+    "bond_4": "Four needs six more to make ten.",
+    "bond_5": "Five needs five more to make ten.",
+    "bond_6": "Six needs four more to make ten.",
+    "bond_7": "Seven needs three more to make ten.",
+    "bond_8": "Eight needs two more to make ten.",
+    "bond_9": "Nine needs one more to make ten.",
+    "seen_1": "One.",
+    "seen_2": "Two.",
+    "seen_3": "Three.",
+    "seen_4": "Four. One less than a full row.",
+    "seen_5": "Five. One full row.",
+    "seen_6": "Six. Five, and one more.",
+    "seen_7": "Seven. Five, and two more.",
+    "seen_8": "Eight. Five, and three more.",
+    "seen_9": "Nine. Just one gap.",
+    "seen_10": "Ten. Two full rows."
+  }
+}
